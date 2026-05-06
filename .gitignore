@@ -1,0 +1,7 @@
+data/archaeology.db
+*.pyc
+__pycache__/
+data/archaeology.db
+*.pyc
+__pycache__/
+worker/__pycache__/
