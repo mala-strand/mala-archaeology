@@ -1,7 +1,14 @@
+# Large databases (>100MB GitHub limit)
 data/archaeology.db
-*.pyc
-__pycache__/
-data/archaeology.db
+data/archaeology_phase1.db
+data/phase1/archaeology.db
+data/phase1/archaeology_phase1.db
+*.db
+
+# Python
 *.pyc
 __pycache__/
 worker/__pycache__/
+
+# OS
+.DS_Store
