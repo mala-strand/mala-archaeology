@@ -33,5 +33,5 @@ GUTENBERG_DELAY = 1.0  # Seconds between requests
 GUTENBERG_RETRY = 3  # Retry attempts
 
 # Drift detection
-DRIFT_TOP_K = 50  # Track top K most changed words
+DRIFT_TOP_K = None  # Track ALL drift scores (not just top K)
 DRIFT_METRIC = "cosine"  # Distance metric for drift

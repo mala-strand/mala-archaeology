@@ -53,7 +53,7 @@ PHASE1_CATALOG = [
     (39132, "Emile", "Rousseau", 1762, "1700-1800"),
     
     # Economics
-    (3300, "The Wealth of Nations", "Adam Smith", 1776, "1700-1800"),  # Note: ID collision, need real ID
+    # (3300 is Plato's Republic — skipping Wealth of Nations, need real Gutenberg ID)
     
     # Literature
     (3268, "Gulliver's Travels", "Jonathan Swift", 1726, "1700-1800"),
@@ -123,7 +123,7 @@ PHASE1_CATALOG = [
     (60096, "Notes from Underground", "Dostoevsky", 1864, "1850-1900"),
     
     # Science & Philosophy
-    (1228, "On the Origin of Species", "Charles Darwin", 1859, "1850-1900"),  # Note: ID collision
+    # (1228 is Augustine's Confessions — skipping Origin of Species, need real Gutenberg ID)
     (2009, "The Descent of Man", "Charles Darwin", 1871, "1850-1900"),
     (3860, "Thus Spake Zarathustra", "Nietzsche", 1883, "1850-1900"),
     (52263, "Beyond Good and Evil", "Nietzsche", 1886, "1850-1900"),
@@ -131,30 +131,28 @@ PHASE1_CATALOG = [
     
     # ============ 1900-1923 (Modernist) ============
     # Literature
-    (145, "The Metamorphosis", "Kafka", 1915, "1900-1923"),  # Note: ID collision
+    # (145 is Middlemarch — skipping Metamorphosis, need real Gutenberg ID)
     (7849, "The Trial", "Kafka", 1925, "1900-1923"),  # Actually 1925
     (7831, "The Castle", "Kafka", 1926, "1900-1923"),  # Actually 1926
-    (37106, "Little Women", "Louisa May Alcott", 1868, "1900-1923"),  # Wrong era
+    (37106, "Little Women", "Louisa May Alcott", 1868, "1850-1900"),  # Corrected era
     (21571, "The Great Gatsby", "F. Scott Fitzgerald", 1925, "1900-1923"),  # Actually 1925
     (5670, "The Sun Also Rises", "Ernest Hemingway", 1926, "1900-1923"),  # Actually 1926
 ]
 
 # Filter to valid entries (some IDs may be placeholders)
 def get_valid_catalog():
-    """Return catalog with valid Gutenberg IDs only."""
-    # These are confirmed working IDs from Phase 0
-    confirmed = {
-        11, 12, 61, 74, 76, 84, 98, 100, 105, 121, 1260, 1342, 1399, 1400, 145,
-        158, 161, 219, 2600, 3207, 3300, 541, 768, 2199, 25421, 3268, 6130, 965,
-    }
-    
-    # Prioritize confirmed IDs first
+    """Return catalog with valid Gutenberg IDs only, deduplicated."""
+    seen_ids = set()
     valid = []
     for item in PHASE1_CATALOG:
         gutenberg_id, title, author, year, era = item
         # Skip items with year 0 or obviously wrong
         if year == 0:
             continue
+        # Skip duplicate Gutenberg IDs (keep first occurrence)
+        if gutenberg_id in seen_ids:
+            continue
+        seen_ids.add(gutenberg_id)
         valid.append(item)
     
     return valid[:120]  # Cap at 120 for safety

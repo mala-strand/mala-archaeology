@@ -9,7 +9,7 @@ import json
 import numpy as np
 from pathlib import Path
 
-DB_PATH = Path(__file__).parent.parent / "data" / "archaeology.db"
+DB_PATH = Path(__file__).parent.parent / "data" / "phase1" / "archaeology_phase1.db"
 
 
 def cosine_similarity(vec1, vec2):
@@ -42,6 +42,7 @@ def get_vector(word: str, era: str):
 def get_neighbors(word: str, era: str, n: int = 10):
     """
     Find n nearest neighbors for a word in a specific era.
+    Skips zero-norm vectors (word not used in that era).
     """
     target_vec = get_vector(word, era)
     if target_vec is None:
@@ -59,6 +60,9 @@ def get_neighbors(word: str, era: str, n: int = 10):
     for other_word, vec_json in cursor.fetchall():
         if other_word != word:
             other_vec = json.loads(vec_json)
+            # Skip zero-norm vectors (word not used in this era)
+            if np.linalg.norm(other_vec) < 1e-10:
+                continue
             sim = cosine_similarity(target_vec, other_vec)
             similarities.append((other_word, sim))
     
