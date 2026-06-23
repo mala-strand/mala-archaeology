@@ -9,7 +9,7 @@ import json
 import numpy as np
 from pathlib import Path
 
-DB_PATH = Path(__file__).parent.parent / "data" / "phase1" / "archaeology_phase1.db"
+DB_PATH = Path(__file__).parent.parent / "data" / "phase1" / "archaeology_phase1_clean.db"
 
 
 def cosine_similarity(vec1, vec2):
@@ -108,6 +108,7 @@ def interactive_query():
     print("  neighbors <word> <era> [n]  - Find nearest neighbors")
     print("  compare <word> <era1> <era2> [n]  - Compare between eras")
     print("  eras                        - List available eras")
+    print("  dreams [limit]              - List stored dreams")
     print("  quit                        - Exit")
     print()
     
@@ -128,6 +129,21 @@ def interactive_query():
                 cursor.execute("SELECT DISTINCT era FROM word_vectors ORDER BY era")
                 for row in cursor.fetchall():
                     print(f"  {row[0]}")
+                conn.close()
+            
+            elif parts[0] == "dreams":
+                limit = int(parts[1]) if len(parts) > 1 else 5
+                conn = sqlite3.connect(DB_PATH)
+                cursor = conn.cursor()
+                cursor.execute(
+                    "SELECT id, seed_word, start_era, temperature, jump_count, length, created_at FROM dreams ORDER BY id DESC LIMIT ?",
+                    (limit,)
+                )
+                rows = cursor.fetchall()
+                print(f"\nStored dreams (last {limit}):")
+                for row in rows:
+                    print(f"  #{row[0]}: {row[1]} → {row[2]} | temp={row[3]} | jumps={row[4]} | len={row[5]} | {row[6]}")
+                print()
                 conn.close()
             
             elif parts[0] == "neighbors" and len(parts) >= 3:

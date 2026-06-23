@@ -110,7 +110,7 @@ def stream_vocab_tokens(text_path, vocab_set):
 
 if __name__ == "__main__":
     # Test
-    DATA_DIR = Path("/home/mala/.openclaw/workspace/archaeology/data")
+    DATA_DIR = Path("/mnt/nas/mala/work/archaeology/data")
     text_paths = list(DATA_DIR.glob("*.txt"))[:5]
     
     vocab = build_vocab(text_paths, vocab_size=1000, min_freq=5)

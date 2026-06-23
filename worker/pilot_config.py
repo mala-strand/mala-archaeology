@@ -5,7 +5,7 @@ Box-aware constraints for 2-core, 3.8GB RAM machine
 from pathlib import Path
 
 # Base workspace
-WORKSPACE = Path("/home/mala/.openclaw/workspace/archaeology")
+WORKSPACE = Path("/mnt/nas/mala/work/archaeology")
 
 # Pilot scope - deliberately small to prove pipeline
 PILOT_BOOKS = 20

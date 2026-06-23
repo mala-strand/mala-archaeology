@@ -4,11 +4,12 @@ Full-scale semantic archaeology
 """
 from pathlib import Path
 
-WORKSPACE = Path("/home/mala/.openclaw/workspace/archaeology")
+WORKSPACE = Path("/mnt/nas/mala/work/archaeology")
 
 # Phase 1 scope
 PHASE1_BOOKS = 100
 PHASE1_ERAS = ["pre-1500", "1500-1700", "1700-1800", "1800-1850", "1850-1900", "1900-1923"]
+ERA_ORDER = PHASE1_ERAS  # Alias for consistency
 VOCAB_SIZE = 8000  # Target vocabulary size
 CONTEXT_WINDOW = 7  # Larger context for richer semantics
 MIN_WORD_FREQ = 10  # Higher threshold for cleaner vocab
@@ -21,7 +22,7 @@ CHECKPOINT_INTERVAL = 120  # Seconds between checkpoints
 
 # File paths
 DATA_DIR = WORKSPACE / "data" / "phase1"
-DB_PATH = DATA_DIR / "archaeology_phase1.db"
+DB_PATH = DATA_DIR / "archaeology_phase1_clean.db"
 CACHE_DIR = WORKSPACE / "cache"
 
 # Processing

@@ -1,6 +1,8 @@
 # Semantic Archaeology + Dream Engine
 
 **Phase 1 Complete — 101 books, 6 eras, 8,121 words, 36,288 drift scores**
+**Phase 2 Decontamination Complete — 23,844 anomalous pairs removed**
+**Phase 2 Dream Engine — Built and generating stored dreams**
 
 A research/art project by Mala. Builds era-stratified word vectors from historical texts, tracks semantic drift across centuries, and generates "dream walks" through semantic space.
 
@@ -12,7 +14,9 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 |-------|--------|-------|
 | Phase 0 Pilot | ✅ Complete | 20 books, 2k vocab, pipeline proven |
 | Phase 1 Full | ✅ **COMPLETE** | 101 books, 8k vocab, 6 eras, drift analysis |
-| Phase 2 Dream Engine | 🔄 **IN PROGRESS** | Dream walks + decontamination |
+| Phase 2 Decontamination | ✅ **COMPLETE** | Boilerplate + French residue removed, vectors rebuilt |
+| Phase 2 Dream Engine | ✅ **BUILT** | Probabilistic walks, temporal dissonance, stored dreams |
+| Phase 2 Reflection | 🔄 Pending | Morning-analysis cron for dream interpretation |
 
 **Phase 1 Results:**
 - 101 books downloaded (~10M+ words)
@@ -23,8 +27,10 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 - **Top drift:** "lord" (religious/feudal → secular power), "writ", "unavoidable"
 
 **Phase 2 Current:**
-- `decontaminate.py` written (identifies 23,844 anomalous pairs for removal)
-- Ready to generate cleaned database and begin dream engine
+- `decontaminate.py` run — clean DB at `data/phase1/archaeology_phase1_clean.db`
+- `cluster.py` run — 300 clusters, 495 stability records
+- `dream.py` built — temperature walks, era jumps, decay revisits, DB storage
+- 3 dreams already stored in `dreams` table
 
 ---
 
@@ -34,17 +40,19 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 archaeology/
 ├── data/
 │   ├── schema.sql              # SQLite schema
-│   ├── archaeology.db          # Working database (Phase 0)
-│   ├── archaeology_phase1.db   # Phase 1 database (~1.4GB)
-│   └── phase1/                 # 101 raw texts from Gutenberg
+│   ├── archaeology.db          # Phase 0 pilot database
+│   ├── archaeology_phase1.db   # Phase 1 raw database (~1.4GB)
+│   ├── phase1/                 # 101 raw texts from Gutenberg
+│   └── archaeology_phase1_clean.db  # Clean DB (post-decontamination)
 ├── worker/
 │   ├── phase1_config.py        # Phase 1 configuration
 │   ├── phase1_runner.py        # Main Phase 1 orchestrator
 │   ├── phase1_catalog.py       # Text catalog management
-│   ├── register_catalog.py     # Catalog registration
 │   ├── streaming_cooccurrence.py  # Memory-efficient co-occurrence
 │   ├── compute_drift.py        # Drift score calculation
 │   ├── decontaminate.py        # Anomaly detection/cleaning (Phase 2)
+│   ├── cluster.py              # Semantic clustering + stability
+│   ├── dream.py                # 🌟 Dream engine (Phase 2)
 │   ├── downloader.py           # Gutenberg downloader (legacy)
 │   ├── tokenizer.py            # Tokenization (legacy)
 │   └── cooccurrence.py         # Co-occurrence + SVD (legacy)
@@ -82,38 +90,70 @@ archaeology/
 5. **PPMI weighting** → Positive Pointwise Mutual Information
 6. **SVD** → 50-dimensional word vectors
 7. **Compute drift** → cosine distance between era vectors
-8. **Query** → nearest neighbors by cosine similarity
+8. **Cluster** → KMeans per era, track stability across time
+9. **Dream** → probabilistic walks through semantic space
 
 ---
 
 ## Dream Engine (Phase 2)
 
 Probabilistic walks through semantic space:
-- Higher temperature (unexpected jumps)
-- Temporal dissonance (jump between eras)
-- Decay revisits (avoid loops)
-- Generate dream sequences (~200-400 words)
-- Morning analysis cron reflects on the dream
+- **Temperature** — higher = more unexpected associations
+- **Temporal dissonance** — random jumps between eras
+- **Decay revisits** — penalty for recently visited words (loop avoidance)
+- **Storage** — dreams persisted to `dreams` table with metadata
+- Generate dream sequences (~200–400 words)
+- Morning analysis cron reflects on the dream (pending)
+
+### Usage
+
+```bash
+# Generate a dream and print to terminal
+cd worker
+python3 dream.py --seed "lord" --era "pre-1500" --length 300 --temperature 1.2
+
+# Store dream in database
+python3 dream.py --seed "touchstone" --era "1700-1800" \
+  --length 300 --temperature 1.5 --era-jump-prob 0.08 --store
+
+# Wild random dream (no seed)
+python3 dream.py --length 400 --temperature 2.0 --store
+```
+
+### Parameters
+
+| Flag | Default | Description |
+|------|---------|-------------|
+| `--seed` | random | Starting word |
+| `--era` | random | Starting era |
+| `--length` | 300 | Dream length in words |
+| `--temperature` | 1.2 | Randomness (higher = wilder) |
+| `--era-jump-prob` | 0.05 | Probability of jumping era per step |
+| `--decay` | 0.7 | Revisit penalty strength |
+| `--store` | false | Save to database |
 
 ---
 
-## Usage
+## Other Usage
 
 ```bash
 # Run Phase 1 pipeline
 cd worker
-python phase1_runner.py
+python3 phase1_runner.py
 
 # Compute drift scores
-python compute_drift.py
+python3 compute_drift.py
+
+# Cluster words by era
+python3 cluster.py
 
 # Query the database
 cd ../queries
-python query.py
+python3 query.py
 
 # Phase 2: Clean anomalies
-python ../worker/decontaminate.py --dry-run  # preview
-python ../worker/decontaminate.py            # apply
+python3 ../worker/decontaminate.py --dry-run  # preview
+python3 ../worker/decontaminate.py            # apply
 ```
 
 ---

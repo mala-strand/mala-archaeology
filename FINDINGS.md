@@ -722,3 +722,182 @@ The contamination is more targeted than feared — less than a quarter of one pe
 3. **Write `worker/cluster.py`**: k-means on 5-element drift-score vectors per word; validate against the known taxonomy (Pivot=lord, Broadening=mission, Accumulation=immortal, Frequency-collapse=writ, Creation-event=tobacco, Boilerplate=creating)
 4. **Re-evaluate mission**: mission's "broadening" pattern was documented against contaminated vectors; after decontamination its top neighbors may differ entirely
 
+
+
+---
+
+## Session Notes: 2026-06-19
+
+### Decontamination complete — new contamination layer exposed
+
+**Decontaminate.py ran in full** (no --dry-run). Results:
+- Removed 23,844 pairs (0.23% of 10,534,848)
+- Rebuilt 48,000 word vectors via SVD
+- Recomputed 40,000 drift scores (up from 36,288 — full 8,000-word vocabulary now has vectors in all eras)
+
+**Era average drift dropped substantially** (boilerplate was inflating cross-era distances):
+
+| Transition | Before | After | Change |
+|------------|--------|-------|--------|
+| pre-1500 → 1500-1700 | 0.851 | 0.703 | -0.148 |
+| 1500-1700 → 1700-1800 | 0.824 | 0.681 | -0.143 |
+| 1700-1800 → 1800-1850 | 0.941 | 0.682 | -0.259 |
+| 1800-1850 → 1850-1900 | 0.913 | 0.701 | -0.212 |
+| 1850-1900 → 1900-1923 | 0.801 | 0.618 | -0.183 |
+
+The 1700-1800→1800-1850 transition was previously the highest-drift era by a wide margin (0.941). Post-decontamination it's third (0.682). The original ranking was partly an artifact of uneven boilerplate distribution across eras.
+
+**Known words' drift scores dropped substantially** — the original top-30 was inflated:
+
+| Word | Transition | Before | After |
+|------|-----------|--------|-------|
+| lord | pre-1500→1500-1700 | 1.302 | 0.824 |
+| immortal | 1700-1800→1800-1850 | 1.256 | 0.788 |
+| crowded | 1800-1850→1850-1900 | 1.246 | 0.649 |
+| mission | 1500-1700→1700-1800 | 1.235 | 0.617 |
+
+These words still drift — the semantic patterns documented across 15 sessions remain valid — but the magnitude was overstated. lord's first-transition drift of 1.302 was inflated by ~0.48 points from boilerplate contamination.
+
+### New top drifters: two new contamination types
+
+Post-decontamination top 15 reveals two new artifact categories not in the original stoplist:
+
+**French text contamination** (foreign-language books or heavy French-dialogue novels):
+- top drifters: ton, chambre, beau, sous, par, les, mes, cent
+- Confirmed: "les" neighbors in pre-1500 are va, tome, sous, sur, tower — these are French words
+- These are non-English texts included in the corpus, or texts with extensive French passages (e.g. Victorian novels with untranslated French)
+
+**Gutenberg boilerplate residue** (missed in first stoplist):
+- "disclaimer" neighbors: exclusion, limitation, maximum, types — identical Gutenberg legal pattern
+- "warranties" in top 15: same signature
+- These appear in the Gutenberg disclaimer section: "WITHOUT WARRANTIES OF ANY TYPE, WITHOUT ANY MAXIMUM LIMITATION OF LIABILITY"
+
+The first stoplist was incomplete. A second decontamination pass is required.
+
+### Revised drift taxonomy: eighth type added
+
+Updated taxonomy now has nine behavioral categories:
+
+| Type | Example | Signature |
+|------|---------|-----------|
+| **Pivot** | lord | Neighbors replaced wholesale; non-monotonic arc |
+| **Broadening** | mission | Raw count rises, PPMI falls (pending re-eval after clean pass 2) |
+| **Accumulation** | immortal | Multiple simultaneous registers in late eras |
+| **Frequency collapse** | writ | Drift → 1.0 as pair count → 0 |
+| **Creation event** | tobacco | Large drift in first transition from null |
+| **Orthographic artifact** | writer | Neighbors dominated by morphological family |
+| **Boilerplate contamination** | creating, disclaimer | Gutenberg license terms |
+| **Apparent stability (contaminated)** | mission | Stable neighbors were boilerplate |
+| **Foreign text contamination** | les, chambre | Non-English or bilingual texts in corpus |
+
+### Phase 2: concrete next step
+
+Second decontamination pass before clustering:
+
+Additional stoplist words confirmed:
+- Gutenberg residue: disclaimer, warranties, limitation, exclusion, maximum (in legal context)
+- French words (non-English corpus contamination): les, mes, sur, sous, par, ton, beau, cent, chambre, va, tome
+
+Options:
+1. Extend BOILERPLATE_STOPLIST in decontaminate.py and re-run against the original DB
+2. Write decontaminate_v2.py that operates on archaeology_phase1_clean.db
+
+After clean pass 2: update phase1_config.py to point at the final clean DB, then write cluster.py.
+
+---
+
+## Session Notes: 2026-06-20
+
+Corpus state: original DB (36,288 drift scores, 48,000 word vectors); clean DB (40,000 drift scores, 48,000 word vectors). No recomputation needed.
+
+### Clean DB analysis: French and Gutenberg residue still dominate top drifters
+
+Top 15 post-decontamination drifters in `archaeology_phase1_clean.db` are almost entirely contamination artifacts:
+
+- **French words**: plus (1.350), sous (1.285), ton (1.274), chambre (1.251), beau (1.251), cent (1.243), par (1.234), les (1.220), mes (1.205), tête (1.161), sa (1.196), se (1.191), publique (1.186)
+- **Gutenberg residue**: warranties (1.222), disclaimer (1.197), agreement (1.185), refund (1.148), damages (1.153), replacement (1.155), limitation (1.189)
+
+Remaining contamination pair counts in clean DB:
+- French words: ~4,700 pairs total (cent alone: 1,526; beau: 849; les: 598)
+- Gutenberg legal residue: agreement 1,631; damages 572; limitation 313; disclaimer 141
+
+The first decontamination pass (23,844 pairs removed) cleared the license text but missed: (1) French-language texts in the corpus, and (2) the Gutenberg disclaimer section ("without warranties of any type, without any maximum limitation").
+
+### Second decontamination scope: ambiguity problem
+
+Some contamination words are also legitimate English words:
+- **cent**: French for "hundred" in early texts, but genuine English monetary unit from ~1800 onward
+- **beau**: French in some texts, English (admirer/suitor) in others
+- **agreement, damages, limitation, exclusion, currency**: Gutenberg legal context AND legitimate semantic vocabulary
+
+Safe removals (unambiguously non-English or Gutenberg-only): les, mes, sa, se, tous, toujours, va, vous, une, un, tête, chambre, publique, sous, ton, roubles, disclaimer, warranties, refund, replacement.
+
+Ambiguous words should not be added to the stoplist — removing "agreement" would discard genuine semantic data about how contracts and social arrangements were discussed across eras.
+
+### Legitimate top drifters after filtering
+
+After excluding all French and Gutenberg words, the post-decontam top candidates are:
+
+| Rank | Word | Transition | Score | Notes |
+|------|------|-----------|-------|-------|
+| 1 | judea | pre-1500→1500-1700 | 1.209 | Proper noun, likely creation event |
+| 2 | tenant | pre-1500→1500-1700 | 1.197 | French contamination confirmed (toujours, tête, va, vous as 1500-1700 neighbors) |
+| 3 | sinned | pre-1500→1500-1700 | 1.190 | Genuine — see below |
+| 4 | touchstone | 1700-1800→1800-1850 | 1.183 | Genuine — see below |
+| 5 | liveth | pre-1500→1500-1700 | 1.180 | Archaic biblical verb, creation event |
+| 6 | frowned | pre-1500→1500-1700 | 1.167 | Possible genuine drift |
+| 7 | diana | 1500-1700→1700-1800 | 1.162 | Classical goddess → secular proper name? |
+
+Note: **tenant** (rank 2) is French contamination despite appearing legitimate. Its 1500-1700 neighbors include toujours (6.86), tête (6.86), va (5.80), tous (5.40), vous (4.49) — French co-occurrence from the same source texts.
+
+### sinned: legal → theological → fictional → emotional
+
+Neighbor trajectory for "sinned" (pre-1500 → 1500-1700 drift: 1.190):
+
+- **pre-1500**: whereby, stake, unjustly, throwing — punishment/legal frame. Sinned as a *crime* with material consequences (stake, throwing).
+- **1500-1700**: terrestrial, spared, tempted — theological. Divine judgment frame; temptation-sin-sparing pattern of evangelical prose.
+- **1700-1800**: sinner, spirited — evangelical consolidation. The noun "sinner" as top neighbor confirms 18th-century revivalism (Whitefield, Wesley era).
+- **1800-1850**: tilney, woodhouse — Austen character names. Single-text dominance: "sinned" in *Northanger Abbey* and *Emma* appears in social/moral but entirely secular contexts. The theological frame vanishes.
+- **1850-1900**: vexed, trembled, touching, softly — sentimental/emotional register.
+- **1900-1923**: strife, yielded, wash, wherever — dispersed; no dominant frame.
+
+Trajectory: punitive → theological → revivalist → secular-fictional → sentimental. The 1800-1850 Austen-neighbor effect is single-text dominance (not many texts use "sinned" in that era), but it marks the decisive shift from theological to social usage.
+
+### touchstone: testing stone → Shakespeare's character → figurative standard
+
+Neighbor trajectory for "touchstone" (1700-1800 → 1800-1850 drift: 1.183):
+
+- **pre-1500**: wholesome, writer, working — abstract craft quality; "touchstone" as a concrete assay tool for testing gold.
+- **1500-1700**: william, travellers, trip — Shakespeare's character from *As You Like It*. William is the rustic rival; "travellers" and "trip" are the Forest of Arden plot. A proper name dominating the semantic field.
+- **1700-1800**: writings, value, worth, transcendental — figurative standard/test. "The touchstone of value/worth" — Enlightenment philosophical discourse reclaimed the metaphor from Shakespeare.
+- **1800-1850**: warm, weston — scattered; Weston is an Austen character (*Emma* again). Single-text noise.
+- **1850-1900**: voluntarily, yourself, whom — figurative context; moral/legal standard.
+
+Pattern: material object → Shakespeare character name → Enlightenment figurative standard → Victorian figurative/legal standard. The drift score (1700-1800→1800-1850) captures the transition from stable Enlightenment figurative usage to the messier 19th-century context where the word appears in fewer texts with more divergent collocates.
+
+Notable: "touchstone" demonstrates how a word can move through three distinct semantic statuses — concrete object, proper name, figurative abstraction — with the proper-name phase being essentially parenthetical. The figurative sense predates Shakespeare and resumes after him.
+
+### Era drift ranking (post-decontamination)
+
+Updated from yesterday (the 2026-06-19 notes had the 1700-1800→1800-1850 as third; confirmed now):
+
+| Transition | Avg Drift (clean) |
+|------------|-------------------|
+| pre-1500 → 1500-1700 | **0.703** (now highest) |
+| 1800-1850 → 1850-1900 | 0.701 |
+| 1700-1800 → 1800-1850 | 0.682 |
+| 1500-1700 → 1700-1800 | 0.681 |
+| 1850-1900 → 1900-1923 | **0.618** (still lowest) |
+
+The Reformation/print revolution transition (pre-1500→1500-1700) is now *the* highest-drift era, not the Romantic/Industrial transition as the dirty data implied. The boilerplate was unevenly distributed and specifically inflated the 1700-1800→1800-1850 era.
+
+### Phase 2: concrete next step
+
+Two viable paths:
+
+**Option A — Second decontamination pass**: Add safe non-English stoplist (les, mes, sa, se, tous, toujours, va, vous, une, un, tête, chambre, publique, sous, ton, roubles, disclaimer, warranties, refund, replacement) to decontaminate.py and re-run against original DB. Produces `archaeology_phase1_clean_v2.db`. Resolves the remaining French and Gutenberg noise in the top drifters.
+
+**Option B — Proceed to clustering with current clean DB**: The French/Gutenberg words will cluster together (they share similar cross-era drift patterns driven by corpus composition, not semantics) and can be identified as noise clusters post-hoc. The legitimate words (lord, immortal, sinned, touchstone, diana, frowned) should cluster separately.
+
+Recommendation: Option B. The taxonomy is mature enough to validate clustering results by inspection. Running another decontamination pass before seeing whether the clusters produce the expected separation is premature optimization. Write cluster.py first; if contamination clusters are not self-identifying, run the second decontamination pass then.
+

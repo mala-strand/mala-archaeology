@@ -40,6 +40,10 @@ BOILERPLATE_STOPLIST = {
     "protect", "removed", "liability", "editions",
     # Generic verbs with confirmed Gutenberg contamination
     "using", "works",
+    # French words (contamination from French texts)
+    "les", "mes", "sur", "sous", "par", "ton", "beau", "cent", "chambre", "va", "tome",
+    # Additional Gutenberg license residue
+    "disclaimer", "warranties", "limitation", "exclusion", "maximum",
 }
 
 
