@@ -9,7 +9,7 @@ import json
 import numpy as np
 from pathlib import Path
 
-DB_PATH = Path(__file__).parent.parent / "data" / "phase1" / "archaeology_phase1_clean.db"
+DB_PATH = Path(__file__).parent.parent / "data" / "archaeology_phase1_clean.db"
 
 
 def cosine_similarity(vec1, vec2):
@@ -99,6 +99,60 @@ def compare_eras(word: str, era1: str, era2: str, n: int = 10):
     }
 
 
+def get_drift_scores(word: str = None, era_from: str = None, limit: int = 20):
+    """
+    Query drift scores from the database.
+    Can filter by word or era_from.
+    """
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    
+    query = "SELECT word, era_from, era_to, drift_score FROM drift_scores WHERE 1=1"
+    params = []
+    
+    if word:
+        query += " AND word = ?"
+        params.append(word)
+    if era_from:
+        query += " AND era_from = ?"
+        params.append(era_from)
+    
+    query += " ORDER BY drift_score DESC LIMIT ?"
+    params.append(limit)
+    
+    cursor.execute(query, params)
+    rows = cursor.fetchall()
+    conn.close()
+    return rows
+
+
+def get_top_drift_words(era_from: str = None, min_score: float = 0.5, limit: int = 20):
+    """Get words with highest drift scores, optionally filtered by era."""
+    conn = sqlite3.connect(DB_PATH)
+    cursor = conn.cursor()
+    
+    if era_from:
+        cursor.execute("""
+            SELECT word, era_from, era_to, drift_score 
+            FROM drift_scores 
+            WHERE era_from = ? AND drift_score >= ?
+            ORDER BY drift_score DESC 
+            LIMIT ?
+        """, (era_from, min_score, limit))
+    else:
+        cursor.execute("""
+            SELECT word, era_from, era_to, drift_score 
+            FROM drift_scores 
+            WHERE drift_score >= ?
+            ORDER BY drift_score DESC 
+            LIMIT ?
+        """, (min_score, limit))
+    
+    rows = cursor.fetchall()
+    conn.close()
+    return rows
+
+
 def interactive_query():
     """Interactive query loop."""
     print("=" * 50)
@@ -107,6 +161,8 @@ def interactive_query():
     print("\nAvailable commands:")
     print("  neighbors <word> <era> [n]  - Find nearest neighbors")
     print("  compare <word> <era1> <era2> [n]  - Compare between eras")
+    print("  drift <word>                - Show drift scores for word")
+    print("  topdrift [era]              - Show highest drift words")
     print("  eras                        - List available eras")
     print("  dreams [limit]              - List stored dreams")
     print("  quit                        - Exit")
@@ -145,6 +201,26 @@ def interactive_query():
                     print(f"  #{row[0]}: {row[1]} → {row[2]} | temp={row[3]} | jumps={row[4]} | len={row[5]} | {row[6]}")
                 print()
                 conn.close()
+            
+            elif parts[0] == "drift" and len(parts) >= 2:
+                word = parts[1]
+                rows = get_drift_scores(word=word, limit=10)
+                print(f"\nDrift scores for '{word}':")
+                if not rows:
+                    print("  (no data)")
+                for w, era_from, era_to, score in rows:
+                    print(f"  {era_from} → {era_to}: {score:.3f}")
+                print()
+            
+            elif parts[0] == "topdrift":
+                era = parts[1] if len(parts) > 1 else None
+                rows = get_top_drift_words(era_from=era, limit=15)
+                print(f"\nTop drift words" + (f" from {era}" if era else "") + ":")
+                if not rows:
+                    print("  (no data)")
+                for w, era_from, era_to, score in rows:
+                    print(f"  {w:<15} {era_from} → {era_to}: {score:.3f}")
+                print()
             
             elif parts[0] == "neighbors" and len(parts) >= 3:
                 word = parts[1]

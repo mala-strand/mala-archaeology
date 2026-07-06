@@ -16,7 +16,7 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 | Phase 1 Full | ✅ **COMPLETE** | 101 books, 8k vocab, 6 eras, drift analysis |
 | Phase 2 Decontamination | ✅ **COMPLETE** | Boilerplate + French residue removed, vectors rebuilt |
 | Phase 2 Dream Engine | ✅ **BUILT** | Probabilistic walks, temporal dissonance, stored dreams |
-| Phase 2 Reflection | 🔄 Pending | Morning-analysis cron for dream interpretation |
+| Phase 2 Reflection | ✅ **BUILT** | `dream_reflect.py` — archetypal analysis, era journey mapping |
 
 **Phase 1 Results:**
 - 101 books downloaded (~10M+ words)
@@ -27,10 +27,14 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 - **Top drift:** "lord" (religious/feudal → secular power), "writ", "unavoidable"
 
 **Phase 2 Current:**
-- `decontaminate.py` run — clean DB at `data/phase1/archaeology_phase1_clean.db`
+- `decontaminate.py` run — clean DB at `data/archaeology_phase1_clean.db`
 - `cluster.py` run — 300 clusters, 495 stability records
 - `dream.py` built — temperature walks, era jumps, decay revisits, DB storage
-- 3 dreams already stored in `dreams` table
+- `dream_reflect.py` built — archetypal analysis, era journey mapping
+- `drift_dream_correlator.py` built — correlation between drift patterns and dream characteristics
+- `dream_analysis.py` built — corpus-wide pattern analysis
+- **12 dreams stored, 21 reflections generated**
+- **Drift-dream hypothesis**: semantic drift acts as "gravity well" — high drift pulls dreams toward temporal chaos
 
 ---
 
@@ -52,8 +56,9 @@ archaeology/
 │   ├── compute_drift.py        # Drift score calculation
 │   ├── decontaminate.py        # Anomaly detection/cleaning (Phase 2)
 │   ├── cluster.py              # Semantic clustering + stability
-│   ├── dream.py                # 🌟 Dream engine (Phase 2)
-│   ├── downloader.py           # Gutenberg downloader (legacy)
+|   ├── dream.py                # Dream engine (Phase 2)
+|   ├── dream_reflect.py        # Dream reflection/analysis (Phase 2)
+|   ├── downloader.py           # Gutenberg downloader (legacy)
 │   ├── tokenizer.py            # Tokenization (legacy)
 │   └── cooccurrence.py         # Co-occurrence + SVD (legacy)
 ├── queries/
@@ -103,7 +108,7 @@ Probabilistic walks through semantic space:
 - **Decay revisits** — penalty for recently visited words (loop avoidance)
 - **Storage** — dreams persisted to `dreams` table with metadata
 - Generate dream sequences (~200–400 words)
-- Morning analysis cron reflects on the dream (pending)
+- **Reflection** — `dream_reflect.py` analyzes dreams for archetypal patterns and era journeys
 
 ### Usage
 
@@ -132,6 +137,33 @@ python3 dream.py --length 400 --temperature 2.0 --store
 | `--decay` | 0.7 | Revisit penalty strength |
 | `--store` | false | Save to database |
 
+### Dream Reflection Engine
+
+Analyze stored dreams for archetypal patterns and semantic journeys:
+
+```bash
+# Reflect on the most recent dream
+cd worker
+python3 dream_reflect.py
+
+# Reflect on all stored dreams
+python3 dream_reflect.py --all
+
+# Store reflections in database
+python3 dream_reflect.py --all --store
+
+# Reflect on specific dream
+python3 dream_reflect.py --dream-id 1
+```
+
+**What it analyzes:**
+- **Temporal journey** — Which eras the dream visited and when it jumped
+- **Archetypal resonance** — Dominant themes (religious, power, domestic, natural, etc.)
+- **Era distribution** — How much time spent in each historical period
+- **Interpretive gloss** — What the dream *means* in human terms
+
+Reflections are stored in `dream_reflections` table with archetype tags.
+
 ---
 
 ## Other Usage
@@ -150,10 +182,17 @@ python3 cluster.py
 # Query the database
 cd ../queries
 python3 query.py
+# Commands: neighbors <word> <era>, compare <word> <e1> <e2>, 
+#           drift <word>, topdrift [era], dreams [limit]
 
 # Phase 2: Clean anomalies
 python3 ../worker/decontaminate.py --dry-run  # preview
 python3 ../worker/decontaminate.py            # apply
+
+# Phase 2: Analyze drift-dream correlations
+cd ../worker
+python3 drift_dream_correlator.py
+python3 dream_analysis.py
 ```
 
 ---
