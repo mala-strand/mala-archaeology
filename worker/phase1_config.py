@@ -21,7 +21,7 @@ BATCH_SIZE = 5000  # Co-occurrence batch inserts
 CHECKPOINT_INTERVAL = 120  # Seconds between checkpoints
 
 # File paths
-DATA_DIR = WORKSPACE / "data" / "phase1"
+DATA_DIR = WORKSPACE / "data"
 DB_PATH = DATA_DIR / "archaeology_phase1_clean.db"
 CACHE_DIR = WORKSPACE / "cache"
 

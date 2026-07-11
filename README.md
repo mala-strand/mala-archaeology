@@ -33,8 +33,8 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 - `dream_reflect.py` built — archetypal analysis, era journey mapping
 - `drift_dream_correlator.py` built — correlation between drift patterns and dream characteristics
 - `dream_analysis.py` built — corpus-wide pattern analysis
-- **12 dreams stored, 21 reflections generated**
-- **Drift-dream hypothesis**: semantic drift acts as "gravity well" — high drift pulls dreams toward temporal chaos
+|- **20 dreams stored, 29 reflections generated**
+|- **Drift-dream hypothesis**: semantic *emptiness* (foreign contamination) + extreme jumps (>46) produces temporal chaos; high drift alone produces varied archetypes
 
 ---
 
