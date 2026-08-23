@@ -31,6 +31,22 @@ DRIFT_TYPES = {
     "creating": "boilerplate_contamination",
     "plus": "foreign_contamination",
     "les": "foreign_contamination",
+    # Phase 2 decontamination additions (2026-08-18)
+    "ellen": "emergence",  # name appears in 1500-1700, drifts 1.18 as literary usage expands
+    "machine": "technological_emergence",  # industrial revolution spike 0.86 in 1700-1800→1800-1850
+    "pollen": "scientific_emergence",  # absent early, emerges with botany in 1900-1923
+    "publique": "orthographic_standardization",  # French spelling fading to "public"
+    "tête": "orthographic_standardization",  # French "head" being anglicized
+    "tenant": "legal_specialization",  # feudal → legal terminology
+    "memory": "stable_core",  # low avg drift ~0.50, fundamental concept
+    "love": "stable_core",  # low avg drift ~0.54, universal affect
+    "soul": "stable_core",  # low avg drift ~0.49, theological constant
+    "woman": "stable_core",  # avg drift ~0.41, fundamental category (like man, love, soul)
+    "decay": "stable_concept",  # moderate drift ~0.61, physical process
+    "tobacco": "creation_event",  # New World commodity → normalized (from FINDINGS)
+    "writer": "role_emergence",  # scribe → author → literary artist
+    "vanity": "stable_concept",  # avg drift ~0.56, moral concept with moderate shift
+    "liveth": "archaic_persistence",  # biblical archaism, high drift 1.179 pre-1500→1500-1700
 }
 
 def get_dreams_with_drift():

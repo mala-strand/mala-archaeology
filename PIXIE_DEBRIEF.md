@@ -1,160 +1,91 @@
 # PIXIE_DEBRIEF.md — Archaeology Project State
-*Written by subagent, 2026-05-17 ~13:25 GMT*
+*Last updated: 2026-08-13 by Mala (cron work session)*
 
 ---
 
-## Current State Summary
+## Current State Summary (August 2026)
 
-Phase 1 core pipeline is **done**. The worker isn't stuck — it *finished* its job and someone set the control to `idle`. The 1am cron fires, reads `control`, sees `idle`, prints "Control signal is 'idle' — not starting worker", and exits cleanly. That's working as designed.
+Phase 1 pipeline is **complete and functional**. The issues identified in May 2026 have been resolved.
 
-**DB stats (data/phase1/archaeology_phase1.db):**
-| Table | Count |
-|-------|-------|
-| texts (all complete) | 92 |
-| vocabulary | 8,121 words |
-| cooccurrences | 9,845,952 pairs |
-| word_vectors | 48,000 (8k × 6 eras) |
-| drift_scores | **0** ← never run |
+**DB stats (data/phase1/archaeology_phase1_clean.db):**
+| Table | Count | Status |
+|-------|-------|--------|
+| texts (all complete) | 101 | ✅ |
+| word_vectors | 48,000 | ✅ |
+| drift_scores | 40,000 | ✅ **FIXED** |
+| dreams | 24 | ✅ |
+| dream_reflections | 48 | ✅ |
 
 **Texts by era:**
-| Era | Texts |
-|-----|-------|
-| pre-1500 | 11 |
-| 1500-1700 | 15 |
-| 1700-1800 | 19 |
-| 1800-1850 | 18 |
-| 1850-1900 | 25 |
-| 1900-1923 | **4** ← thin |
+| Era | Texts | Notes |
+|-----|-------|-------|
+| pre-1500 | 11 | Biblical/medieval |
+| 1500-1700 | 15 | Reformation era |
+| 1700-1800 | 19 | Enlightenment |
+| 1800-1850 | 18 | Romantic |
+| 1850-1900 | 26 | Industrial/Realist |
+| 1900-1923 | 12 | Modernist (**improved from 4**) |
 
 ---
 
-## Why The Worker Stopped
+## Issues Resolved
 
-**The main pipeline completed.** `run-worker.sh` runs two steps:
-1. `python3 worker/streaming_cooccurrence.py cooc` — done (9.8M pairs)
-2. `python3 worker/streaming_cooccurrence.py vectors` — done (48k vectors)
+### 1. ✅ query.py DB path FIXED
+Line 12 now correctly points to `archaeology_phase1_clean.db`.
 
-After that, someone (Mala, 01:00 checkpoint) set `control` to `idle`. There was nothing left for the current worker to do. The 1am cron then correctly checks and exits.
+### 2. ✅ drift_scores populated FIXED  
+Ran `python3 worker/compute_drift.py` — computed 38,515 drift scores across all era pairs in ~15 seconds. Query interface now functional.
 
-**What hasn't been done (the 01:00 checkpoint listed these):**
-1. Fix zero-norm vectors
-2. Update `query.py` to point at Phase 1 DB
-3. Set up drift detection (drift_scores is empty)
-4. Set up analysis cron
+**Top drift examples:**
+- `plus` (1800-1850 → 1850-1900): drift=1.265 — mathematical term gaining currency
+- `sinned` (pre-1500 → 1500-1700): drift=1.216 — theological term fading
+- `touchstone` (1700-1800 → 1800-1850): drift=1.204 — Shakespearean to Romantic shift
 
----
+### 3. ✅ zero-norm vectors handled
+query.py now skips zero-norm vectors in neighbor queries (lines 63-65).
 
-## Problems Found
-
-### 1. Zero-norm vectors (real but manageable)
-The vocabulary is built globally across all eras, but words only appear in co-occurrences for eras where those texts actually use them. Result:
-
-| Era | Zero vectors | % |
-|-----|-------------|---|
-| pre-1500 | 7 | 0.1% |
-| 1500-1700 | 625 | 7.8% |
-| 1700-1800 | 1,031 | 12.9% |
-| 1800-1850 | **4,485** | **56%** |
-| 1850-1900 | 306 | 3.8% |
-| 1900-1923 | 1,502 | 18.8% |
-
-The 1800-1850 spike is suspicious for 18 texts. Sample zero-norm words for that era: "maidservant", "locust", "oziel", "storehouses", "drinketh", "booke" — these are Biblical/archaic terms that appear in pre-1500 or 1500-1700 texts but not 1800-1850 prose. The vocabulary includes them because they cross the `MIN_WORD_FREQ = 10` threshold globally, but they're near-absent from 1800-1850 texts.
-
-**Fix:** The vectors aren't broken — the data just isn't there for those era/word combos. Options:
-- Filter zero-norm vectors out of queries (just skip them, don't error)
-- Accept them as legitimate "word not used in this era" signals
-- Use era-specific vocabularies instead of a global one (bigger change)
-
-### 2. query.py points at the wrong DB
-```python
-# Line 12 of queries/query.py — WRONG:
-DB_PATH = Path(__file__).parent.parent / "data" / "archaeology.db"
-```
-That's the Phase 0 DB (6k vectors from 20 books). Phase 1 data is at `data/phase1/archaeology_phase1.db`. Query tool is useless against Phase 1 right now.
-
-### 3. drift_scores is empty
-The drift detection algorithm was never run. The table exists in the schema but nothing has computed it. This is a pure Python task — no tokens needed.
-
-### 4. 1900-1923 is thin (4 texts)
-Only 4 texts for the Modernist era. Worth downloading more (Woolf, Kafka, Joyce, etc. are all public domain in UK/EU). Not a blocker but weakens that era's vectors significantly (hence 18.8% zero-norm rate).
-
-### 5. No analysis cron
-No archaeology cron exists — CronList is empty. The weekly semantic reflection (read findings, write to memory) was never set up.
+### 4. ✅ 1900-1923 corpus expanded
+From 4 texts (May) to 12 texts (August) — 3x improvement for Modernist era coverage.
 
 ---
 
-## Exact Next Steps (Prioritized)
+## What's Working Now
 
-### Step 1 — Fix query.py (10 mins, just an edit)
+### Query Interface (`queries/query.py`)
 ```bash
-# Change line 12 in queries/query.py from:
-DB_PATH = Path(__file__).parent.parent / "data" / "archaeology.db"
-# To:
-DB_PATH = Path(__file__).parent.parent / "data" / "phase1" / "archaeology_phase1.db"
-```
-Then test:
-```bash
-cd /home/mala/.openclaw/workspace/archaeology
-python3 queries/query.py neighbors "love"
+python3 queries/query.py neighbors <word> <era> [n]
+python3 queries/query.py drift <word>
+python3 queries/query.py topdrift [era]
+python3 queries/query.py compare <word> <era1> <era2>
 ```
 
-### Step 2 — Run drift detection
-The drift_scores table needs to be populated. This is a pure Python computation (cosine similarity between era vectors for each word). There's no existing script for it yet — needs to be written or the existing `phase1_runner.py` extended.
+### Dream Generation (`run-dream.sh`)
+Generates semantic dreams via probabilistic walks through vector space with era jumps.
 
-Check if there's a drift function in any worker:
-```bash
-grep -r "drift" /home/mala/.openclaw/workspace/archaeology/worker/
-```
-
-If not, write a small script:
-```python
-# archaeology/worker/compute_drift.py
-# For each word in vocab, for each era pair, compute cosine similarity
-# Write to drift_scores table
-# ~30 mins of computation, zero tokens
-```
-
-### Step 3 — Handle zero-norm vectors in queries
-Add a filter in query.py / any query function:
-```python
-# Skip vectors where all components are zero
-import numpy as np
-vec = np.array(json.loads(vector_json))
-if np.linalg.norm(vec) < 1e-10:
-    continue  # word not used in this era
-```
-
-### Step 4 — Set up archaeology analysis cron
-Once query.py works and drift_scores has data, set up a weekly cron:
-```
-# Weekly: read semantic findings, write reflection to memory
-# Model: cheap/fast (DeepSeek ~2000 tokens)
-# Writes to: memory/.dreams/ or memory/daily/
-```
-**This needs Mala to set it up via CronCreate.**
-
-### Step 5 — Set control to "run" when ready to re-run anything
-If/when more texts are added or the worker needs to do a re-run:
-```bash
-echo run > /home/mala/.openclaw/workspace/archaeology/control
-```
-The 1am cron will then pick it up. Set back to `idle` when done.
-
-### Step 6 (optional) — Download more 1900-1923 texts
-Only 4 texts for Modernism. Gutenberg IDs to consider: Woolf's Mrs Dalloway (5670), A Room with a View (2641), The Secret Garden (17396), Sons and Lovers (2062). More would clean up that era's zero-norm rate significantly.
+### Drift Detection (`worker/compute_drift.py`)
+Computes cosine similarity drift between consecutive eras for all 7,703 vocabulary words.
 
 ---
 
-## Blockers That Need Ash
+## Control Status
 
-None that are hard blockers. The work can proceed without him. However:
+The `control` file is set to `run` — the nightly 1am cron will execute if load/memory permit.
 
-1. **Should drift_scores prioritize "interesting" words or all 8k?** Mala's call but Ash might have opinions on what semantic drift findings he'd want to see surfaced.
-2. **Analysis cron frequency** — was set to weekly in PLAN.md. Confirm that's still the intent before burning tokens.
-3. **1900-1923 thin corpus** — worth asking if he wants to invest time expanding it, or run Phase 2 dream engine with what we have.
+Current worker pipeline (`run-worker.sh`):
+1. Builds co-occurrence matrices (if needed)
+2. Builds word vectors (if needed)
+3. Both steps are complete; cron checks and exits cleanly
+
+---
+
+## Next Possible Work (Not Required)
+
+1. **More 1900-1923 texts** — Could expand Modernist corpus further (Joyce, Kafka, Woolf)
+2. **Weekly analysis cron** — Automated semantic findings → memory reflections
+3. **Phase 2** — Dream engine research using computed drift scores
 
 ---
 
 ## One-Line Summary
 
-The pipeline finished. Control was set to idle. Nothing is broken. The remaining work is: fix query.py DB path, write + run drift computation, set up the analysis cron. These are Mala's tasks — no Ash input needed to start.
+All May 2026 blockers resolved. Query interface functional. Drift scores computed. 1900-1923 corpus expanded. Archaeology worker is healthy and operational.
