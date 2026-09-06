@@ -33,8 +33,9 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 - `dream_reflect.py` built — archetypal analysis, era journey mapping
 - `drift_dream_correlator.py` built — correlation between drift patterns and dream characteristics
 - `dream_analysis.py` built — corpus-wide pattern analysis
-|- **20 dreams stored, 29 reflections generated**
-|- **Drift-dream hypothesis**: semantic *emptiness* (foreign contamination) + extreme jumps (>46) produces temporal chaos; high drift alone produces varied archetypes
+- `archetype_taxonomy_v2.py` built — 19-archetype v2 taxonomy, POWER/RELIGIOUS subtypes
+- **v2 classifications persisted to DB** — `primary_archetype_v2`/`secondary_archetype_v2`/`v2_scores` columns backfilled for all 53 dreams (`--backfill`)
+- **Drift-dream hypothesis**: semantic *emptiness* (foreign contamination) + extreme jumps (>46) produces temporal chaos; high drift alone produces varied archetypes
 
 ---
 
@@ -56,8 +57,9 @@ archaeology/
 │   ├── compute_drift.py        # Drift score calculation
 │   ├── decontaminate.py        # Anomaly detection/cleaning (Phase 2)
 │   ├── cluster.py              # Semantic clustering + stability
-|   ├── dream.py                # Dream engine (Phase 2)
-|   ├── dream_reflect.py        # Dream reflection/analysis (Phase 2)
+||   ├── dream.py                # Dream engine (Phase 2)
+||   ├── dream_reflect.py        # Dream reflection/analysis (Phase 2)
+||   ├── archetype_taxonomy_v2.py # v2 taxonomy + persistent backfill (Phase 2)
 |   ├── downloader.py           # Gutenberg downloader (legacy)
 │   ├── tokenizer.py            # Tokenization (legacy)
 │   └── cooccurrence.py         # Co-occurrence + SVD (legacy)

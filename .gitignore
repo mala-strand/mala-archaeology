@@ -4,6 +4,7 @@ data/archaeology_phase1.db
 data/phase1/archaeology.db
 data/phase1/archaeology_phase1.db
 *.db
+*.db.backup*
 
 # Python
 *.pyc
