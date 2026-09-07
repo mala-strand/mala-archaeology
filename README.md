@@ -68,6 +68,11 @@ archaeology/
 ├── download_phase1.py          # Phase 1 batch downloader
 ├── run-worker.sh               # Worker control script
 ├── run_vectors.sh              # Vector computation runner
+├── paper/
+│   ├── semantic_archaeology_draft.md  # Paper draft
+│   ├── figure_*.png                   # Generated figures
+│   └── generate_figures.py            # Figure generation script
+├── notes/                      # Hobby-block session notes
 ├── FINDINGS.md                 # Phase 1 analysis results
 ├── PIXIE_DEBRIEF.md            # Project state documentation
 └── README.md                   # This file
@@ -83,8 +88,8 @@ archaeology/
 | 1500-1700 | 15 | Early Modern |
 | 1700-1800 | 19 | Enlightenment |
 | 1800-1850 | 18 | Romantic/Victorian |
-| 1850-1900 | 25 | Industrial Age |
-| 1900-1923 | 4 | Early Modernist |
+| 1850-1900 | 26 | Industrial Age |
+| 1900-1923 | 12 | Early Modernist |
 
 ---
 

@@ -49,10 +49,13 @@ We use texts from Project Gutenberg (public domain, pre-1923). 101 texts were se
 | 1500–1700 | 15 | Early Modern | *King James Bible*, *Faerie Queene*, *Pilgrim's Progress* |
 | 1700–1800 | 19 | Enlightenment | *Robinson Crusoe*, *Gulliver's Travels*, *Clarissa* |
 | 1800–1850 | 18 | Romantic/Victorian | *Pride and Prejudice*, *Frankenstein*, *Jane Eyre* |
-| 1850–1900 | 25 | Industrial Age | *Moby-Dick*, *Wuthering Heights*, *Three Men in a Boat* |
-| 1900–1923 | 13 | Early Modernist | *Heart of Darkness*, *Dubliners*, *The Waste Land* |
+| 1850–1900 | 26 | Industrial Age | *Moby-Dick*, *Wuthering Heights*, *Three Men in a Boat* |
+| 1900–1923 | 12 | Early Modernist | *Heart of Darkness*, *Dubliners*, *The Waste Land* |
 
 Total corpus size: ~10 million words.
+
+![Corpus composition by era](figure_0_era_coverage.png)
+*Figure 0: Texts per historical era. The Industrial Age (1850–1900) is most heavily represented.*
 
 ### 2.2 Vocabulary and Vectors
 
@@ -137,11 +140,17 @@ The drift scores reveal a bimodal distribution. Most words (mode ~0.4–0.5) are
 
 The decontamination step (Phase 2) removed 23,844 anomalous co-occurrence pairs, primarily French residue and boilerplate text headers, and rebuilt vectors from the cleaned corpus.
 
+![Drift score distribution](figure_1_drift_distribution.png)
+*Figure 1: Distribution of drift scores across all 38,515 word–era transitions. Mean = 0.67. High-drift tail (>0.8) consists mainly of archaic forms and foreign residue.*
+
 ### 3.2 Dream Generation
 
 53 dreams were generated from 32 seed words at temperatures ranging from 0.8 to 1.8. Seed words were chosen to span the drift spectrum: high-drift (*liveth*, *publique*, *touchstone*), mid-drift (*writ*, *immortal*, *machine*), and low-drift (*man*, *woman*, *knowledge*, *love*).
 
 **Jump count** (temporal instability) ranges from 9 (*sinned* at T=0.8) to 48 (*plus* at T=1.8). The correlation between temperature and jump count is positive but noisy: temperature explains some variance, but seed identity matters.
+
+![Temperature vs era jumps](figure_2_temp_vs_jumps.png)
+*Figure 2: Temperature versus temporal instability (era jumps) for all 53 non-random dreams. Colour indicates whether the dream was classifiable under the v2 taxonomy. Extreme points annotated.*
 
 ### 3.3 Archetype Distribution (v2)
 
@@ -164,6 +173,9 @@ After decontamination and tie-breaking:
 | chaos | 1 |
 
 The dominance of `unclassifiable` (57%) reflects the honest tie-handling. Among classifiable dreams, DOMESTIC and BODILY are most common, likely because our corpus is rich in domestic, bodily, and narrative prose.
+
+![Archetype distribution](figure_3_archetype_distribution.png)
+*Figure 3: Primary archetype distribution after v2 decontamination and principled tie-breaking. 57% of dreams are unclassifiable due to tied scores — a measure of taxonomy coverage, not failure.*
 
 ### 3.4 Hypothesis Tests
 
