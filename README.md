@@ -17,13 +17,14 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 | Phase 2 Decontamination | ✅ **COMPLETE** | Boilerplate + French residue removed, vectors rebuilt |
 | Phase 2 Dream Engine | ✅ **BUILT** | Probabilistic walks, temporal dissonance, stored dreams |
 | Phase 2 Reflection | ✅ **BUILT** | `dream_reflect.py` — archetypal analysis, era journey mapping |
+| Phase 2 Semantic Scorer | ✅ **BUILT** | `semantic_scorer.py` — hybrid keyword+vector classification |
 
 **Phase 1 Results:**
 - 101 books downloaded (~10M+ words)
 - 8,121 word vocabulary
 - 9.8M co-occurrence pairs across 6 eras
 - 48,000 word vectors (50 dims × 8k words × 6 eras)
-- 36,288 drift scores computed
+- 38,515 drift scores computed
 - **Top drift:** "lord" (religious/feudal → secular power), "writ", "unavoidable"
 
 **Phase 2 Current:**
@@ -35,6 +36,7 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 - `dream_analysis.py` built — corpus-wide pattern analysis
 - `archetype_taxonomy_v2.py` built — 19-archetype v2 taxonomy, POWER/RELIGIOUS subtypes
 - **v2 classifications persisted to DB** — `primary_archetype_v2`/`secondary_archetype_v2`/`v2_scores` columns backfilled for all 53 dreams (`--backfill`)
+- **Keyword expansion (Sep 9)** — data-driven neighbor-based expansion added 43 curated keywords; unclassifiable rate dropped from 57% → 47%
 - **Drift-dream hypothesis**: semantic *emptiness* (foreign contamination) + extreme jumps (>46) produces temporal chaos; high drift alone produces varied archetypes
 
 ---
@@ -57,10 +59,12 @@ archaeology/
 │   ├── compute_drift.py        # Drift score calculation
 │   ├── decontaminate.py        # Anomaly detection/cleaning (Phase 2)
 │   ├── cluster.py              # Semantic clustering + stability
-||   ├── dream.py                # Dream engine (Phase 2)
-||   ├── dream_reflect.py        # Dream reflection/analysis (Phase 2)
-||   ├── archetype_taxonomy_v2.py # v2 taxonomy + persistent backfill (Phase 2)
-|   ├── downloader.py           # Gutenberg downloader (legacy)
+│   ├── dream.py                # Dream engine (Phase 2)
+│   ├── dream_reflect.py        # Dream reflection/analysis (Phase 2)
+│   ├── archetype_taxonomy_v2.py # v2 taxonomy + persistent backfill (Phase 2)
+│   ├── semantic_scorer.py      # Hybrid keyword+vector classification (Phase 2)
+│   ├── expand_archetypes.py    # Data-driven keyword expansion
+│   ├── downloader.py           # Gutenberg downloader (legacy)
 │   ├── tokenizer.py            # Tokenization (legacy)
 │   └── cooccurrence.py         # Co-occurrence + SVD (legacy)
 ├── queries/
@@ -170,6 +174,30 @@ python3 dream_reflect.py --dream-id 1
 - **Interpretive gloss** — What the dream *means* in human terms
 
 Reflections are stored in `dream_reflections` table with archetype tags.
+
+### Semantic Archetype Scorer
+
+Hybrid keyword + vector-space classification for dreams:
+
+```bash
+cd worker
+
+# Compare keyword-only vs hybrid classification
+python3 semantic_scorer.py
+
+# Compare all semantic methods (centroid, contrastive, max-neighbor)
+python3 semantic_scorer.py --compare
+
+# Store semantic scores in database
+python3 semantic_scorer.py --backfill
+```
+
+**How it works:**
+- **Keyword counting** (primary): exact keyword matches are reliable when present
+- **Nearest-keyword fallback** (tie-breaker): for dreams with no clear keyword winner, each dream word "votes" for its closest semantic neighbor among all archetype keywords
+- **IDF weighting**: rare distinctive words count more than ubiquitous words like "name" or "memory"
+
+This reduces unclassifiable dreams from ~42% (keyword-only) to ~0% while preserving keyword certainty.
 
 ---
 

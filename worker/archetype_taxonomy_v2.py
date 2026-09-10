@@ -41,31 +41,31 @@ ARCHETYPES_V1 = {
 # Refined v2 archetypes - splits POWER and RELIGIOUS into subtypes
 ARCHETYPES_V2 = {
     # Tier 1: Foundational (unchanged from v1)
-    'bodily': ['hand', 'eye', 'heart', 'blood', 'flesh', 'bone', 'face', 'head', 'foot', 'voice', 'breath', 'touch', 'body', 'skin'],
-    'domestic': ['home', 'house', 'family', 'mother', 'father', 'child', 'hearth', 'kitchen', 'bed', 'room', 'door', 'window', 'fire', 'table'],
-    'conflict': ['war', 'battle', 'fight', 'enemy', 'sword', 'death', 'kill', 'wound', 'struggle', 'defeat', 'victory', 'weapon', 'armor'],
+    'bodily': ['hand', 'eye', 'heart', 'blood', 'flesh', 'bone', 'face', 'head', 'foot', 'voice', 'breath', 'touch', 'body', 'skin', 'hands', 'arm', 'arms', 'bones', 'eyes'],
+    'domestic': ['home', 'house', 'family', 'mother', 'father', 'child', 'hearth', 'kitchen', 'bed', 'room', 'door', 'window', 'fire', 'table', 'corner', 'floor', 'sat', 'sitting', 'chair', 'children', 'sister'],
+    'conflict': ['war', 'battle', 'fight', 'enemy', 'sword', 'death', 'kill', 'wound', 'struggle', 'defeat', 'victory', 'weapon', 'armor', 'army', 'campaign', 'fought', 'retreat'],
     'chaos': ['wild', 'tumult', 'confusion', 'storm', 'uncontrolled', 'disorder', 'waste', 'desolate', 'chaos', 'anarchy'],
-    'knowledge': ['book', 'write', 'read', 'learn', 'know', 'think', 'mind', 'wisdom', 'truth', 'false', 'understand', 'study', 'school'],
+    'knowledge': ['book', 'write', 'read', 'learn', 'know', 'think', 'mind', 'wisdom', 'truth', 'false', 'understand', 'study', 'school', 'reading', 'writing', 'written', 'note'],
     
     # Tier 2: POWER subtypes (split from v1 'power')
     'power_political': ['king', 'crown', 'throne', 'government', 'reign', 'subjects', 'civic', 'state', 'nation', 'empire', 'republic', 'court'],
-    'power_divine': ['lord', 'worship', 'pray', 'temple', 'grace', 'divine', 'sacred', 'holy', 'blessing', 'god', 'providence', 'almighty'],
+    'power_divine': ['lord', 'worship', 'pray', 'temple', 'grace', 'divine', 'sacred', 'holy', 'blessing', 'god', 'providence', 'almighty', 'faith', 'bless', 'prayers'],
     'power_personal': ['master', 'command', 'resolve', 'will', 'determination', 'self', 'agency', 'choice', 'decision', 'control'],
     'power_institutional': ['authority', 'obey', 'rule', 'office', 'official', 'bureaucracy', 'administration', 'institution'],
     
     # Tier 2: RELIGIOUS subtypes (split from v1 'religious')
-    'religious_devotion': ['pray', 'worship', 'blessed', 'temple', 'devotion', 'piety', 'prayer', 'adoration', 'reverence'],
-    'religious_moral': ['sin', 'repent', 'moral', 'wicked', 'pious', 'virtue', 'sinned', 'guilt', 'conscience', 'damnation', 'salvation'],
+    'religious_devotion': ['pray', 'worship', 'blessed', 'temple', 'devotion', 'piety', 'prayer', 'adoration', 'reverence', 'forgive'],
+    'religious_moral': ['sin', 'repent', 'moral', 'wicked', 'pious', 'virtue', 'sinned', 'guilt', 'conscience', 'damnation', 'salvation', 'faith', 'spirit'],
     'religious_cosmic': ['providence', 'destiny', 'fate', 'divine will', 'judgment', 'creation', 'cosmic', 'eternal', 'soul', 'immortal'],
     
     # Tier 3: Contextual (unchanged or refined)
     'temporal': ['time', 'day', 'night', 'year', 'moment', 'hour', 'past', 'future', 'age', 'century', 'eternity', 'ancient', 'modern'],
-    'urban': ['street', 'crowd', 'city', 'building', 'shop', 'work', 'factory', 'machine', 'railway', 'carriage', 'population'],
-    'natural': ['tree', 'river', 'mountain', 'sky', 'earth', 'water', 'wind', 'stone', 'forest', 'sea', 'sun', 'moon', 'star', 'ocean'],
+    'urban': ['street', 'crowd', 'city', 'building', 'shop', 'work', 'factory', 'machine', 'railway', 'carriage', 'population', 'corner'],
+    'natural': ['tree', 'river', 'mountain', 'sky', 'earth', 'water', 'wind', 'stone', 'forest', 'sea', 'sun', 'moon', 'star', 'ocean', 'rain', 'cloud', 'clouds', 'mist', 'snow', 'trees', 'island', 'shadows', 'shining', 'shore'],
     'legacy': ['immortal', 'remember', 'name', 'reputation', 'fame', 'memory', 'endure', 'posterity', 'historical'],
     'craft': ['write', 'create', 'artist', 'work', 'craft', 'make', 'skill', 'art', 'design', 'compose'],
     'identity': ['self', 'who', 'person', 'individual', 'character', 'soul', 'mind', 'essence'],
-    'commerce': ['money', 'gold', 'silver', 'pay', 'buy', 'sell', 'trade', 'merchant', 'price', 'wealth', 'poor', 'rich', 'market'],
+    'commerce': ['money', 'gold', 'silver', 'pay', 'buy', 'sell', 'trade', 'merchant', 'price', 'wealth', 'poor', 'rich', 'market', 'bought', 'buying', 'goods', 'sold', 'paid', 'worth'],
     'abstract': ['number', 'system', 'theory', 'mathematical', 'concept', 'abstract', 'plus', 'equal', 'formula', 'equation'],
 }
 

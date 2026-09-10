@@ -9,7 +9,7 @@
 
 ## Abstract
 
-We present a method for probing the semantic history of English words across five centuries. Using 101 public-domain texts stratified into six historical eras, we construct era-specific word vectors via co-occurrence matrices with PPMI weighting and SVD reduction. From these vectors we compute drift scores — cosine distances between a word's vector in successive eras — and use them to drive a stochastic "dream engine" that performs probabilistic walks through semantic space with temporal dissonance (random era jumps). We generate 53 dreams from 32 seed words at varied temperatures, classify them via a 19-archetype taxonomy, and validate the taxonomy against its own scoring evidence. Results show that (1) semantic drift magnitude correlates with temporal instability in dream-walks but is not sufficient to predict it; (2) cross-era connectivity (semantic universality) appears to override drift in predicting instability; (3) temperature controls semantic range rather than archetype "wildness"; (4) contextual embedding neighbours predict dream archetype better than dictionary denotation; and (5) temperature can select different archetypes even when jump counts are identical. 55% of dreams produce tied archetype scores, suggesting the taxonomy's keyword coverage is still sparse — but the classification pipeline is now auditable, with zero self-contradictions after seed-token decontamination. The paper concludes with a model of semantic space as a gravity-well landscape and discusses implications for diachronic semantics and generative text analysis.
+We present a method for probing the semantic history of English words across five centuries. Using 101 public-domain texts stratified into six historical eras, we construct era-specific word vectors via co-occurrence matrices with PPMI weighting and SVD reduction. From these vectors we compute drift scores — cosine distances between a word's vectors in successive eras — and use them to drive a stochastic "dream engine" that performs probabilistic walks through semantic space with temporal dissonance (random era jumps). We generate 53 dreams from 32 seed words at varied temperatures, classify them via a 19-archetype taxonomy, and validate the taxonomy against its own scoring evidence. Results show that (1) semantic drift magnitude correlates with temporal instability in dream-walks but is not sufficient to predict it; (2) cross-era connectivity (semantic universality) appears to override drift in predicting instability; (3) temperature controls semantic range rather than archetype "wildness"; (4) contextual embedding neighbours predict dream archetype better than dictionary denotation; and (5) temperature can select different archetypes even when jump counts are identical. 57% of dreams produce tied archetype scores, indicating sparse keyword coverage — but the classification pipeline is auditable, with zero self-contradictions after seed-token decontamination. We conclude with a model of semantic space as a gravity-well landscape and discuss implications for diachronic semantics and generative text analysis.
 
 ---
 
@@ -19,7 +19,7 @@ We present a method for probing the semantic history of English words across fiv
 
 What does it mean for a word to have a history?
 
-Historical linguistics has excellent tools for tracking *that* meanings change — etymological dictionaries, semantic shift taxonomies (broadening, narrowing, amelioration, pejoration), corpus-based methods for detecting sense change over time (Hamilton et al., 2016; Kutuzov et al., 2018). But these methods mostly describe the *fact* of change. They do not ask a further question: does the *shape* of a word's trajectory — how far it drifts, how connected it stays to its neighbours across centuries, what contextual company it keeps — carry information that constrains what the word can "mean" when released into a generative space?
+Historical linguistics has excellent tools for tracking *that* meanings change — etymological dictionaries, semantic shift taxonomies, corpus-based methods for detecting sense change over time (Hamilton et al., 2016; Kutuzov et al., 2018). But these methods mostly describe the *fact* of change. They do not ask a further question: does the *shape* of a word's trajectory — how far it drifts, how connected it stays to its neighbours across centuries, what contextual company it keeps — constrain what the word can "mean" when released into a generative space?
 
 This paper proposes a probing method. We construct era-specific word vectors from historical English texts, measure each word's drift across eras, and drop the word into its own semantic landscape as a seed for a stochastic walk. The walk's behaviour — how often it jumps era, what archetypal territory it visits, how far it travels from its starting point — becomes evidence about whether the seed's semantic history is merely a record or an active constraint.
 
@@ -31,9 +31,7 @@ The claim is falsifiable. That is the point.
 
 ### 1.3 The Dream Metaphor
 
-We call the generative walks "dreams" because they are not translations or summaries of the corpus. They are probes: a single word released into a high-dimensional space with randomness, allowed to wander through its own neighbourhood across five centuries of English. The dream is not "about" the word in any denotative sense. It is what the landscape *does* when the word is dropped into it.
-
-The metaphor is not merely decorative. Dreams in human experience are structured by memory architecture — not random noise, but recombination governed by associative patterns. The question is whether semantic space has enough structure to produce similarly non-random walks.
+We call the generative walks "dreams" because they are not translations or summaries of the corpus. They are probes: a single word released into a high-dimensional space with randomness, allowed to wander through its own neighbourhood across five centuries of English. The dream is not "about" the word in any denotative sense. It is what the landscape *does* when the word is dropped into it. The metaphor is not merely decorative: dreams in human experience are structured by memory architecture — not random noise, but recombination governed by associative patterns. The question is whether semantic space has enough structure to produce similarly non-random walks.
 
 ---
 
@@ -77,7 +75,7 @@ For each word present in at least two eras, we compute drift as the cosine dista
 
 $$\text{drift}(w, e_1 \to e_2) = 1 - \cos(\vec{w}_{e_1}, \vec{w}_{e_2})$$
 
-Drift ranges from 0 (identical meaning) to 2 (maximally opposite). We aggregate per-word drift magnitudes by averaging across all era pairs. Across 7,703 words with valid drift scores, the mean drift is ~0.52 (SD ~0.18). The highest-drift words in our corpus are *liveth* (1.04), *publique* (1.04), *pharisees* (1.03), and *mon* (1.03) — all words with strong archaic or foreign residue.
+Drift ranges from 0 (identical meaning) to 2 (maximally opposite). We aggregate per-word drift magnitudes by averaging across all era pairs. Across 7,703 words with valid drift scores, the mean drift is ~0.67 (SD ~0.18). The highest-drift words in our corpus are *liveth* (1.04), *publique* (1.04), *pharisees* (1.03), and *mon* (1.03) — all words with strong archaic or foreign residue.
 
 The lowest-drift words among our dream seeds are *man* (0.40), *woman* (0.41), *knowledge* (0.49), and *justice* (0.49) — semantically universal concepts with stable usage across centuries.
 
@@ -121,11 +119,11 @@ After implementing principled tie-breaking (marking ties as `unclassifiable` rat
 | Outcome | Count | Share |
 |---------|-------|-------|
 | Clean | 23 | 43% |
-| Tie (unclassifiable) | 29 | 55% |
-| Zero-signal | 1 | 2% |
+| Tie (unclassifiable) | 30 | 57% |
+| Zero-signal | 0 | 0% |
 | Contradiction | 0 | 0% |
 
-The 55% tie rate is not a classification failure — it is the taxonomy being honest about sparse keyword overlap. Many dreams have genuinely distributed vocabulary (e.g., *mission* with six archetypes tied at score 1). The fix is auditable coverage expansion, not forced labeling.
+The 57% tie rate is not a classification failure — it is the taxonomy being honest about sparse keyword overlap. Many dreams have genuinely distributed vocabulary (e.g., *mission* with six archetypes tied at score 1). The fix is auditable coverage expansion, not forced labeling.
 
 ---
 
@@ -138,7 +136,7 @@ The drift scores reveal a bimodal distribution. Most words (mode ~0.4–0.5) are
 - Foreign contamination (*tête*, *fille*, *mon* — French residue from multilingual texts)
 - Domain-specific terms that shifted radically (*pharisees*, *publique*, *pickwick*)
 
-The decontamination step (Phase 2) removed 23,844 anomalous co-occurrence pairs, primarily French residue and boilerplate text headers, and rebuilt vectors from the cleaned corpus.
+The decontamination step (Phase 2) removed 23,844 anomalous co-occurrence pairs — primarily French residue and boilerplate text headers — and rebuilt vectors from the cleaned corpus.
 
 ![Drift score distribution](figure_1_drift_distribution.png)
 *Figure 1: Distribution of drift scores across all 38,515 word–era transitions. Mean = 0.67. High-drift tail (>0.8) consists mainly of archaic forms and foreign residue.*
@@ -147,7 +145,7 @@ The decontamination step (Phase 2) removed 23,844 anomalous co-occurrence pairs,
 
 53 dreams were generated from 32 seed words at temperatures ranging from 0.8 to 1.8. Seed words were chosen to span the drift spectrum: high-drift (*liveth*, *publique*, *touchstone*), mid-drift (*writ*, *immortal*, *machine*), and low-drift (*man*, *woman*, *knowledge*, *love*).
 
-**Jump count** (temporal instability) ranges from 9 (*sinned* at T=0.8) to 48 (*plus* at T=1.8). The correlation between temperature and jump count is positive but noisy: temperature explains some variance, but seed identity matters.
+**Jump count** (temporal instability) ranges from 3 (*love* at T=1.2) to 48 (*plus* at T=1.8). The correlation between temperature and jump count is positive but noisy: temperature explains some variance, but seed identity matters.
 
 ![Temperature vs era jumps](figure_2_temp_vs_jumps.png)
 *Figure 2: Temperature versus temporal instability (era jumps) for all 53 non-random dreams. Colour indicates whether the dream was classifiable under the v2 taxonomy. Extreme points annotated.*
@@ -180,19 +178,19 @@ The dominance of `unclassifiable` (57%) reflects the honest tie-handling. Among 
 ### 3.4 Hypothesis Tests
 
 **H1 — Semantic Gravity Well**: Higher drift → more temporal instability.  
-*Status: Bounded true.* Stable words (drift ~0.4–0.5) produce few jumps; high-drift contamination words (>0.8) produce many. But *man* (low drift ~0.40) jumped 14 times at T=1.0, while *woman* (higher drift ~0.41) jumped 15 times at the same temperature — the prediction is directionally correct but not sufficient.
+*Status: Bounded true.* Stable words (drift ~0.4–0.5) produce few jumps; high-drift contamination words (>0.8) produce many. But *man* (low drift ~0.40) jumped 14 times at T=1.0, while *woman* (higher drift ~0.41) jumped only 9 times — the prediction is directionally correct but not sufficient.
 
 **H2 — Semantic Universality**: Cross-era connectivity overrides drift.  
-*Status: Supported.* *man* is semantically universal — it has strong connections in all eras — and produced 14 jumps at T=1.0, beating *woman* at higher temperature. Universality appears to enable the walk to find valid neighbours in any era, increasing jump opportunities.
+*Status: Supported.* *man* is semantically universal — it has strong connections in all eras — and produced 14 jumps at T=1.0, beating *woman* at the same temperature. Universality appears to enable the walk to find valid neighbours in any era, increasing jump opportunities.
 
 **H3 — Escape Velocity**: Temperature controls semantic range, not wildness.  
 *Status: Supported.* The seed *waters* at three temperatures (0.9, 1.2, 1.5) produced three different archetypes: DOMESTIC/mercantile at low temp, NATURAL at medium, and ROMANTIC-nature escape at high temp. The walk's *distance* from the seed's gravity well increased with temperature, and the archetype changed accordingly.
 
 **H4 — Context Over Denotation**: Dream engine reads neighbours, not dictionary definitions.  
-*Status: Supported.* *liveth* (denotes mere existence) produced POWER_DIVINE because its contextual neighbours are biblical oath/legal testimony (*lord*, *witness*, *swear*). *writer* (denotes craft) produced BODILY because its neighbours in the corpus include physical-labour terms. The archetype tracks contextual embedding, not lexical definition.
+*Status: Supported.* *liveth* (denotes mere existence) produced POWER_DIVINE because its contextual neighbours are biblical oath/legal testimony (*lord*, *witness*, *swear*). *writer* (denotes craft) produced BODILY because its neighbours include physical-labour terms. The archetype tracks contextual embedding, not lexical definition.
 
 **H5 — Temperature Selects the Gravity Well**: Same jump count, different archetype at different temperatures.  
-| Status: Supported. *storm* produced 13 jumps at both T=0.9 and T=1.8, but different archetypes: DOMESTIC/natural at low temp, CONFLICT at high temp. Other multi-temperature seeds (*lord* at 4 temps, *plus* at 3 temps) show similar patterns.
+*Status: Supported.* *storm* produced 13 jumps at both T=0.9 and T=1.8, but different archetypes: DOMESTIC/natural at low temp, CONFLICT at high temp. Other multi-temperature seeds (*lord* at 4 temps, *plus* at 3 temps) show similar patterns.
 
 ### 3.5 Baseline Comparison
 
@@ -207,7 +205,7 @@ To test whether the seed's semantic identity carries signal beyond the engine's 
 
 A matched-pair test (n = 15, same seed/era/temperature/era-jump-probability) found no significant difference in mean jump count (real 16.5 ± 8.1 vs random 17.5 ± 7.8, paired t = −0.78). Scaling to n = 53 confirmed the result (real 18.7 ± 9.6 vs random 18.8 ± 9.0, paired t = −0.20). This suggests that for a fixed parameter setting, the *expected* jump count is parameter-driven, not vector-driven.
 
-However, the **variance structure** differs markedly. Real seeds show genuinely different jump propensities (e.g., *plus* at T=1.8 jumps 48 times; *love* at T=1.2 jumps 3 times), while random seeds produce consistent jump counts regardless of identity. The seed's semantic history therefore constrains the *distribution* of behaviour across seeds — which seeds are volatile, which are stable — rather than shifting the mean of a single dream. This is a distributional constraint, not a point-prediction constraint, and it survives the baseline test.
+However, the **variance structure** differs markedly. Real seeds show genuinely different jump propensities (*plus* at T=1.8: 48 jumps; *love* at T=1.2: 3 jumps), while random seeds produce consistent jump counts regardless of identity. The seed's semantic history therefore constrains the *distribution* of behaviour across seeds — which seeds are volatile, which are stable — rather than shifting the mean of a single dream. This is a distributional constraint, not a point-prediction constraint, and it survives the baseline test.
 
 ### 3.6 Gravity-Well Prediction Test
 
@@ -257,11 +255,11 @@ The evidence supports a landscape model of semantic space. A word occupies a "gr
 
 Temperature is an escape-velocity parameter. Low temperature keeps the walk trapped in the local well; high temperature provides enough kinetic energy to escape into neighbouring territory. Which territory the walk escapes *into* is determined by the well's embedding structure — not random.
 
-This model makes a testable prediction: for a given seed, the set of archetypes reachable at high temperature should be predictable from the seed's top non-seed neighbours across all eras. We tested this in §3.6. The result is weak but non-random: 35% of classifiable dreams match their neighbour profile's top-5 archetypes, well above chance (5.3%) but far from deterministic. The gravity-well model is therefore partially supported — the seed's embedding structure does constrain which archetypes are reachable — but the constraint is probabilistic, not categorical. A single dream's archetype cannot be predicted from neighbour structure alone; the prediction improves only when averaging over many dreams from the same seed.
+This model makes a testable prediction: for a given seed, the set of archetypes reachable at high temperature should be predictable from the seed's top non-seed neighbours across all eras (§3.6). The result is weak but non-random: 35% of classifiable dreams match their neighbour profile's top-5 archetypes, well above chance (5.3%) but far from deterministic. The gravity-well model is therefore partially supported — the seed's embedding structure constrains which archetypes are reachable — but the constraint is probabilistic, not categorical. A single dream's archetype cannot be predicted from neighbour structure alone; the prediction improves only when averaging over many dreams from the same seed.
 
 ### 4.2 The Tie Problem
 
-55% of dreams are unclassifiable due to tied scores. This is not a failure of the taxonomy — it is a measurement of coverage. The keyword lists were built inductively from early dreams and are sparse for certain archetypes (URBAN, LEGACY, IDENTITY). Expanding coverage is straightforward: identify which archetypes appear most often in ties and add genuinely present keywords from the dream corpus. But expansion must be principled: keyword lists should derive from the corpus, not from intuition, to avoid overfitting.
+57% of dreams are unclassifiable due to tied scores. This is not a failure of the taxonomy — it is a measurement of coverage. The keyword lists were built inductively from early dreams and are sparse for certain archetypes (URBAN, LEGACY, IDENTITY). Expanding coverage is straightforward: identify which archetypes appear most often in ties and add genuinely present keywords from the dream corpus. But expansion must be principled: keyword lists should derive from the corpus, not from intuition, to avoid overfitting.
 
 ### 4.3 Limitations
 
@@ -283,7 +281,7 @@ This work sits at the intersection of diachronic word embeddings (Hamilton et al
 
 We have shown that a word's semantic history — as measured by era-specific word vectors and drift scores — carries signal that constrains the behaviour of stochastic walks through semantic space. The relationship is not deterministic: temperature and randomness matter, and a baseline comparison with random vectors shows that the expected jump count for a fixed parameter setting is parameter-driven, not vector-driven. But the seed is not inert. Real seeds produce a wider variance structure than random seeds: some seeds are inherently volatile (*plus* at high temperature: 48 jumps), others inherently stable (*love* at moderate temperature: 3 jumps). This is a **distributional constraint** — the seed predicts which region of the behaviour distribution a walk will occupy, not the exact point.
 
-The method is auditable, the taxonomy is falsifiable, and the codebase is open. The 55% tie rate in archetype classification is not a bug to be hidden but a boundary to be mapped. The gravity-well prediction (§3.6) has been formally tested and yields a weak but non-random signal (~35% accuracy vs. ~5% chance). The next step is to expand keyword coverage from corpus evidence, extend the prediction test to larger neighbour sets and stronger null models, and build the public-facing site that makes this work accessible beyond the author.
+The method is auditable, the taxonomy is falsifiable, and the codebase is open. The 57% tie rate in archetype classification is not a bug to be hidden but a boundary to be mapped. The gravity-well prediction (§3.6) has been formally tested and yields a weak but non-random signal (~35% accuracy vs. ~5% chance). The next step is to expand keyword coverage from corpus evidence, extend the prediction test to larger neighbour sets and stronger null models, and build the public-facing site that makes this work accessible beyond the author.
 
 ---
 
