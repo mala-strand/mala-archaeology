@@ -674,24 +674,106 @@ def backfill_semantic_scores(conn, era="1850-1900", contrastive=True):
     print(f"Backfilled {updated} reflections with semantic scores")
 
 
+def backfill_hybrid(conn, era="1850-1900"):
+    """
+    Backfill hybrid classification results to dream_reflections.
+    Stores hybrid_primary (archetype or 'unclassifiable') and hybrid_method
+    ('keyword' or 'semantic') for every dream that has a reflection.
+    """
+    cursor = conn.cursor()
+
+    # Ensure columns exist
+    cursor.execute("PRAGMA table_info(dream_reflections)")
+    columns = [row[1] for row in cursor.fetchall()]
+
+    if 'hybrid_primary' not in columns:
+        cursor.execute("ALTER TABLE dream_reflections ADD COLUMN hybrid_primary TEXT")
+    if 'hybrid_method' not in columns:
+        cursor.execute("ALTER TABLE dream_reflections ADD COLUMN hybrid_method TEXT")
+    if 'hybrid_secondary' not in columns:
+        cursor.execute("ALTER TABLE dream_reflections ADD COLUMN hybrid_secondary TEXT")
+
+    conn.commit()
+
+    era_vectors = load_era_vectors(conn, era)
+    centroids, _ = build_archetype_centroids(conn, era)
+    archetype_kvecs = build_archetype_keyword_vectors(conn, era)
+    idf_weights, dream_count = compute_idf_weights(conn)
+
+    cursor.execute("""
+        SELECT d.id, d.seed_word, d.start_era, d.dream_text
+        FROM dreams d
+        JOIN dream_reflections dr ON d.id = dr.dream_id
+    """)
+
+    updated = 0
+    keyword_count = 0
+    semantic_count = 0
+    unclass_count = 0
+
+    for dream_id, seed, start_era, dream_text in cursor.fetchall():
+        words = extract_words_from_dream(dream_text)
+
+        hybrid_result = classify_hybrid(words, seed, start_era, centroids, era_vectors, archetype_kvecs, idf_weights)
+
+        primary = hybrid_result['primary'][0]
+        secondary = hybrid_result['secondary'][0] if hybrid_result['secondary'] else None
+        method = hybrid_result['method']
+
+        cursor.execute("""
+            UPDATE dream_reflections
+            SET hybrid_primary = ?, hybrid_secondary = ?, hybrid_method = ?
+            WHERE dream_id = ?
+        """, (primary, secondary, method, dream_id))
+        updated += 1
+
+        if method == 'keyword':
+            keyword_count += 1
+        elif method == 'semantic':
+            semantic_count += 1
+
+        if primary == 'unclassifiable':
+            unclass_count += 1
+
+    conn.commit()
+    print(f"Backfilled {updated} reflections with hybrid classifications")
+    print(f"  Keyword-determined: {keyword_count}")
+    print(f"  Semantic-rescued:   {semantic_count}")
+    print(f"  Still unclassifiable: {unclass_count}")
+
+    # Show distribution
+    cursor.execute("""
+        SELECT hybrid_primary, COUNT(*) FROM dream_reflections
+        WHERE hybrid_primary IS NOT NULL
+        GROUP BY hybrid_primary
+        ORDER BY COUNT(*) DESC
+    """)
+    print("\nHybrid classification distribution:")
+    for archetype, count in cursor.fetchall():
+        print(f"  {archetype}: {count}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Semantic archetype scorer")
     parser.add_argument("--compare", action="store_true", help="Compare all semantic methods")
     parser.add_argument("--hybrid", action="store_true", help="Compare keyword vs hybrid (default)")
     parser.add_argument("--backfill", action="store_true", help="Store semantic scores in DB")
+    parser.add_argument("--backfill-hybrid", action="store_true", help="Store hybrid classifications in DB")
     parser.add_argument("--era", default="1850-1900", help="Era to use for vectors")
     args = parser.parse_args()
-    
+
     conn = sqlite3.connect(DB_PATH)
-    
-    if args.backfill:
+
+    if args.backfill_hybrid:
+        backfill_hybrid(conn, args.era)
+    elif args.backfill:
         backfill_semantic_scores(conn, args.era)
     elif args.compare:
         compare_classifications(conn, args.era)
     else:
         # Default: hybrid comparison
         compare_hybrid(conn, args.era)
-    
+
     conn.close()
 
 

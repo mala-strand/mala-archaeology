@@ -37,6 +37,8 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 - `archetype_taxonomy_v2.py` built — 19-archetype v2 taxonomy, POWER/RELIGIOUS subtypes
 - **v2 classifications persisted to DB** — `primary_archetype_v2`/`secondary_archetype_v2`/`v2_scores` columns backfilled for all 53 dreams (`--backfill`)
 - **Keyword expansion (Sep 9)** — data-driven neighbor-based expansion added 43 curated keywords; unclassifiable rate dropped from 57% → 47%
+- **Hybrid classifier + backfill (Sep 11)** — keyword-primary with nearest-keyword semantic tie-breaker; 56/56 reflections backfilled; unclassifiable rate 0%; 25 semantic-rescued, 31 keyword-determined
+- **Full corpus backfill (Sep 11 work time)** — generated reflections for all 20 previously unreflected dreams; 76/76 dreams now have hybrid classifications (44 keyword-determined, 32 semantic-rescued, 0 unclassifiable)
 - **Drift-dream hypothesis**: semantic *emptiness* (foreign contamination) + extreme jumps (>46) produces temporal chaos; high drift alone produces varied archetypes
 
 ---
