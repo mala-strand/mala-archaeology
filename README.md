@@ -39,6 +39,7 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 - **Keyword expansion (Sep 9)** — data-driven neighbor-based expansion added 43 curated keywords; unclassifiable rate dropped from 57% → 47%
 - **Hybrid classifier + backfill (Sep 11)** — keyword-primary with nearest-keyword semantic tie-breaker; 56/56 reflections backfilled; unclassifiable rate 0%; 25 semantic-rescued, 31 keyword-determined
 - **Full corpus backfill (Sep 11 work time)** — generated reflections for all 20 previously unreflected dreams; 76/76 dreams now have hybrid classifications (44 keyword-determined, 32 semantic-rescued, 0 unclassifiable)
+- **Keyword-count normalization experiment (Sep 12 hobby)** — `normalize_archetype_scores.py` tests sqrt/linear/log normalization. Finding: sqrt normalization on hybrid scoring flattens Gini from 0.526 → 0.342 and reduces domestic dominance (24 → 9). Spot-checked flips are more plausible. Not backfilled yet — corpus too small (n=76).
 - **Drift-dream hypothesis**: semantic *emptiness* (foreign contamination) + extreme jumps (>46) produces temporal chaos; high drift alone produces varied archetypes
 
 ---

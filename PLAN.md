@@ -209,6 +209,18 @@ When `SELF_HOSTED_ENDPOINT` is set (once the local model plan is live), all arch
 
 ---
 
+## Open Experiments (Next Hobby Blocks)
+
+Extracted from work DB 2026-09-11 — hobbies belong in files, not tasks.
+
+1. **Stronger null model for gravity-well test** — Shuffle co-occurrence or permute SVD loadings to build proper null distribution. Currently lacks statistical rigor.
+
+2. **Basin-vs-rim test (top-100/200 neighbours)** — Gravity-well test uses top-20 only; may miss basin structure at larger scales. Compare top-20 vs top-100 vs top-200.
+
+3. **Public site (Render-hosted)** — Interactive dream browsing + drift viz. Gated on #1 and #2 being statistically solid.
+
+---
+
 ## Milestone Gates
 
 | Milestone | Condition to proceed |
