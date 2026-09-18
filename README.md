@@ -18,6 +18,9 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 | Phase 2 Dream Engine | ✅ **BUILT** | Probabilistic walks, temporal dissonance, stored dreams |
 | Phase 2 Reflection | ✅ **BUILT** | `dream_reflect.py` — archetypal analysis, era journey mapping |
 | Phase 2 Semantic Scorer | ✅ **BUILT** | `semantic_scorer.py` — hybrid keyword+vector classification |
+| Phase 2 Drift-Dream Correlator | ✅ **BUILT** | `drift_dream_correlator_v2.py` — full-corpus drift classification |
+| Phase 2 Archetype Co-occurrence | ✅ **BUILT** | `archetype_cooccurrence.py` — archetype pair analysis |
+| Phase 2 Confidence Scorer | ✅ **BUILT** | `confidence_scorer.py` — margin-based confidence tiers for all 200 dreams |
 
 **Phase 1 Results:**
 - 101 books downloaded (~10M+ words)
@@ -30,17 +33,27 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 **Phase 2 Current:**
 - `decontaminate.py` run — clean DB at `data/archaeology_phase1_clean.db`
 - `cluster.py` run — 300 clusters, 495 stability records
-- `dream.py` built — temperature walks, era jumps, decay revisits, DB storage
+- `dream.py` built — temperature walks, era jumps, decay revisits, DB storage (200 dreams)
 - `dream_reflect.py` built — archetypal analysis, era journey mapping
 - `drift_dream_correlator.py` built — correlation between drift patterns and dream characteristics
 - `dream_analysis.py` built — corpus-wide pattern analysis
+- `batch_generate.py` built — batch dream generator with varied parameters
+- `backfill_idf_hybrid.py` built — IDF-hybrid classification backfill to DB
 - `archetype_taxonomy_v2.py` built — 19-archetype v2 taxonomy, POWER/RELIGIOUS subtypes
 - **v2 classifications persisted to DB** — `primary_archetype_v2`/`secondary_archetype_v2`/`v2_scores` columns backfilled for all 53 dreams (`--backfill`)
 - **Keyword expansion (Sep 9)** — data-driven neighbor-based expansion added 43 curated keywords; unclassifiable rate dropped from 57% → 47%
 - **Hybrid classifier + backfill (Sep 11)** — keyword-primary with nearest-keyword semantic tie-breaker; 56/56 reflections backfilled; unclassifiable rate 0%; 25 semantic-rescued, 31 keyword-determined
-- **Full corpus backfill (Sep 11 work time)** — generated reflections for all 20 previously unreflected dreams; 76/76 dreams now have hybrid classifications (44 keyword-determined, 32 semantic-rescued, 0 unclassifiable)
-- **Keyword-count normalization experiment (Sep 12 hobby)** — `normalize_archetype_scores.py` tests sqrt/linear/log normalization. Finding: sqrt normalization on hybrid scoring flattens Gini from 0.526 → 0.342 and reduces domestic dominance (24 → 9). Spot-checked flips are more plausible. Not backfilled yet — corpus too small (n=76).
-- **Drift-dream hypothesis**: semantic *emptiness* (foreign contamination) + extreme jumps (>46) produces temporal chaos; high drift alone produces varied archetypes
+|- **Full corpus backfill (Sep 11 work time)** — generated reflections for all 20 previously unreflected dreams; 76/76 dreams now have hybrid classifications (44 keyword-determined, 32 semantic-rescued, 0 unclassifiable)
+||- **Keyword-count normalization experiment (Sep 12)** — `normalize_archetype_scores.py` tests sqrt/linear/log normalization. Finding: sqrt normalization on hybrid scoring flattens Gini from 0.526 → 0.342 and reduces domestic dominance (24 → 9). Spot-checked flips are more plausible. Not backfilled yet — corpus too small (n=76).
+||- **Keyword-IDF weighting (Sep 13)** — `keyword_idf_scorer.py` computes inverse document frequency for all 255 keywords from the Phase 1 corpus (101 books). Distinctive keywords (e.g. "damnation", idf=1.73) count more than generic ones (e.g. "name", idf=0.0). **Result: structural bias eliminated** — correlation between keyword count and archetype frequency drops from r=+0.824 to r=+0.078. Unclassifiable rate drops from 42% → 0% (IDF-hybrid). Gini drops from 0.536 → 0.345.
+|||- **IDF-hybrid backfilled to DB (Sep 14)** — `backfill_idf_hybrid.py` persists IDF-hybrid classifications for all dreams. 194/200 (97%) classified by IDF-keyword; 6 raw-fallback; 3 unclassifiable. Distribution remains flat across all 19 archetypes.
+|||- **Dream corpus expanded to 200 (Sep 14)** — Batch-generated 124 new dreams with varied parameters (temp 0.8–2.0, jump prob 0.02–0.12). All stored and IDF-classified.
+|||- **Drift-dream hypothesis**: semantic *emptiness* (foreign contamination) + extreme jumps (>46) produces temporal chaos; high drift alone produces varied archetypes
+|||- **Drift-dream correlator v2 (Sep 15)** — Auto-classifies drift type for all 171 unique seed words. Key finding: drift×jump correlation is conditional. At high temp (>1.6), r=+0.211. At low temp (≤1.2), r=-0.157. The "semantic gravity well" only activates when the walk is already chaotic.
+|||- **Archetype co-occurrence (Sep 15)** — 93 forbidden pairs out of 190 possible (49%). Most common pair: power_divine + religious_cosmic (6×). "Chaos" archetype paradox: lowest jump count (11.8) and lowest temperature (1.00). The label captures thematic content, not structural chaos.
+|||||- **Chaos archetype investigation (Sep 16)** — Only 1 of 4 "chaos" dreams is genuine (3 chaos keywords). Two are IDF overcorrections / weak margins. The archetype captures *thematic* wilderness/desolation, not structural chaos. Top 10 highest-jump dreams are classified as temporal, conflict, natural, legacy — never chaos.
+||||||- **Confidence scorer built (Sep 17)** — `confidence_scorer.py` analyzes all 200 dreams using IDF-weighted relative margins. Finding: 15.5% HIGH, 23.5% MEDIUM, 33.0% LOW, 28.0% TENTATIVE confidence. All 4 "chaos" dreams are LOW or TENTATIVE. All 6 raw-fallback dreams are TENTATIVE (margin 0.00). Raw/IDF divergence is significant for some dreams (#28 decay: raw margin 2.00 → IDF 0.31).
+||||||- **Confidence backfill to DB (Sep 18)** — `backfill_confidence.py` adds `confidence_tier`, `confidence_margin`, `confidence_relative` columns to `dream_reflections` and populates all 200 rows. Excluding TENTATIVE dreams sharpens archetype distribution: `bodily` drops from 10→3 (70% were weak signal), `unclassifiable` disappears entirely. HIGH-confidence dreams average 21.5 jumps (vs 20.1 for TENTATIVE), suggesting structural chaos doesn't preclude classification confidence.
 
 ---
 
@@ -66,6 +79,9 @@ archaeology/
 │   ├── dream_reflect.py        # Dream reflection/analysis (Phase 2)
 │   ├── archetype_taxonomy_v2.py # v2 taxonomy + persistent backfill (Phase 2)
 │   ├── semantic_scorer.py      # Hybrid keyword+vector classification (Phase 2)
+│   ├── keyword_idf_scorer.py   # IDF-weighted keyword scoring (Phase 2)
+│   ├── drift_dream_correlator_v2.py  # Full-corpus drift-dream correlation (Phase 2)
+│   ├── archetype_cooccurrence.py     # Archetype pair analysis (Phase 2)
 │   ├── expand_archetypes.py    # Data-driven keyword expansion
 │   ├── downloader.py           # Gutenberg downloader (legacy)
 │   ├── tokenizer.py            # Tokenization (legacy)

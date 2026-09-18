@@ -1,0 +1,209 @@
+======================================================================
+Archetype Classification Confidence Scorer
+======================================================================
+
+Analyzed 200 dreams using IDF-weighted margins
+
+--- Margin Statistics (IDF-weighted) ---
+  Average margin:    0.32
+  Min margin:        0.00
+  Max margin:        1.32
+  Median margin:     0.23
+  Flagged (<0.5):    155 / 200 (77.5%)
+
+--- Confidence Tier Distribution ---
+  HIGH        :  31 ( 15.5%) ██████████
+  MEDIUM      :  47 ( 23.5%) ███████████████
+  LOW         :  66 ( 33.0%) ██████████████████████
+  TENTATIVE   :  56 ( 28.0%) ██████████████████
+
+--- Tier Distribution by Method ---
+
+  idf-keyword (n=194):
+    HIGH        :  31 ( 16.0%)
+    MEDIUM      :  47 ( 24.2%)
+    LOW         :  66 ( 34.0%)
+    TENTATIVE   :  50 ( 25.8%)
+
+  raw-fallback (n=6):
+    HIGH        :   0 (  0.0%)
+    MEDIUM      :   0 (  0.0%)
+    LOW         :   0 (  0.0%)
+    TENTATIVE   :   6 (100.0%)
+
+--- Low-Confidence Dreams (margin < 0.5) ---
+  ID         Seed      StoredPrimary         Method  Score                2nd  2ndSc  Margin       Tier
+-------------------------------------------------------------------------------------------------------
+  19       tenant           commerce   raw-fallback   0.74   religious_cosmic   0.74    0.00  TENTATIVE
+  46         lord              chaos   raw-fallback   0.52 religious_devotion   0.52    0.00  TENTATIVE
+  91      whisper     unclassifiable   raw-fallback   0.18           abstract   0.18    0.00  TENTATIVE
+ 116      pretend     unclassifiable   raw-fallback   0.43           commerce   0.43    0.00  TENTATIVE
+ 184       begins     unclassifiable   raw-fallback   0.50 religious_devotion   0.50    0.00  TENTATIVE
+ 189 commencement power_institutional   raw-fallback   0.88           abstract   0.88    0.00  TENTATIVE
+ 129        becky    religious_moral    idf-keyword   0.69       power_divine   0.69    0.00  TENTATIVE
+  52        storm             legacy    idf-keyword   1.11    religious_moral   1.11    0.00  TENTATIVE
+ 144     disputes religious_devotion    idf-keyword   0.47              urban   0.47    0.01  TENTATIVE
+ 135    agreeable    power_political    idf-keyword   1.04              urban   1.03    0.01  TENTATIVE
+  72 RANDOM_creating             bodily    idf-keyword   0.36            natural   0.35    0.01  TENTATIVE
+   4         writ           abstract    idf-keyword   0.88           domestic   0.87    0.01  TENTATIVE
+ 172         deep             bodily    idf-keyword   0.68           abstract   0.66    0.01  TENTATIVE
+ 114     perceive           conflict    idf-keyword   0.70           domestic   0.69    0.01  TENTATIVE
+ 196      othello             bodily    idf-keyword   0.41   religious_cosmic   0.40    0.01  TENTATIVE
+  17       vanity power_institutional    idf-keyword   0.31       power_divine   0.30    0.01  TENTATIVE
+ 121   collecting              urban    idf-keyword   0.34              craft   0.32    0.01  TENTATIVE
+  15      machine           domestic    idf-keyword   0.37              craft   0.35    0.01  TENTATIVE
+   5         lord       power_divine    idf-keyword   0.89             legacy   0.88    0.02  TENTATIVE
+ 170      variety             bodily    idf-keyword   0.63     power_personal   0.61    0.02  TENTATIVE
+ 155        small            natural    idf-keyword   0.79           domestic   0.78    0.02  TENTATIVE
+  49        table   religious_cosmic    idf-keyword   0.43             legacy   0.41    0.02  TENTATIVE
+ 148     supposes   religious_cosmic    idf-keyword   0.63     power_personal   0.61    0.02  TENTATIVE
+ 136         deaf    religious_moral    idf-keyword   0.70             bodily   0.68    0.02  TENTATIVE
+  64  RANDOM_tête           abstract    idf-keyword   0.88            natural   0.85    0.02  TENTATIVE
+ 125   motionless           domestic    idf-keyword   0.60            natural   0.57    0.03  TENTATIVE
+  25         lord    power_political    idf-keyword   0.79           conflict   0.75    0.03  TENTATIVE
+ 175         rest             legacy    idf-keyword   0.88           conflict   0.84    0.04  TENTATIVE
+ 198         till    religious_moral    idf-keyword   0.40            natural   0.35    0.04  TENTATIVE
+ 150      francis    power_political    idf-keyword   1.03           conflict   0.99    0.04  TENTATIVE
+   3       sinned              chaos    idf-keyword   0.46 religious_devotion   0.41    0.05  TENTATIVE
+ 117          axe religious_devotion    idf-keyword   0.93           temporal   0.88    0.05  TENTATIVE
+ 173    ascending religious_devotion    idf-keyword   0.93             legacy   0.88    0.05  TENTATIVE
+ 177   valancourt           commerce    idf-keyword   0.73            natural   0.68    0.05  TENTATIVE
+  90      stepped             bodily    idf-keyword   0.66           conflict   0.61    0.05  TENTATIVE
+ 160   gratefully            natural    idf-keyword   0.72           domestic   0.67    0.06  TENTATIVE
+  93         duty           commerce    idf-keyword   0.67     power_personal   0.61    0.06  TENTATIVE
+ 124  ingratitude              craft    idf-keyword   0.49            natural   0.43    0.06  TENTATIVE
+  82     pangloss           abstract    idf-keyword   0.94             bodily   0.88    0.06  TENTATIVE
+ 110        honey             bodily    idf-keyword   0.49           conflict   0.43    0.06  TENTATIVE
+ 137         cool             bodily    idf-keyword   0.56          knowledge   0.49    0.07  TENTATIVE
+  41      justice           commerce    idf-keyword   0.38 power_institutional   0.31    0.07        LOW
+ 147         drag           temporal    idf-keyword   0.82       power_divine   0.74    0.07  TENTATIVE
+  98      journey           conflict    idf-keyword   0.74           abstract   0.66    0.08  TENTATIVE
+ 151        final            natural    idf-keyword   0.96             legacy   0.88    0.08  TENTATIVE
+ 123         wool           conflict    idf-keyword   0.75    power_political   0.67    0.08  TENTATIVE
+ 104  impressions             bodily    idf-keyword   0.54   religious_cosmic   0.46    0.08        LOW
+ 154      service           domestic    idf-keyword   0.56 religious_devotion   0.47    0.09        LOW
+  70 RANDOM_decay religious_devotion    idf-keyword   0.93            natural   0.84    0.09  TENTATIVE
+ 182      officer           abstract    idf-keyword   0.66    religious_moral   0.57    0.09  TENTATIVE
+  54 RANDOM_machine             legacy    idf-keyword   0.49    religious_moral   0.40    0.09        LOW
+  31        decay             legacy    idf-keyword   0.52           abstract   0.43    0.10        LOW
+   2   touchstone           identity    idf-keyword   0.76           conflict   0.66    0.10  TENTATIVE
+  35     publique     power_personal    idf-keyword   0.58           conflict   0.47    0.10        LOW
+ 132         paid           commerce    idf-keyword   0.49            natural   0.38    0.11        LOW
+ 156     specific           conflict    idf-keyword   0.70       power_divine   0.59    0.11        LOW
+   9      mission             legacy    idf-keyword   0.95            natural   0.84    0.11  TENTATIVE
+  45       waters           commerce    idf-keyword   1.16    power_political   1.04    0.12  TENTATIVE
+  51        storm              craft    idf-keyword   0.35     power_personal   0.23    0.12     MEDIUM
+ 195      picture           domestic    idf-keyword   0.61          knowledge   0.49    0.13        LOW
+  80       minded    religious_moral    idf-keyword   0.79 religious_devotion   0.66    0.13        LOW
+  77          oil            natural    idf-keyword   1.16 power_institutional   1.03    0.13  TENTATIVE
+ 143          buy            natural    idf-keyword   0.70    religious_moral   0.57    0.13        LOW
+   8         plus             legacy    idf-keyword   0.88       power_divine   0.74    0.13        LOW
+  92         hint     power_personal    idf-keyword   0.37           domestic   0.23    0.13     MEDIUM
+ 176         ring              craft    idf-keyword   0.84   religious_cosmic   0.70    0.14        LOW
+  43       waters           conflict    idf-keyword   0.63            natural   0.49    0.14        LOW
+  13         writ              craft    idf-keyword   0.52            natural   0.38    0.14        LOW
+  26         plus           abstract    idf-keyword   0.66              craft   0.52    0.14        LOW
+ 105       giveth           abstract    idf-keyword   0.66           domestic   0.52    0.14        LOW
+ 101       gained       power_divine    idf-keyword   0.89 power_institutional   0.74    0.14        LOW
+ 106       supply    power_political    idf-keyword   0.74           commerce   0.60    0.14        LOW
+ 131   successful power_institutional    idf-keyword   1.03            natural   0.88    0.15  TENTATIVE
+ 187     defeated            natural    idf-keyword   0.90 power_institutional   0.74    0.15        LOW
+  68 RANDOM_storm              urban    idf-keyword   1.25    power_political   1.09    0.15  TENTATIVE
+ 158    eloquence       power_divine    idf-keyword   0.64          knowledge   0.49    0.16        LOW
+  47         lord    power_political    idf-keyword   0.68             legacy   0.52    0.16        LOW
+ 166        plant   religious_cosmic    idf-keyword   0.70             bodily   0.54    0.17        LOW
+  23         soul              chaos    idf-keyword   0.83    religious_moral   0.66    0.17        LOW
+  62 RANDOM_publique            natural    idf-keyword   0.64 religious_devotion   0.47    0.17        LOW
+  83 contributions           identity    idf-keyword   0.94             bodily   0.77    0.17        LOW
+ 174    perpetual    power_political    idf-keyword   1.28            natural   1.11    0.17  TENTATIVE
+  61 RANDOM_machine             bodily    idf-keyword   0.60            natural   0.43    0.17        LOW
+ 159        notes   religious_cosmic    idf-keyword   1.10           domestic   0.93    0.17        LOW
+ 141        heirs           conflict    idf-keyword   0.93            natural   0.75    0.18        LOW
+  73  RANDOM_plus           abstract    idf-keyword   0.88           temporal   0.69    0.18        LOW
+  84 indifference             legacy    idf-keyword   0.88    power_political   0.69    0.18        LOW
+  34        ellen       power_divine    idf-keyword   1.57   religious_cosmic   1.39    0.18  TENTATIVE
+   7        woman   religious_cosmic    idf-keyword   1.05           conflict   0.87    0.19        LOW
+   6       memory    power_political    idf-keyword   1.09            natural   0.90    0.19        LOW
+  78    hostility           abstract    idf-keyword   0.59              urban   0.40    0.19     MEDIUM
+ 146      trading    power_political    idf-keyword   0.68             legacy   0.49    0.20        LOW
+ 103       boldly           conflict    idf-keyword   0.84       power_divine   0.64    0.20        LOW
+  24        woman           abstract    idf-keyword   0.66            natural   0.46    0.21     MEDIUM
+  30          man religious_devotion    idf-keyword   1.17             legacy   0.95    0.22        LOW
+ 185        cards    power_political    idf-keyword   0.79   religious_cosmic   0.57    0.22        LOW
+  56  RANDOM_writ            natural    idf-keyword   0.97             bodily   0.75    0.22        LOW
+  57 RANDOM_decay    power_political    idf-keyword   0.92           temporal   0.69    0.22        LOW
+ 111      failing religious_devotion    idf-keyword   0.93              chaos   0.70    0.22        LOW
+ 108      tumbled           conflict    idf-keyword   1.19    religious_moral   0.97    0.22        LOW
+  69 RANDOM_publique           commerce    idf-keyword   0.77           temporal   0.54    0.23        LOW
+ 122      college           abstract    idf-keyword   1.48       power_divine   1.25    0.23        LOW
+ 163       stones           abstract    idf-keyword   1.48              urban   1.25    0.23        LOW
+ 168        wings       power_divine    idf-keyword   0.98   religious_cosmic   0.74    0.23        LOW
+  58  RANDOM_love religious_devotion    idf-keyword   1.27       power_divine   1.03    0.24        LOW
+ 200        votre              urban    idf-keyword   1.03    power_political   0.79    0.25        LOW
+  48        table           conflict    idf-keyword   1.46    power_political   1.21    0.25        LOW
+ 127     coloured religious_devotion    idf-keyword   1.50              urban   1.25    0.25        LOW
+  21         lord             legacy    idf-keyword   0.95              chaos   0.70    0.25        LOW
+  39       liveth    religious_moral    idf-keyword   1.78             legacy   1.52    0.26  TENTATIVE
+ 113       poorer religious_devotion    idf-keyword   0.41       power_divine   0.15    0.26       HIGH
+ 191     precious              urban    idf-keyword   1.03           identity   0.76    0.27        LOW
+  59 RANDOM_table            natural    idf-keyword   0.68           domestic   0.41    0.28     MEDIUM
+  27         love           domestic    idf-keyword   0.28             bodily   0.00    0.28       HIGH
+  50        storm    power_political    idf-keyword   1.03       power_divine   0.74    0.29        LOW
+ 153         land    power_political    idf-keyword   1.03       power_divine   0.74    0.29        LOW
+ 139         bear    religious_moral    idf-keyword   1.22 religious_devotion   0.93    0.29        LOW
+  16   touchstone    religious_moral    idf-keyword   0.76 religious_devotion   0.47    0.29     MEDIUM
+  88        beard       power_divine    idf-keyword   1.29 power_institutional   1.00    0.29        LOW
+  94      serpent           domestic    idf-keyword   1.04 power_institutional   0.74    0.29        LOW
+ 115     saturday       power_divine    idf-keyword   1.04   religious_cosmic   0.74    0.30        LOW
+ 183        spare           commerce    idf-keyword   1.22           domestic   0.93    0.30        LOW
+  55  RANDOM_soul              urban    idf-keyword   1.03             legacy   0.73    0.30        LOW
+  29          man             bodily    idf-keyword   0.89       power_divine   0.59    0.30     MEDIUM
+ 140      passing             legacy    idf-keyword   1.01              craft   0.70    0.30     MEDIUM
+  74   touchstone   religious_cosmic    idf-keyword   0.70           temporal   0.40    0.31     MEDIUM
+  37      tobacco           conflict    idf-keyword   0.47           domestic   0.16    0.31       HIGH
+  28        decay            natural    idf-keyword   1.31 religious_devotion   1.00    0.31        LOW
+   1         lord             legacy    idf-keyword   0.88           domestic   0.56    0.31     MEDIUM
+  33       sinned           conflict    idf-keyword   0.70            natural   0.38    0.32     MEDIUM
+ 133         save             legacy    idf-keyword   0.82            natural   0.47    0.35     MEDIUM
+  44       waters           conflict    idf-keyword   0.76    religious_moral   0.40    0.36     MEDIUM
+  97          cho    power_political    idf-keyword   1.03           abstract   0.66    0.37     MEDIUM
+  14       pollen religious_devotion    idf-keyword   1.07     power_personal   0.71    0.37     MEDIUM
+  42    knowledge       power_divine    idf-keyword   1.25           abstract   0.88    0.37        LOW
+ 164      central              urban    idf-keyword   1.03           commerce   0.66    0.37     MEDIUM
+ 138         sigh    power_political    idf-keyword   0.79           domestic   0.41    0.38     MEDIUM
+  38       writer           abstract    idf-keyword   1.48              urban   1.10    0.38        LOW
+  81     intimacy              urban    idf-keyword   0.64           conflict   0.25    0.39       HIGH
+ 120       copied           abstract    idf-keyword   1.49           commerce   1.10    0.39        LOW
+ 126       notice    power_political    idf-keyword   1.47           commerce   1.05    0.42        LOW
+  63 RANDOM_touchstone             legacy    idf-keyword   1.12   religious_cosmic   0.70    0.42     MEDIUM
+  32         plus       power_divine    idf-keyword   1.46    religious_moral   1.03    0.43        LOW
+ 112      setting           abstract    idf-keyword   0.88           commerce   0.45    0.43     MEDIUM
+  36      mission           temporal    idf-keyword   0.90           conflict   0.46    0.44     MEDIUM
+ 102      amazing           temporal    idf-keyword   0.88           conflict   0.44    0.44       HIGH
+ 197        funny              urban    idf-keyword   1.25    power_political   0.79    0.46     MEDIUM
+  89     embraced power_institutional    idf-keyword   1.34           temporal   0.88    0.47     MEDIUM
+ 130        knows power_institutional    idf-keyword   1.03           conflict   0.56    0.47     MEDIUM
+ 142      seconds             legacy    idf-keyword   1.18           domestic   0.71    0.47     MEDIUM
+ 107        raise           commerce    idf-keyword   1.13           abstract   0.66    0.47     MEDIUM
+  96    officials       power_divine    idf-keyword   1.27             bodily   0.80    0.47     MEDIUM
+  65  RANDOM_tête           commerce    idf-keyword   1.01              craft   0.52    0.49     MEDIUM
+  10     immortal    religious_moral    idf-keyword   0.93           conflict   0.44    0.50       HIGH
+  60  RANDOM_soul           conflict    idf-keyword   1.44           identity   0.94    0.50     MEDIUM
+
+--- Chaos-Classified Dreams (all, sorted by margin) ---
+  ID         Seed  Temp Jumps         Method  Score                2nd  2ndSc  Margin       Tier
+------------------------------------------------------------------------------------------------------
+  46         lord   0.9    15   raw-fallback   0.52 religious_devotion   0.52    0.00  TENTATIVE
+   3       sinned   0.8     9    idf-keyword   0.46 religious_devotion   0.41    0.05  TENTATIVE
+  23         soul   1.3    13    idf-keyword   0.83    religious_moral   0.66    0.17        LOW
+  75       gospel   1.0    10    idf-keyword   1.72            natural   1.06    0.65     MEDIUM
+
+--- Dreams with Raw/IDF Margin Divergence (≥1.0) ---
+  ID         Seed            Primary RawMarg IDFMarg   Diff
+------------------------------------------------------------
+  28        decay            natural    2.00    0.31  -1.69
+  18        ellen            natural    2.00    0.66  -1.34
+  19       tenant           commerce    1.00    0.00  -1.00
+  46         lord              chaos    1.00    0.00  -1.00
+
+======================================================================
