@@ -21,6 +21,7 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 | Phase 2 Drift-Dream Correlator | ✅ **BUILT** | `drift_dream_correlator_v2.py` — full-corpus drift classification |
 | Phase 2 Archetype Co-occurrence | ✅ **BUILT** | `archetype_cooccurrence.py` — archetype pair analysis |
 | Phase 2 Confidence Scorer | ✅ **BUILT** | `confidence_scorer.py` — margin-based confidence tiers for all 200 dreams |
+| Phase 2 Wilderness Rename | ✅ **COMPLETE** | `chaos` → `wilderness`, 4 dreams reclassified |
 
 **Phase 1 Results:**
 - 101 books downloaded (~10M+ words)
@@ -54,6 +55,8 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 |||||- **Chaos archetype investigation (Sep 16)** — Only 1 of 4 "chaos" dreams is genuine (3 chaos keywords). Two are IDF overcorrections / weak margins. The archetype captures *thematic* wilderness/desolation, not structural chaos. Top 10 highest-jump dreams are classified as temporal, conflict, natural, legacy — never chaos.
 ||||||- **Confidence scorer built (Sep 17)** — `confidence_scorer.py` analyzes all 200 dreams using IDF-weighted relative margins. Finding: 15.5% HIGH, 23.5% MEDIUM, 33.0% LOW, 28.0% TENTATIVE confidence. All 4 "chaos" dreams are LOW or TENTATIVE. All 6 raw-fallback dreams are TENTATIVE (margin 0.00). Raw/IDF divergence is significant for some dreams (#28 decay: raw margin 2.00 → IDF 0.31).
 ||||||- **Confidence backfill to DB (Sep 18)** — `backfill_confidence.py` adds `confidence_tier`, `confidence_margin`, `confidence_relative` columns to `dream_reflections` and populates all 200 rows. Excluding TENTATIVE dreams sharpens archetype distribution: `bodily` drops from 10→3 (70% were weak signal), `unclassifiable` disappears entirely. HIGH-confidence dreams average 21.5 jumps (vs 20.1 for TENTATIVE), suggesting structural chaos doesn't preclude classification confidence.
+58|||||||- **Wilderness rename (Sep 19)** — Renamed `chaos` archetype → `wilderness` with curated keywords (wild, desolate, waste, storm). Removed spurious keywords (tumult, confusion, disorder, anarchy, uncontrolled) that never appeared in corpus dreams or belonged elsewhere. 4 dreams reclassified: #3 → religious_devotion, #23 → wilderness, #46 → unclassifiable, #75 → natural. Archaic 'chaos' label dissolved — none of its dreams were about structural chaos.
+59||||||- **Bodily archetype diagnosed as structural artifact (Sep 20)** — 10 dreams (5% of corpus), 0 HIGH, 70% TENTATIVE. Root cause: bodily keywords (hand, eye, heart, body, arm, face, head) have IDF values of 0.01–0.54 vs distinctive keywords at 1.4–4.6 — 15–45× less discriminative. Bodily is universal vocabulary noise, not a coherent thematic category. 4× overrepresentation among lowest-confidence dreams. Recommendation: apply IDF penalty (×0.25) to bodily keywords.
 
 ---
 

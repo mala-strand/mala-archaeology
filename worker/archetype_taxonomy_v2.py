@@ -44,7 +44,7 @@ ARCHETYPES_V2 = {
     'bodily': ['hand', 'eye', 'heart', 'blood', 'flesh', 'bone', 'face', 'head', 'foot', 'voice', 'breath', 'touch', 'body', 'skin', 'hands', 'arm', 'arms', 'bones', 'eyes'],
     'domestic': ['home', 'house', 'family', 'mother', 'father', 'child', 'hearth', 'kitchen', 'bed', 'room', 'door', 'window', 'fire', 'table', 'corner', 'floor', 'sat', 'sitting', 'chair', 'children', 'sister'],
     'conflict': ['war', 'battle', 'fight', 'enemy', 'sword', 'death', 'kill', 'wound', 'struggle', 'defeat', 'victory', 'weapon', 'armor', 'army', 'campaign', 'fought', 'retreat'],
-    'chaos': ['wild', 'tumult', 'confusion', 'storm', 'uncontrolled', 'disorder', 'waste', 'desolate', 'chaos', 'anarchy'],
+    'wilderness': ['wild', 'desolate', 'waste', 'storm'],
     'knowledge': ['book', 'write', 'read', 'learn', 'know', 'think', 'mind', 'wisdom', 'truth', 'false', 'understand', 'study', 'school', 'reading', 'writing', 'written', 'note'],
     
     # Tier 2: POWER subtypes (split from v1 'power')
@@ -218,7 +218,7 @@ def project_v2_distribution():
     print("=" * 60)
     
     # Group by tier for clarity
-    tier1 = ['bodily', 'domestic', 'conflict', 'chaos', 'knowledge']
+    tier1 = ['bodily', 'domestic', 'conflict', 'wilderness', 'knowledge']
     tier2_power = ['power_political', 'power_divine', 'power_personal', 'power_institutional']
     tier2_religious = ['religious_devotion', 'religious_moral', 'religious_cosmic']
     tier3 = ['temporal', 'urban', 'natural', 'legacy', 'craft', 'identity', 'commerce', 'abstract']
@@ -343,7 +343,7 @@ def analyze_stored_v2_distribution():
     """)
     dist = cursor.fetchall()
 
-    tier1 = ['bodily', 'domestic', 'conflict', 'chaos', 'knowledge']
+    tier1 = ['bodily', 'domestic', 'conflict', 'wilderness', 'knowledge']
     tier2_power = ['power_political', 'power_divine', 'power_personal', 'power_institutional']
     tier2_religious = ['religious_devotion', 'religious_moral', 'religious_cosmic']
     tier3 = ['temporal', 'urban', 'natural', 'legacy', 'craft', 'identity', 'commerce', 'abstract']
