@@ -91,6 +91,24 @@ def extract_words_from_dream(dream_text: str) -> list:
     return words
 
 
+# IDF penalty multiplier for bodily archetype keywords.
+# Bodily keywords (hand, eye, heart, body, arm, face, head) have IDF
+# 0.01–0.54 vs distinctive keywords at 1.4–4.6 (15–45× less discriminative).
+# They are universal vocabulary noise, not a coherent thematic category.
+BODILY_IDF_PENALTY = 0.25
+
+
+def load_idf_weights(cache_path=None):
+    """Load cached IDF weights from keyword_idf_scorer.py run."""
+    import json
+    if cache_path is None:
+        cache_path = Path(__file__).parent.parent / "cache" / "keyword_idf_weights.json"
+    if not cache_path.exists():
+        return None
+    with open(cache_path, "r") as f:
+        return json.load(f)
+
+
 def score_archetypes_v2(words: list) -> dict:
     """Score dream against v2 archetype taxonomy."""
     word_set = set(words)
@@ -98,6 +116,33 @@ def score_archetypes_v2(words: list) -> dict:
     for archetype, keywords in ARCHETYPES_V2.items():
         matches = word_set.intersection(keywords)
         scores[archetype] = len(matches)
+    return scores
+
+
+def score_archetypes_v2_idf(words: list, idf_weights: dict = None,
+                            archetype_penalties: dict = None) -> dict:
+    """
+    Score dream against v2 archetype taxonomy using IDF-weighted keywords.
+
+    Each keyword match contributes its IDF weight instead of 1.
+    Archetypes listed in *archetype_penalties* have their total score
+    multiplied by the penalty value after summing (e.g. bodily ×0.25).
+    """
+    if idf_weights is None:
+        idf_weights = load_idf_weights() or {}
+    if archetype_penalties is None:
+        archetype_penalties = {'bodily': BODILY_IDF_PENALTY}
+
+    word_set = set(words)
+    scores = {}
+    for archetype, keywords in ARCHETYPES_V2.items():
+        total = 0.0
+        for kw in keywords:
+            if kw in word_set:
+                total += idf_weights.get(kw, 1.0)
+        # Apply archetype-level penalty multiplier
+        penalty = archetype_penalties.get(archetype, 1.0)
+        scores[archetype] = total * penalty
     return scores
 
 
