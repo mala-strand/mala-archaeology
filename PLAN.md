@@ -213,11 +213,11 @@ When `SELF_HOSTED_ENDPOINT` is set (once the local model plan is live), all arch
 
 Extracted from work DB 2026-09-11 — hobbies belong in files, not tasks.
 
-1. **Stronger null model for gravity-well test** — Shuffle co-occurrence or permute SVD loadings to build proper null distribution. Currently lacks statistical rigor.
+1. ~~**Stronger null model for gravity-well test**~~ — **DONE (Sep 23)**. `null_model_test.py` built with random-seed and random-words nulls. Finding: gravity-well hypothesis **rejected**. At all scales, actual accuracy is indistinguishable from or worse than null. Dreams are genuinely emergent.
 
-2. **Basin-vs-rim test (top-100/200 neighbours)** — Gravity-well test uses top-20 only; may miss basin structure at larger scales. Compare top-20 vs top-100 vs top-200.
+2. ~~**Basin-vs-rim test (top-100/200 neighbours)**~~ — **DONE (Sep 22, invalidated Sep 23)**. Monotonic accuracy increase (32.3% → 35.5% → 38.7%) was artifactual — classifier base-rate bias, not basin structure.
 
-3. **Public site (Render-hosted)** — Interactive dream browsing + drift viz. Gated on #1 and #2 being statistically solid.
+3. **Public site (Render-hosted)** — Interactive dream browsing + drift viz. Gated on statistical solidity; now ungated since #1/#2 are resolved (negatively). Could proceed if desired.
 
 ---
 

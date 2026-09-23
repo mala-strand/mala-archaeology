@@ -21,7 +21,8 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 | Phase 2 Drift-Dream Correlator | ✅ **BUILT** | `drift_dream_correlator_v2.py` — full-corpus drift classification |
 | Phase 2 Archetype Co-occurrence | ✅ **BUILT** | `archetype_cooccurrence.py` — archetype pair analysis |
 | Phase 2 Confidence Scorer | ✅ **BUILT** | `confidence_scorer.py` — margin-based confidence tiers for all 200 dreams |
-| Phase 2 Wilderness Rename | ✅ **COMPLETE** | `chaos` → `wilderness`, 4 dreams reclassified |
+|| Phase 2 Wilderness Rename | ✅ **COMPLETE** | `chaos` → `wilderness`, 4 dreams reclassified |
+|| Phase 2 Null-Model Test | ✅ **COMPLETE** | `null_model_test.py` — gravity-well hypothesis rejected |
 
 **Phase 1 Results:**
 - 101 books downloaded (~10M+ words)
@@ -58,7 +59,8 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 58|||||||- **Wilderness rename (Sep 19)** — Renamed `chaos` archetype → `wilderness` with curated keywords (wild, desolate, waste, storm). Removed spurious keywords (tumult, confusion, disorder, anarchy, uncontrolled) that never appeared in corpus dreams or belonged elsewhere. 4 dreams reclassified: #3 → religious_devotion, #23 → wilderness, #46 → unclassifiable, #75 → natural. Archaic 'chaos' label dissolved — none of its dreams were about structural chaos.
 |||||||- **Bodily archetype diagnosed as structural artifact (Sep 20)** — 10 dreams (5% of corpus), 0 HIGH, 70% TENTATIVE. Root cause: bodily keywords (hand, eye, heart, body, arm, face, head) have IDF values of 0.01–0.54 vs distinctive keywords at 1.4–4.6 — 15–45× less discriminative. Bodily is universal vocabulary noise, not a coherent thematic category. 4× overrepresentation among lowest-confidence dreams. Recommendation: apply IDF penalty (×0.25) to bodily keywords.
 |||||||- **Bodily penalty validated (Sep 21)** — Plausibility analysis of all 10 formerly-"bodily" dreams: 6 reclassified to clearly better archetypes (power_divine, conflict, religious_cosmic, power_personal, abstract), 3 neutral (still TENTATIVE, no dominant signal), 1 stayed bodily with genuine physical-sensory content. Penalty removes noise without creating false signal.
-|||||||- **Basin-vs-rim test (Sep 22)** — `basin_rim_test.py` compares gravity-well prediction at top-20/100/200 neighbour scales. Finding: accuracy increases monotonically (32.3% → 35.5% → 38.7%). High-temperature dreams benefit most (28.6% → 42.9%). Basin structure confirmed: predictive signal exists beyond the immediate rim. Dreams remain ~60% generative even at deep-basin scale — temperature, era-jumps, and decay create emergent trajectories.
+||||||||- **Basin-vs-rim test (Sep 22)** — `basin_rim_test.py` compares gravity-well prediction at top-20/100/200 neighbour scales. Finding: accuracy increases monotonically (32.3% → 35.5% → 38.7%). High-temperature dreams benefit most (28.6% → 42.9%). *Later invalidated by null-model test (Sep 23)* — the increase is artifactual, not evidence of basin structure.
+||||||||- **Null-model test (Sep 23)** — `null_model_test.py` implements random-seed and random-words null models for gravity-well prediction. Finding: **gravity-well hypothesis rejected**. At top-20, actual accuracy (32.3%) is *worse* than random-seed null (38.8%). At top-200, actual (38.7%) exceeds random-seed null (34.1%) but not significantly (z=+0.59, p=0.36). Random-words null consistently outperforms actual accuracy, indicating classifier base-rate bias. Dreams are genuinely emergent — seed semantics do not constrain archetype outcomes.
 
 ---
 
