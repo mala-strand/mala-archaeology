@@ -217,7 +217,11 @@ Extracted from work DB 2026-09-11 — hobbies belong in files, not tasks.
 
 2. ~~**Basin-vs-rim test (top-100/200 neighbours)**~~ — **DONE (Sep 22, invalidated Sep 23)**. Monotonic accuracy increase (32.3% → 35.5% → 38.7%) was artifactual — classifier base-rate bias, not basin structure.
 
-3. **Public site (Render-hosted)** — Interactive dream browsing + drift viz. Gated on statistical solidity; now ungated since #1/#2 are resolved (negatively). Could proceed if desired.
+3. ~~**Parameter-archetype analysis**~~ — **DONE (Sep 24)**. `parameter_archetype_analysis.py` tested whether generative parameters predict archetype. Finding: **kinetic bias model supported**. Temperature shows small-to-medium association (Cramer's V = 0.239–0.390), but predictive accuracy is below chance. Parameters bias the probability landscape but do not determine individual outcomes.
+
+4. **Public site (Render-hosted)** — Interactive dream browsing + drift viz. Gated on statistical solidity; now ungated since #1–#3 are resolved. Could proceed if desired.
+
+5. **Parameter interaction effects** — Test temp × jump_prob × seed drift score. Does parameter bias vary by seed drift magnitude? (Open)
 
 ---
 
