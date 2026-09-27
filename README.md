@@ -23,6 +23,9 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 | Phase 2 Confidence Scorer | ✅ **BUILT** | `confidence_scorer.py` — margin-based confidence tiers for all 200 dreams |
 || Phase 2 Wilderness Rename | ✅ **COMPLETE** | `chaos` → `wilderness`, 4 dreams reclassified |
 || Phase 2 Null-Model Test | ✅ **COMPLETE** | `null_model_test.py` — gravity-well hypothesis rejected |
+|| Phase 2 Interaction Effects | ✅ **COMPLETE** | `interaction_effects_analysis.py` — escape energy model |
+|| Phase 2 Parameter Landscape Viz | ✅ **COMPLETE** | `visualize_parameter_landscape.py` — 3 faceted plots (scatter/heatmap/confidence) |
+|| Phase 2 Public Site (start) | ✅ **BUILT** | `site/index.html` — static gallery with findings, plots, example dreams |
 
 **Phase 1 Results:**
 - 101 books downloaded (~10M+ words)
@@ -61,9 +64,11 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 |||||||- **Bodily penalty validated (Sep 21)** — Plausibility analysis of all 10 formerly-"bodily" dreams: 6 reclassified to clearly better archetypes (power_divine, conflict, religious_cosmic, power_personal, abstract), 3 neutral (still TENTATIVE, no dominant signal), 1 stayed bodily with genuine physical-sensory content. Penalty removes noise without creating false signal.
 ||||||||- **Basin-vs-rim test (Sep 22)** — `basin_rim_test.py` compares gravity-well prediction at top-20/100/200 neighbour scales. Finding: accuracy increases monotonically (32.3% → 35.5% → 38.7%). High-temperature dreams benefit most (28.6% → 42.9%). *Later invalidated by null-model test (Sep 23)* — the increase is artifactual, not evidence of basin structure.
 |||||||||- **Null-model test (Sep 23)** — `null_model_test.py` implements random-seed and random-words null models for gravity-well prediction. Finding: **gravity-well hypothesis rejected**. At top-20, actual accuracy (32.3%) is *worse* than random-seed null (38.8%). At top-200, actual (38.7%) exceeds random-seed null (34.1%) but not significantly (z=+0.59, p=0.36). Random-words null consistently outperforms actual accuracy, indicating classifier base-rate bias. Dreams are genuinely emergent — seed semantics do not constrain archetype outcomes.
-||||||||||- **Parameter-archetype analysis (Sep 24)** — `parameter_archetype_analysis.py` tests whether generative parameters (temperature, jump_prob) predict archetype. Finding: **kinetic bias model supported**. Temperature shows small association with archetype (Cramer's V = 0.239, ALL; V = 0.390, HIGH+MED confidence). High-temperature dreams skew toward abstract/religious/power archetypes; low-temperature toward concrete/material. BUT predictive accuracy is below chance (3.6% vs 5.3% baseline). Parameters bias the probability landscape but do not determine individual outcomes. Dreams are emergent from stochastic dynamics + semantic topology, not parameter readouts.
+|||||||||||- **Parameter-archetype analysis (Sep 24)** — `parameter_archetype_analysis.py` tests whether generative parameters (temperature, jump_prob) predict archetype. Finding: **kinetic bias model supported**. Temperature shows small association with archetype (Cramer's V = 0.239, ALL; V = 0.390, HIGH+MED confidence). High-temperature dreams skew toward abstract/religious/power archetypes; low-temperature toward concrete/material. BUT predictive accuracy is below chance (3.6% vs 5.3% baseline). Parameters bias the probability landscape but do not determine individual outcomes. Dreams are emergent from stochastic dynamics + semantic topology, not parameter readouts.
+||||||||||||- **Interaction effects: parameters × seed drift (Sep 25)** — `interaction_effects_analysis.py` tests whether parameter bias varies by seed drift magnitude. Finding: **escape energy model**. Temperature-archetype association is strongest for low-drift (stable) seeds (V = 0.676) and weakest for high-drift (unstable) seeds (V = 0.471). Stable seeds have deep semantic basins; temperature provides escape energy. Unstable seeds are already on ridges; their own drift dominates. The *meaning* of temperature reverses by stratum: low-drift + high temp → personal agency/craft; high-drift + high temp → political/abstract. Drift is uncorrelated with parameters (r ≈ 0.03), so the interaction is genuine.
+|||||||||||||- **Parameter landscape visualization (Sep 26)** — `visualize_parameter_landscape.py` generates three faceted plots (scatter, heatmap, confidence) showing how archetype distribution varies across temperature × jump probability, stratified by seed drift. 166 dreams analyzed. Visual finding: low-drift seeds at high temp show maximum archetype dispersion; high-drift seeds cluster densely regardless of parameters. TENTATIVE classifications concentrate in high-drift + high-temp quadrant. `matplotlib` and `pandas` added to `.venv` for plotting.
 
----
+|---
 
 ## Project Structure
 
@@ -103,6 +108,8 @@ archaeology/
 │   ├── semantic_archaeology_draft.md  # Paper draft
 │   ├── figure_*.png                   # Generated figures
 │   └── generate_figures.py            # Figure generation script
+├── site/                       # Static HTML gallery (public-facing)
+│   └── index.html              # Main gallery page with plots + dreams
 ├── notes/                      # Hobby-block session notes
 ├── FINDINGS.md                 # Phase 1 analysis results
 ├── PIXIE_DEBRIEF.md            # Project state documentation

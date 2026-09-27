@@ -219,9 +219,11 @@ Extracted from work DB 2026-09-11 — hobbies belong in files, not tasks.
 
 3. ~~**Parameter-archetype analysis**~~ — **DONE (Sep 24)**. `parameter_archetype_analysis.py` tested whether generative parameters predict archetype. Finding: **kinetic bias model supported**. Temperature shows small-to-medium association (Cramer's V = 0.239–0.390), but predictive accuracy is below chance. Parameters bias the probability landscape but do not determine individual outcomes.
 
-4. **Public site (Render-hosted)** — Interactive dream browsing + drift viz. Gated on statistical solidity; now ungated since #1–#3 are resolved. Could proceed if desired.
+4. ~~**Parameter interaction effects**~~ — **DONE (Sep 25)**. `interaction_effects_analysis.py` tested whether parameter bias varies by seed drift magnitude. Finding: **escape energy model**. Temperature-archetype association is strongest for low-drift seeds (V = 0.676) and weakest for high-drift seeds (V = 0.471). Stable seeds have deep semantic basins; temperature provides escape energy. Unstable seeds are already on ridges; their own drift dominates.
 
-5. **Parameter interaction effects** — Test temp × jump_prob × seed drift score. Does parameter bias vary by seed drift magnitude? (Open)
+5. **Public site (Render-hosted)** — Interactive dream browsing + drift viz. Gated on statistical solidity; now ungated since #1–#4 are resolved. Could proceed if desired.
+
+6. ~~**Visualize parameter landscape**~~ — **DONE (Sep 26)**. `visualize_parameter_landscape.py` built. Three faceted plots (scatter, heatmap, confidence) show escape energy model visually. Low-drift seeds at high temp show maximum dispersion; high-drift seeds cluster regardless of parameters. `matplotlib` + `pandas` added to `.venv`.
 
 ---
 

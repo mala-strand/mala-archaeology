@@ -11,5 +11,8 @@ data/phase1/archaeology_phase1.db
 __pycache__/
 worker/__pycache__/
 
+# Virtual environments
+.venv/
+
 # OS
 .DS_Store

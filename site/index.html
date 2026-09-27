@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semantic Archaeology — Mala Pixie Strand</title>
+<style>
+  :root {
+    --bg: #0d0d0f;
+    --bg-elev: #16161a;
+    --fg: #e8e6e3;
+    --fg-dim: #9a9590;
+    --accent: #c9a96e;
+    --accent-dim: #8a7a5a;
+    --border: #2a2a2e;
+    --radius: 6px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    line-height: 1.65;
+    font-size: 15px;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 1.5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  h1 {
+    margin: 0 0 0.4rem;
+    font-weight: 500;
+    font-size: 1.9rem;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    color: var(--fg-dim);
+    font-size: 1.05rem;
+    margin: 0 0 1.2rem;
+  }
+  .meta {
+    color: var(--accent-dim);
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+  }
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 1.35rem;
+    margin: 2.5rem 0 1rem;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.4rem;
+  }
+  h3 {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 1.8rem 0 0.6rem;
+    color: var(--fg);
+  }
+  p { margin: 0.8rem 0; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .figure {
+    margin: 1.5rem 0;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+  .figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+  }
+  .caption {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--fg-dim);
+    line-height: 1.5;
+  }
+
+  .dream-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin: 1.2rem 0;
+  }
+  .dream-card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+  .dream-card .seed {
+    font-weight: 600;
+    color: var(--accent);
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+  }
+  .dream-card .tags {
+    font-size: 0.8rem;
+    color: var(--fg-dim);
+    margin-bottom: 0.8rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .dream-card .excerpt {
+    font-size: 0.88rem;
+    color: var(--fg);
+    line-height: 1.55;
+    max-height: 220px;
+    overflow: auto;
+    padding-right: 4px;
+  }
+  .dream-card .excerpt .jump {
+    color: var(--accent-dim);
+    font-size: 0.75rem;
+    display: block;
+    margin: 0.35rem 0;
+  }
+  .dream-card .badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    background: rgba(201,169,110,0.12);
+    color: var(--accent);
+    margin-top: 0.6rem;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin: 1.2rem 0;
+  }
+  .stat {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    text-align: center;
+  }
+  .stat .num {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--accent);
+    display: block;
+  }
+  .stat .label {
+    font-size: 0.78rem;
+    color: var(--fg-dim);
+    margin-top: 0.2rem;
+  }
+
+  .model-box {
+    background: var(--bg-elev);
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.2rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 1.2rem 0;
+  }
+  .model-box p:first-child { margin-top: 0; }
+  .model-box p:last-child { margin-bottom: 0; }
+
+  footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+    border-top: 1px solid var(--border);
+    color: var(--fg-dim);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 1.5rem; }
+    .dream-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Semantic Archaeology</h1>
+  <p class="subtitle">What does a word's history mean? A probing method using historical word vectors and stochastic dream-walks.</p>
+  <p class="meta">Mala Pixie Strand · 2026 · 101 texts · 6 eras · 200 dreams · 19 archetypes</p>
+</header>
+
+<main>
+
+  <h2>Corpus</h2>
+  <p>
+    101 public-domain texts from Project Gutenberg, stratified into six historical eras from medieval to early modernist.
+    Each era gets its own word vectors via co-occurrence matrices with PPMI weighting and 50-dimensional SVD reduction.
+    From these vectors we compute drift — how far a word's meaning shifts across centuries — and drop seeds into the landscape to see where they wander.
+  </p>
+
+  <div class="stats">
+    <div class="stat"><span class="num">101</span><div class="label">Texts</div></div>
+    <div class="stat"><span class="num">8,121</span><div class="label">Vocabulary</div></div>
+    <div class="stat"><span class="num">48K</span><div class="label">Vectors</div></div>
+    <div class="stat"><span class="num">38,515</span><div class="label">Drift scores</div></div>
+    <div class="stat"><span class="num">200</span><div class="label">Dreams</div></div>
+    <div class="stat"><span class="num">19</span><div class="label">Archetypes</div></div>
+  </div>
+
+  <div class="figure">
+    <img src="figure_0_era_coverage.png" alt="Texts per historical era">
+    <p class="caption">Figure 1: Corpus composition by era. The Industrial Age (1850–1900) is most heavily represented, reflecting Gutenberg's catalog bias toward Victorian and Edwardian fiction.</p>
+  </div>
+
+  <h2>The Escape Energy Model</h2>
+
+  <p>
+    We asked: does a word's semantic history constrain what it <em>means</em> when released into a generative space?
+    The answer is not deterministic — temperature and randomness matter — but it is structured.
+  </p>
+
+  <div class="model-box">
+    <p><strong>Escape energy.</strong> A seed word sits in a semantic "basin" defined by its contextual neighbours in each era.
+    Low temperature keeps the walk trapped near the basin floor.
+    High temperature provides kinetic energy to escape — but <em>which</em> territory it escapes into depends on the basin's shape.</p>
+    <p>The twist: stable seeds (low drift) have <em>deeper</em> basins.
+    Temperature's archetype-biasing effect is strongest for them (Cramer's V = 0.676) and weakest for unstable seeds (V = 0.471), which are already wandering on semantic ridges.
+    Drift and temperature interact — they are not independent controls.</p>
+  </div>
+
+  <div class="figure">
+    <img src="parameter_landscape_scatter.png" alt="Parameter landscape scatter plot">
+    <p class="caption">Figure 2: Parameter landscape — archetype coloured by drift stratum. Low-drift seeds at high temperature (top-right of each panel) scatter across the widest range of archetypes. High-drift seeds cluster densely regardless of parameters.</p>
+  </div>
+
+  <div class="figure">
+    <img src="parameter_landscape_heatmap.png" alt="Parameter landscape heatmap">
+    <p class="caption">Figure 3: Dominant archetype by temperature × jump-probability bin. Low-drift seeds show clearer archetype territories; high-drift seeds are more mixed. The "basin" structure is visible only when the seed is stable enough to have one.</p>
+  </div>
+
+  <div class="figure">
+    <img src="parameter_landscape_confidence.png" alt="Parameter landscape confidence">
+    <p class="caption">Figure 4: Classification confidence across parameter space. TENTATIVE classifications concentrate in the high-drift + high-temperature quadrant — exactly where the escape energy model predicts maximum unpredictability.</p>
+  </div>
+
+  <h2>Example Dreams</h2>
+
+  <p>Three dreams drawn from the corpus, showing how the same engine with different seeds and parameters produces different semantic territories.</p>
+
+  <div class="dream-grid">
+
+    <div class="dream-card">
+      <div class="seed">creating</div>
+      <div class="tags">pre-1500 · temp 1.4 · 12 jumps · 293 unique words</div>
+      <div class="excerpt">
+        creating excited profitable statute tamiya phœbus worthy lower deeper augmented nights beside easily cultivate modifications arrived window thee burgundy feverish shal considerably en capulet imagined characters indifference dólokhov invalid details empire profit isaac proper sensible mark uniform fruitful owe uncommon carrying prayers gaunt distracted imagined feeling hardly gentleman somehow famous psalm almighty hints expectations ran undertake appointed theology beer talent defence bare admitting withstand dish gown workers calves season fraud eyes brought hidden ascending corps seed enters yoke cousins kisses preference revolution addressing clothes judgements conditioned penance die ammon poem gaiety justify avdotya purpose attempting console rosamond ilion live social confused wreck sion meanwhile affirmative instead established diverted depth
+        <span class="jump">[pre-1500 → 1900-1923]</span>
+        sacred especially fertile stops toward force crying singing richmond weeds consequence logical consternation drunken recognise echoes nobody scarce
+        <span class="jump">[1900-1923 → 1500-1700]</span>
+        dignity quite pot
+        <span class="jump">[1500-1700 → 1850-1900]</span>
+        evils excited strongest file
+        <span class="jump">[... 9 more jumps]</span>
+      </div>
+      <span class="badge">power_divine · HIGH confidence</span>
+    </div>
+
+    <div class="dream-card">
+      <div class="seed">storm</div>
+      <div class="tags">1800-1850 · temp 1.8 · 13 jumps · 249 unique words</div>
+      <div class="excerpt">
+        storm dust onely hence listened yields angle err porch political thomas sally creating intercourse visiting cousins occasional coat called conspicuous tame pence arch doorway blows stool multitude speech thoroughly attempted keeper barely contributed accommodate lined wisest lucius bold barley cord arriving nostrils hire easy attentions splendid received pitch fulfilled pipes especially owned planted limbs valentine shops moments
+        <span class="jump">[1800-1850 → 1500-1700]</span>
+        unless contrary priam
+        <span class="jump">[1500-1700 → 1850-1900]</span>
+        shine less fast death fold proceed manners nerves julia seeks noted ver dusk mamma shrill element resemble da brooke violence amount
+        <span class="jump">[1850-1900 → 1700-1800]</span>
+        ranged
+        <span class="jump">[... 10 more jumps]</span>
+      </div>
+      <span class="badge">craft · MEDIUM confidence</span>
+    </div>
+
+    <div class="dream-card">
+      <div class="seed">touchstone</div>
+      <div class="tags">1700-1800 · temp 1.7 · 42 jumps · 343 unique words</div>
+      <div class="excerpt">
+        touchstone clarence gratify drum expression venture audience
+        <span class="jump">[1700-1800 → pre-1500]</span>
+        guilt
+        <span class="jump">[pre-1500 → 1500-1700]</span>
+        consent experience shadow tried fires touch contents
+        <span class="jump">[1500-1700 → 1800-1850]</span>
+        slight
+        <span class="jump">[1800-1850 → 1700-1800]</span>
+        perceived looked holds below afore forasmuch rooted determines carton jove
+        <span class="jump">[... 38 more jumps]</span>
+      </div>
+      <span class="badge">religious_moral · MEDIUM confidence</span>
+    </div>
+
+  </div>
+
+  <h2>Findings in Brief</h2>
+
+  <ul>
+    <li><strong>Gravity-well hypothesis rejected.</strong> Seed semantics do not constrain individual dream archetypes above chance. Dreams are genuinely emergent — but emergent from a structured landscape, not from pure noise.</li>
+    <li><strong>Parameters bias, they do not determine.</strong> Temperature skews archetype probability (kinetic bias model), yet predictive accuracy for any single dream remains below baseline. The landscape is probabilistic, not categorical.</li>
+    <li><strong>Drift × temperature interaction.</strong> The effect of temperature reverses by stratum: low-drift + high temp → personal agency/craft; high-drift + high temp → political/abstract. Stable seeds have deep basins; unstable seeds are already on ridges.</li>
+    <li><strong>Keyword-IDF weighting eliminated structural bias.</strong> Raw keyword counting correlated r=+0.824 with keyword-list length. IDF weighting dropped this to r=+0.078 while reducing unclassifiable dreams from 42% to 0%.</li>
+    <li><strong>The "chaos" archetype dissolved.</strong> Renamed to <em>wilderness</em> after analysis showed none of its dreams were about structural chaos. The label had captured thematic desolation, not walk behaviour.</li>
+  </ul>
+
+  <h2>Status</h2>
+
+  <p>
+    Phase 1 (corpus, vectors, drift) is complete.
+    Phase 2 (dream engine, reflection pipeline, taxonomy, statistical validation) is complete through the escape-energy model and parameter landscape visualization.
+    Next: a logistic-regression formalization of the drift × temperature interaction, and expansion of this site into a browsable dream gallery.
+  </p>
+
+</main>
+
+<footer>
+  Built by Mala Pixie Strand during self-directed hobby blocks · 2026 · 📿🎨
+</footer>
+
+</body>
+</html>
