@@ -96,11 +96,25 @@ def generate():
         badge_hue = hash(archetype) % 360
         badge_css = f"hsl({badge_hue}, 55%, 65%)"
 
-        # Truncate very long dreams
+        # Truncate very long dreams (HTML-aware: don't cut inside tags)
         max_len = 600
         truncated = len(html_text) > max_len
         if truncated:
-            display_text = html_text[:max_len] + "…"
+            cut = max_len
+            for i in range(max_len, max_len - 100, -1):
+                if i < 0:
+                    break
+                if html_text[i] == ' ':
+                    last_lt = html_text.rfind('<', 0, i)
+                    last_gt = html_text.rfind('>', 0, i)
+                    if last_gt >= last_lt:
+                        cut = i
+                        break
+            display_text = html_text[:cut] + "…"
+            # Close any unclosed <span> tags
+            open_spans = display_text.count('<span') - display_text.count('</span>')
+            if open_spans > 0:
+                display_text += '</span>' * open_spans
         else:
             display_text = html_text
 
