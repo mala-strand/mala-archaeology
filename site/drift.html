@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semantic Drift Explorer — Mala Pixie Strand</title>
+<style>
+  :root {
+    --bg: #0d0d0f;
+    --bg-elev: #16161a;
+    --fg: #e8e6e3;
+    --fg-dim: #9a9590;
+    --accent: #c9a96e;
+    --accent-dim: #8a7a5a;
+    --border: #2a2a2e;
+    --radius: 6px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    line-height: 1.65;
+    font-size: 15px;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 1.5rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  h1 {
+    margin: 0 0 0.4rem;
+    font-weight: 500;
+    font-size: 1.9rem;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    color: var(--fg-dim);
+    font-size: 1.05rem;
+    margin: 0 0 1.2rem;
+  }
+  .meta {
+    color: var(--accent-dim);
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .meta a { color: var(--accent-dim); }
+  .meta a:hover { color: var(--accent); }
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 1.35rem;
+    margin: 2.5rem 0 1rem;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.4rem;
+  }
+  h3 {
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin: 1.8rem 0 0.6rem;
+    color: var(--fg);
+  }
+  p { margin: 0.8rem 0; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .era-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.2rem 0 2rem;
+  }
+  .era-nav a {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    color: var(--fg-dim);
+    transition: all 0.15s;
+  }
+  .era-nav a:hover {
+    border-color: var(--accent-dim);
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .drift-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.92rem;
+  }
+  .drift-table th {
+    text-align: left;
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--fg-dim);
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .drift-table td {
+    padding: 0.55rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .drift-table tr:hover td {
+    background: rgba(255,255,255,0.02);
+  }
+  .drift-table .word {
+    font-weight: 600;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .drift-table .score {
+    font-variant-numeric: tabular-nums;
+    color: var(--fg-dim);
+    white-space: nowrap;
+  }
+  .drift-table .interp {
+    color: var(--fg-dim);
+    font-size: 0.88rem;
+  }
+
+  .neighbor-box {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .neighbor-box h4 {
+    margin: 0 0 0.6rem;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--accent);
+  }
+  .neighbor-box .era-pair {
+    font-size: 0.8rem;
+    color: var(--fg-dim);
+    margin-bottom: 0.8rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .neighbor-box .neighbors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.4rem 0;
+  }
+  .neighbor-box .neighbors span {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: rgba(201,169,110,0.08);
+    border: 1px solid rgba(201,169,110,0.18);
+    border-radius: 4px;
+    font-size: 0.82rem;
+    color: var(--fg);
+  }
+  .neighbor-box .note {
+    margin-top: 0.8rem;
+    font-size: 0.88rem;
+    color: var(--fg-dim);
+    line-height: 1.55;
+  }
+
+  .pattern-box {
+    background: var(--bg-elev);
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.2rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 1.2rem 0;
+  }
+  .pattern-box h4 {
+    margin: 0 0 0.4rem;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--accent);
+  }
+  .pattern-box p { margin: 0.4rem 0; }
+  .pattern-box p:first-child { margin-top: 0; }
+  .pattern-box p:last-child { margin-bottom: 0; }
+
+  footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+    border-top: 1px solid var(--border);
+    color: var(--fg-dim);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 1.5rem; }
+    .drift-table { font-size: 0.85rem; }
+    .drift-table th, .drift-table td { padding: 0.45rem 0.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Semantic Drift Explorer</h1>
+  <p class="subtitle">How word meanings shifted across 500 years of English. 38,288 drift scores, curated and interpreted.</p>
+  <p class="meta"><a href="index.html">← Back to gallery</a> · <a href="dreams.html">Browse dreams →</a> · Mala Pixie Strand · 2026</p>
+</header>
+
+<main>
+
+  <p>Each entry shows a word whose meaning changed significantly between two historical periods. The <strong>drift score</strong> measures how far the word's semantic neighborhood moved: 0.0 means identical meaning, 2.0 means complete opposition. Scores above 0.7 are considered substantial.</p>
+
+  <div class="era-nav">
+    <a href="#pre-1500-1500-1700">pre-1500 → 1500-1700</a>
+    <a href="#1500-1700-1700-1800">1500-1700 → 1700-1800</a>
+    <a href="#1700-1800-1800-1850">1700-1800 → 1800-1850</a>
+    <a href="#1800-1850-1850-1900">1800-1850 → 1850-1900</a>
+    <a href="#1850-1900-1900-1923">1850-1900 → 1900-1923</a>
+  </div>
+
+  <h2 id="pre-1500-1500-1700">pre-1500 → 1500-1700</h2>
+  <p class="meta">7,688 words analyzed · avg drift 0.70 · The Reformation and the birth of print</p>
+
+  <table class="drift-table">
+    <thead><tr><th>Word</th><th>Score</th><th>Interpretation</th></tr></thead>
+    <tbody>
+      <tr><td class="word">lord</td><td class="score">1.30</td><td class="interp">Courtly/religious patronage → biblical scriptural authority (Saul, oil, utterance)</td></tr>
+      <tr><td class="word">writ</td><td class="score">1.28</td><td class="interp">Sacred texts → legal documents and authorship</td></tr>
+      <tr><td class="word">unavoidable</td><td class="score">1.26</td><td class="interp">Theological necessity → secular inevitability</td></tr>
+      <tr><td class="word">bethel</td><td class="score">1.25</td><td class="interp">Biblical sacred place → metaphorical refuge</td></tr>
+      <tr><td class="word">contributed</td><td class="score">1.25</td><td class="interp">Religious offering → secular participation</td></tr>
+      <tr><td class="word">writer</td><td class="score">1.24</td><td class="interp">Scribe/copyist → creative author</td></tr>
+      <tr><td class="word">yea</td><td class="score">1.23</td><td class="interp">Formal affirmation → archaic/dialectal</td></tr>
+      <tr><td class="word">tobacco</td><td class="score">1.23</td><td class="interp">New World commodity → normalized vice</td></tr>
+      <tr><td class="word">creating</td><td class="score">1.23</td><td class="interp">Divine creation → human making</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pattern-box">
+    <h4>Pattern: The Great Secularization (revised)</h4>
+    <p>The initial framing — religious words becoming secular — is only half right. <strong>lord</strong> actually moved <em>deeper</em> into biblical language (Saul, oil, utterance), not away from it. The real secularization is subtler: words like <strong>writ</strong>, <strong>writer</strong>, and <strong>creating</strong> shifted from divine to human agency. Print culture created the modern author.</p>
+  </div>
+
+  <h2 id="1500-1700-1700-1800">1500-1700 → 1700-1800</h2>
+  <p class="meta">7,703 words analyzed · avg drift 0.68 · The Enlightenment</p>
+
+  <table class="drift-table">
+    <thead><tr><th>Word</th><th>Score</th><th>Interpretation</th></tr></thead>
+    <tbody>
+      <tr><td class="word">mission</td><td class="score">1.24</td><td class="interp">Religious pilgrimage → secular purpose / duty</td></tr>
+      <tr><td class="word">vote</td><td class="score">1.07</td><td class="interp">Religious assent → political franchise</td></tr>
+      <tr><td class="word">angels</td><td class="score">1.09</td><td class="interp">Literal messengers → metaphorical goodness</td></tr>
+      <tr><td class="word">consternation</td><td class="score">1.10</td><td class="interp">Religious dread → general alarm</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pattern-box">
+    <h4>Pattern: Political Secularization</h4>
+    <p>The Enlightenment accelerated what the Reformation began. <strong>mission</strong> and <strong>vote</strong> both shed their ecclesiastical skin. Words that once required a church now functioned in coffee houses and parliaments.</p>
+  </div>
+
+  <h2 id="1700-1800-1800-1850">1700-1800 → 1800-1850</h2>
+  <p class="meta">7,703 words analyzed · avg drift 0.68 · Romanticism and the rise of industry</p>
+
+  <table class="drift-table">
+    <thead><tr><th>Word</th><th>Score</th><th>Interpretation</th></tr></thead>
+    <tbody>
+      <tr><td class="word">immortal</td><td class="score">1.26</td><td class="interp">Religious eternal life → secular fame and legacy</td></tr>
+      <tr><td class="word">touchstone</td><td class="score">1.20</td><td class="interp">Literal gold-test → metaphorical standard of judgment</td></tr>
+      <tr><td class="word">shorter</td><td class="score">1.24</td><td class="interp">Physical measurement → temporal urgency</td></tr>
+      <tr><td class="word">local</td><td class="score">1.23</td><td class="interp">Specific place → general vicinity</td></tr>
+      <tr><td class="word">writer</td><td class="score">1.22</td><td class="interp">Professional scribe → literary artist</td></tr>
+      <tr><td class="word">hearken</td><td class="score">1.14</td><td class="interp">Biblical obedience → archaic poeticism</td></tr>
+    </tbody>
+  </table>
+
+  <div class="neighbor-box">
+    <h4>Deep-dive: immortal</h4>
+    <div class="era-pair">1700-1800 → 1800-1850 · drift 1.26</div>
+    <div class="neighbors"><strong>1700-1800:</strong> <span>th</span> <span>needful</span> <span>torments</span> <span>liberality</span> <span>salvation</span> <span>worthless</span></div>
+    <div class="neighbors"><strong>1800-1850:</strong> <span>mouths</span> <span>vile</span> <span>reap</span> <span>resign</span> <span>preservation</span> <span>infernal</span> <span>novel</span> <span>philosopher</span></div>
+    <p class="note"><strong>novel</strong> and <strong>philosopher</strong> appear alongside <strong>infernal</strong> and <strong>preservation</strong>. Immortality became a concept you could <em>discuss</em>, <em>write about</em>, and <em>apply</em> rather than just <em>believe in</em>.</p>
+  </div>
+
+  <h2 id="1800-1850-1850-1900">1800-1850 → 1850-1900</h2>
+  <p class="meta">7,703 words analyzed · avg drift 0.70 · Full industrialization</p>
+
+  <table class="drift-table">
+    <thead><tr><th>Word</th><th>Score</th><th>Interpretation</th></tr></thead>
+    <tbody>
+      <tr><td class="word">crowded</td><td class="score">1.25</td><td class="interp">Physical space → industrial urban density</td></tr>
+      <tr><td class="word">solicitation</td><td class="score">1.16</td><td class="interp">Earnest request → commercial or moral entreaty</td></tr>
+      <tr><td class="word">chastity</td><td class="score">1.12</td><td class="interp">Religious virtue → social/moral constraint</td></tr>
+      <tr><td class="word">valiant</td><td class="score">1.12</td><td class="interp">Knightly courage → abstract moral quality</td></tr>
+      <tr><td class="word">exempt</td><td class="score">1.12</td><td class="interp">Religious dispensation → legal/statistical exception</td></tr>
+      <tr><td class="word">manufacturer</td><td class="score">1.07</td><td class="interp">Craftsman → industrial capitalist</td></tr>
+    </tbody>
+  </table>
+
+  <div class="neighbor-box">
+    <h4>Deep-dive: crowded</h4>
+    <div class="era-pair">1800-1850 → 1850-1900 · drift 1.25</div>
+    <div class="neighbors"><strong>1800-1850:</strong> <span>shouting</span> <span>tents</span> <span>narrow</span> <span>hospital</span> <span>pestilence</span> <span>ragged</span></div>
+    <div class="neighbors"><strong>1850-1900:</strong> <span>diverted</span> <span>pattern</span> <span>hatchway</span> <span>deliver</span> <span>gold</span> <span>pasture</span> <span>estimated</span> <span>sexes</span></div>
+    <p class="note">From <em>physical density in distress</em> (war, disease, poverty) to <em>social/economic density</em>. <strong>Pattern</strong> and <strong>estimated</strong> suggest statistical/urban thinking. <strong>Sexes</strong> hints at crowded social spaces — ballrooms, parlors. The word became about <em>population</em> and <em>society</em>, not just <em>bodies in a space</em>.</p>
+  </div>
+
+  <h2 id="1850-1900-1900-1923">1850-1900 → 1900-1923</h2>
+  <p class="meta">7,703 words analyzed · avg drift 0.61 · Early Modernism and the Great War</p>
+
+  <table class="drift-table">
+    <thead><tr><th>Word</th><th>Score</th><th>Interpretation</th></tr></thead>
+    <tbody>
+      <tr><td class="word">sincerely</td><td class="score">1.18</td><td class="interp">Religious devotion → epistolary convention</td></tr>
+      <tr><td class="word">pastors</td><td class="score">1.06</td><td class="interp">Shepherd-metaphor → professional clergy</td></tr>
+      <tr><td class="word">sensuous</td><td class="score">1.05</td><td class="interp">Moral danger → aesthetic category (Keats → Pater)</td></tr>
+      <tr><td class="word">precept</td><td class="score">1.05</td><td class="interp">Moral rule → psychological principle</td></tr>
+      <tr><td class="word">flour</td><td class="score">1.04</td><td class="interp">Ground grain → industrial commodity</td></tr>
+    </tbody>
+  </table>
+
+  <div class="pattern-box">
+    <h4>Pattern: The Professionalization of Virtue</h4>
+    <p>The early 20th century saw moral and religious vocabulary becoming bureaucratic and aesthetic. <strong>sincerely</strong> became how you end a letter, not how you pray. <strong>sensuous</strong> became an art-critical term. The language of the soul became the language of the office and the gallery.</p>
+  </div>
+
+  <h2>Methodology</h2>
+  <p>Drift scores are computed as <code>1 - cosine_similarity(vector[era_from], vector[era_to])</code> where vectors are 50-dimensional word embeddings trained via PPMI-weighted co-occurrence matrices and SVD reduction. Each vector represents a word's semantic neighborhood in a given historical period.</p>
+  <p>Corpus: 101 public-domain texts from Project Gutenberg, stratified into 6 eras from pre-1500 to 1923. Stopwords and boilerplate excluded. Zero-norm vectors (words absent in one era) skipped.</p>
+
+</main>
+
+<footer>
+  <p>Built by Mala Pixie Strand · <a href="index.html">Back to main gallery</a></p>
+</footer>
+
+</body>
+</html>

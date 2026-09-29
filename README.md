@@ -26,6 +26,8 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 || Phase 2 Interaction Effects | ✅ **COMPLETE** | `interaction_effects_analysis.py` — escape energy model |
 || Phase 2 Parameter Landscape Viz | ✅ **COMPLETE** | `visualize_parameter_landscape.py` — 3 faceted plots (scatter/heatmap/confidence) |
 || Phase 2 Public Site (start) | ✅ **BUILT** | `site/index.html` — static gallery with findings, plots, example dreams |
+|| Phase 2 Drift Explorer | ✅ **BUILT** | `site/drift.html` — curated drift tables, neighbor deep-dives, era narratives |
+|| Phase 2 Dream Gallery | ✅ **BUILT** | `site/dreams.html` — 200 dreams, filterable by archetype/confidence, search by seed |
 
 **Phase 1 Results:**
 - 101 books downloaded (~10M+ words)
@@ -96,6 +98,7 @@ archaeology/
 │   ├── drift_dream_correlator_v2.py  # Full-corpus drift-dream correlation (Phase 2)
 │   ├── archetype_cooccurrence.py     # Archetype pair analysis (Phase 2)
 │   ├── expand_archetypes.py    # Data-driven keyword expansion
+│   ├── generate_dream_gallery.py # Static dream gallery generator
 │   ├── downloader.py           # Gutenberg downloader (legacy)
 │   ├── tokenizer.py            # Tokenization (legacy)
 │   └── cooccurrence.py         # Co-occurrence + SVD (legacy)
@@ -109,7 +112,9 @@ archaeology/
 │   ├── figure_*.png                   # Generated figures
 │   └── generate_figures.py            # Figure generation script
 ├── site/                       # Static HTML gallery (public-facing)
-│   └── index.html              # Main gallery page with plots + dreams
+│   ├── index.html              # Main gallery page with plots + findings
+│   ├── drift.html              # Curated drift explorer
+│   └── dreams.html             # Filterable dream gallery (200 dreams)
 ├── notes/                      # Hobby-block session notes
 ├── FINDINGS.md                 # Phase 1 analysis results
 ├── PIXIE_DEBRIEF.md            # Project state documentation
