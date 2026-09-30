@@ -225,6 +225,8 @@ Extracted from work DB 2026-09-11 — hobbies belong in files, not tasks.
 
 6. ~~**Visualize parameter landscape**~~ — **DONE (Sep 26)**. `visualize_parameter_landscape.py` built. Three faceted plots (scatter, heatmap, confidence) show escape energy model visually. Low-drift seeds at high temp show maximum dispersion; high-drift seeds cluster regardless of parameters. `matplotlib` + `pandas` added to `.venv`.
 
+7. ~~**Logistic regression: drift × temperature interaction**~~ — **DONE (Sep 30)**. `logistic_regression_model.py` built. **Finding: escape energy model NOT supported.** The temp×drift interaction is positive, not negative. Stratified analysis reveals a non-monotonic pattern: medium-drift seeds show the strongest temperature sensitivity (OR 2.422), not low-drift. Temperature matters most at intermediate drift — where seeds are unstable enough to be movable, but stable enough to have directional bias.
+
 ---
 
 ## Milestone Gates

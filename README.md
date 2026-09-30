@@ -24,7 +24,8 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 || Phase 2 Wilderness Rename | ✅ **COMPLETE** | `chaos` → `wilderness`, 4 dreams reclassified |
 || Phase 2 Null-Model Test | ✅ **COMPLETE** | `null_model_test.py` — gravity-well hypothesis rejected |
 || Phase 2 Interaction Effects | ✅ **COMPLETE** | `interaction_effects_analysis.py` — escape energy model |
-|| Phase 2 Parameter Landscape Viz | ✅ **COMPLETE** | `visualize_parameter_landscape.py` — 3 faceted plots (scatter/heatmap/confidence) |
+||| Phase 2 Parameter Landscape Viz | ✅ **COMPLETE** | `visualize_parameter_landscape.py` — 3 faceted plots (scatter/heatmap/confidence) |
+||| Phase 2 Logistic Regression | ✅ **BUILT** | `logistic_regression_model.py` — formal drift×temp interaction test |
 || Phase 2 Public Site (start) | ✅ **BUILT** | `site/index.html` — static gallery with findings, plots, example dreams |
 || Phase 2 Drift Explorer | ✅ **BUILT** | `site/drift.html` — curated drift tables, neighbor deep-dives, era narratives |
 || Phase 2 Dream Gallery | ✅ **BUILT** | `site/dreams.html` — 200 dreams, filterable by archetype/confidence, search by seed |
@@ -99,6 +100,7 @@ archaeology/
 │   ├── archetype_cooccurrence.py     # Archetype pair analysis (Phase 2)
 │   ├── expand_archetypes.py    # Data-driven keyword expansion
 │   ├── generate_dream_gallery.py # Static dream gallery generator
+│   ├── logistic_regression_model.py # Formal drift×temp interaction (Phase 2)
 │   ├── downloader.py           # Gutenberg downloader (legacy)
 │   ├── tokenizer.py            # Tokenization (legacy)
 │   └── cooccurrence.py         # Co-occurrence + SVD (legacy)
