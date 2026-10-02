@@ -1,0 +1,70 @@
+============================================================
+DREAM SPACE TOPOLOGY REPORT
+============================================================
+Nodes: 200
+Edges (undirected, 5-NN): 677
+Connected components: 1
+  Component 1: 200 nodes
+Articulation points: 0 ([])
+
+Degree — min: 5, max: 17, mean: 6.77
+
+Clustering coefficient — mean: 0.250, max: 0.700
+
+Archetype assortativity: 49.3% same-primary edges, 50.7% different-primary
+
+Top 10 hub dreams (degree):
+  #63 (RANDOM_touchstone, legacy) — degree 17
+  #72 (RANDOM_creating, bodily) — degree 12
+  #199 (key, power_divine) — degree 12
+  #10 (immortal, religious_moral) — degree 11
+  #34 (ellen, power_divine) — degree 11
+  #59 (RANDOM_table, natural) — degree 11
+  #112 (setting, abstract) — degree 11
+  #115 (saturday, power_divine) — degree 11
+  #120 (copied, abstract) — degree 11
+  #181 (iago, conflict) — degree 11
+
+Most isolated dreams (low degree, far neighbors):
+  #27 (love, domestic) — degree 5, avg neighbor dist 0.660
+  #110 (honey, bodily) — degree 5, avg neighbor dist 0.589
+  #92 (hint, power_personal) — degree 5, avg neighbor dist 0.588
+  #176 (ring, craft) — degree 5, avg neighbor dist 0.586
+  #51 (storm, craft) — degree 5, avg neighbor dist 0.578
+  #195 (picture, domestic) — degree 5, avg neighbor dist 0.569
+  #127 (coloured, religious_devotion) — degree 5, avg neighbor dist 0.568
+  #130 (knows, power_institutional) — degree 5, avg neighbor dist 0.564
+  #137 (cool, bodily) — degree 5, avg neighbor dist 0.561
+  #91 (whisper, unclassifiable) — degree 5, avg neighbor dist 0.557
+
+Densest subregions (high clustering + degree):
+  #123 (wool, conflict) — degree 5, clustering 0.700
+  #162 (wondrous, conflict) — degree 5, clustering 0.700
+  #22 (machine, conflict) — degree 5, clustering 0.600
+  #99 (conditioned, abstract) — degree 5, clustering 0.600
+  #124 (ingratitude, craft) — degree 5, clustering 0.600
+  #134 (edition, natural) — degree 5, clustering 0.600
+  #167 (martial, natural) — degree 5, clustering 0.600
+  #75 (gospel, natural) — degree 6, clustering 0.533
+  #142 (seconds, legacy) — degree 6, clustering 0.533
+  #171 (studying, religious_moral) — degree 6, clustering 0.533
+
+Bridge-like edges (≤1 shared neighbor): 528
+  #171(studying,religious_moral) <-> #198(till,religious_moral) — dist 0.456, shared 1
+  #80(minded,religious_moral) <-> #149(trace,religious_moral) — dist 0.460, shared 0
+  #39(liveth,religious_moral) <-> #52(storm,legacy) — dist 0.461, shared 1
+  #87(loose,abstract) <-> #99(conditioned,abstract) — dist 0.466, shared 1
+  #85(medical,conflict) <-> #90(stepped,bodily) — dist 0.466, shared 1
+  #4(writ,abstract) <-> #31(decay,legacy) — dist 0.470, shared 0
+  #28(decay,natural) <-> #62(RANDOM_publique,natural) — dist 0.472, shared 1
+  #28(decay,natural) <-> #70(RANDOM_decay,religious_devotion) — dist 0.473, shared 1
+  #141(heirs,conflict) <-> #156(specific,conflict) — dist 0.473, shared 0
+  #17(vanity,power_institutional) <-> #41(justice,commerce) — dist 0.474, shared 0
+
+Component archetype composition (largest 3 components):
+  Component 1 (200 nodes):
+    abstract: 20
+    conflict: 19
+    power_divine: 17
+    power_political: 17
+    religious_moral: 16
