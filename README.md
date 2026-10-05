@@ -27,11 +27,14 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 ||| Phase 2 Parameter Landscape Viz | ✅ **COMPLETE** | `visualize_parameter_landscape.py` — 3 faceted plots (scatter/heatmap/confidence) |
 |||| Phase 2 Logistic Regression | ✅ **BUILT** | `logistic_regression_model.py` — formal drift×temp interaction test |
 |||| Phase 2 Dream Topology | ✅ **BUILT** | `dream_topology.py` — graph analysis of dream space: clusters, bridges, assortativity |
+||||| Phase 2 Topology Null Model | ✅ **BUILT** | `dream_topology_null.py` — label-permutation + configuration-model validation of assortativity
+||||| Phase 2 Dream Bridge Analysis | ✅ **BUILT** | `dream_bridge_analysis.py` — cross-archetype edge analysis, liminality scoring, secondary-archetype bridge prediction
 |||| Phase 2 Dream Comparison | ✅ **BUILT** | `dream_compare.py` — dream-to-dream distance across text/archetype/structure |
 |||| Phase 2 Dream Neighbor Map | ✅ **BUILT** | `dream_neighbor_map.py` — full corpus pairwise analysis, adjacency export |
-||| Phase 2 Public Site (start) | ✅ **BUILT** | `site/index.html` — static gallery with findings, plots, example dreams |
+|| Phase 2 Public Site (start) | ✅ **BUILT** | `site/index.html` — static gallery with findings, plots, example dreams |
 || Phase 2 Drift Explorer | ✅ **BUILT** | `site/drift.html` — curated drift tables, neighbor deep-dives, era narratives |
 || Phase 2 Dream Gallery | ✅ **BUILT** | `site/dreams.html` — 200 dreams, filterable by archetype/confidence, search by seed |
+|| Phase 2 Territory Map | ✅ **BUILT** | `dream_territory_map.py` — 2D archetype territories with convex hulls + liminality labels |
 
 **Phase 1 Results:**
 - 101 books downloaded (~10M+ words)
@@ -104,9 +107,12 @@ archaeology/
 │   ├── expand_archetypes.py    # Data-driven keyword expansion
 │   ├── generate_dream_gallery.py # Static dream gallery generator
 │   ├── dream_compare.py        # Dream-to-dream distance comparison (Phase 2)
-   ├── dream_neighbor_map.py   # Full corpus neighbor analysis (Phase 2)
-   ├── dream_topology.py       # Graph topology: clusters, bridges, assortativity (Phase 2)
-   ├── logistic_regression_model.py # Formal drift×temp interaction (Phase 2)
+│   ├── dream_neighbor_map.py   # Full corpus neighbor analysis (Phase 2)
+│   ├── dream_topology.py       # Graph topology: clusters, bridges, assortativity (Phase 2)
+│   ├── dream_topology_null.py  # Null-model validation of archetype assortativity (Phase 2)
+│   ├── dream_bridge_analysis.py # Cross-archetype bridge dreams, liminality scoring (Phase 2)
+│   ├── dream_territory_map.py  # 2D archetype territory visualization (Phase 2)
+│   ├── logistic_regression_model.py # Formal drift×temp interaction (Phase 2)
 │   ├── downloader.py           # Gutenberg downloader (legacy)
 │   ├── tokenizer.py            # Tokenization (legacy)
 │   └── cooccurrence.py         # Co-occurrence + SVD (legacy)

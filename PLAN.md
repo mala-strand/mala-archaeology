@@ -226,6 +226,10 @@ Extracted from work DB 2026-09-11 — hobbies belong in files, not tasks.
 6. ~~**Visualize parameter landscape**~~ — **DONE (Sep 26)**. `visualize_parameter_landscape.py` built. Three faceted plots (scatter, heatmap, confidence) show escape energy model visually. Low-drift seeds at high temp show maximum dispersion; high-drift seeds cluster regardless of parameters. `matplotlib` + `pandas` added to `.venv`.
 
 7. ~~**Logistic regression: drift × temperature interaction**~~ — **DONE (Sep 30)**. `logistic_regression_model.py` built. **Finding: escape energy model NOT supported.** The temp×drift interaction is positive, not negative. Stratified analysis reveals a non-monotonic pattern: medium-drift seeds show the strongest temperature sensitivity (OR 2.422), not low-drift. Temperature matters most at intermediate drift — where seeds are unstable enough to be movable, but stable enough to have directional bias.
+8. ~~**Topology null-model validation**~~ — **DONE (Oct 3)**. `dream_topology_null.py` built. Label-permutation + configuration-model tests both confirm archetype assortativity is highly significant (z > 36–53, p < 0.0001). Neither degree sequence nor graph structure explains it. Archetype structure is a genuine property of dream-space topology.
+9. ~~**Dream bridge analysis**~~ — **DONE (Oct 4)**. `dream_bridge_analysis.py` built. 49.2% of edges are cross-archetype. 188/196 classified dreams are "liminal" (≥1 cross edge). Bridge dreams have lower confidence margins (0.310 vs 0.640), higher seed drift (0.644 vs 0.509), and fewer jumps (20.2 vs 27.9). Secondary archetype predicts bridge target 68.4% of the time. Top bridge pair: bodily + natural (13 edges).
+
+10. ~~**Archetype territory mapping**~~ — **DONE (Oct 5)**. `dream_territory_map.py` built. 2D scatter plot with convex hulls for 14 archetype territories, top-10 liminal dreams labeled. All top-liminal dreams are LOW/TENTATIVE confidence — liminality and uncertainty are the same phenomenon. Territory map + bridge analysis integrated into static site.
 
 ---
 

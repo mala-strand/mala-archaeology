@@ -251,6 +251,35 @@
     <p class="caption">Figure 4: Classification confidence across parameter space. TENTATIVE classifications concentrate in the high-drift + high-temperature quadrant — exactly where the escape energy model predicts maximum unpredictability.</p>
   </div>
 
+  <h2>Dream Topology</h2>
+
+  <p>
+    If dreams are points in semantic space, what does that space <em>look</em>?
+    We built a nearest-neighbor graph from pairwise dream distances (composite metric: text overlap, archetype distance, structural difference)
+    and tested whether archetype labels correspond to genuine neighborhoods or are mere post-hoc decoration.
+  </p>
+
+  <div class="model-box">
+    <p><strong>Assortativity.</strong> 51% of edges connect dreams with the same primary archetype, against a 6.8% baseline — a 7.5× enrichment.
+    For HIGH+MEDIUM confidence dreams, this rises to 87% vs 8.3% baseline.
+    Label-permutation and configuration-model null tests both yield z > 36, p < 0.0001.
+    The structure is real.</p>
+    <p><strong>Liminality.</strong> Yet 49% of edges <em>cross</em> archetype boundaries.
+    96% of dreams have at least one cross-archetype neighbor.
+    These "bridge" dreams have lower confidence margins (0.31 vs 0.64) and higher seed drift — they sit on semantic borders.
+    The secondary archetype predicts which territory a dream bridges into 68% of the time.</p>
+  </div>
+
+  <div class="figure">
+    <img src="dream_territory_map.png" alt="Dream territory map">
+    <p class="caption">Figure 5: Dream territory map. Each point is a dream positioned by semantic distance; convex hulls trace archetype territories. Numbered labels mark the 10 most liminal dreams — those with the most cross-archetype neighbors. The map is not a clean partition; territories overlap, and most dreams live on borders.</p>
+  </div>
+
+  <div class="figure">
+    <img src="dream_bridge_analysis.png" alt="Bridge analysis">
+    <p class="caption">Figure 6: Bridge analysis. Left: liminality score distribution — most dreams have at least one cross-archetype edge. Right: top 10 bridge pairs. The bodily↔natural pair dominates (13 edges), reflecting the structural artifact nature of the bodily archetype.</p>
+  </div>
+
   <h2>Example Dreams</h2>
 
   <p>Three dreams drawn from the corpus, showing how the same engine with different seeds and parameters produces different semantic territories.</p>
@@ -317,15 +346,18 @@
     <li><strong>Drift × temperature interaction.</strong> The effect of temperature reverses by stratum: low-drift + high temp → personal agency/craft; high-drift + high temp → political/abstract. Stable seeds have deep basins; unstable seeds are already on ridges.</li>
     <li><strong>Keyword-IDF weighting eliminated structural bias.</strong> Raw keyword counting correlated r=+0.824 with keyword-list length. IDF weighting dropped this to r=+0.078 while reducing unclassifiable dreams from 42% to 0%.</li>
     <li><strong>The "chaos" archetype dissolved.</strong> Renamed to <em>wilderness</em> after analysis showed none of its dreams were about structural chaos. The label had captured thematic desolation, not walk behaviour.</li>
+    <li><strong>Archetype assortativity is genuine.</strong> 51% of nearest-neighbor edges connect same-primary dreams vs 6.8% baseline (7.5× enrichment). Label-permutation and configuration-model null tests both reject the null at z > 36, p < 0.0001.</li>
+    <li><strong>Bridge dreams are the norm, not the exception.</strong> 96% of classified dreams have at least one cross-archetype neighbor. Liminality correlates with lower confidence (0.31 vs 0.64 margin) and higher seed drift. Counterintuitively, fewer jumps produce more boundary-crossing dreams — stable walks linger on borders; chaotic walks collapse into single archetypes or unclassifiability.</li>
+    <li><strong>Secondary archetype predicts bridge targets.</strong> A dream's secondary label forecasts which archetype territories it touches 68% of the time. The secondary is not decorative — it is a genuine directional signal.</li>
   </ul>
 
   <h2>Status</h2>
 
   <p>
     Phase 1 (corpus, vectors, drift) is complete.
-    Phase 2 (dream engine, reflection pipeline, taxonomy, statistical validation) is complete through the escape-energy model and parameter landscape visualization.
+    Phase 2 (dream engine, reflection pipeline, taxonomy, statistical validation, topology, bridge analysis) is complete.
     <a href="drift.html">Semantic drift explorer</a> and <a href="dreams.html">dream gallery</a> now live.
-    Next: logistic-regression formalization of the drift × temperature interaction.
+    Next: public site deployment (Render), or Phase 3 (generative drift — new words that never existed in any era).
   </p>
 
 </main>

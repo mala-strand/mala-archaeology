@@ -1,0 +1,77 @@
+============================================================
+DREAM SPACE TOPOLOGY — NULL MODEL TESTS
+============================================================
+Total dreams: 200
+Total edges (undirected 5-NN): 677
+Classified dreams (excl. unclassifiable): 196
+Classified edges: 655
+HIGH+MEDIUM confidence edges: 136
+
+------------------------------------------------------------
+NULL MODEL 1: LABEL PERMUTATION
+  (Preserve graph structure, shuffle archetype labels)
+------------------------------------------------------------
+
+All dreams:
+  Actual assortativity:     0.4934
+  Null mean ± std:          0.0618 ± 0.0091
+  Null range:               [0.0443, 0.0842]
+  Z-score:                  47.38
+  P-value (one-tailed):     0.0000
+  Result:                   *** HIGHLY SIGNIFICANT ***
+
+Classified only:
+  Actual assortativity:     0.5084
+  Null mean ± std:          0.0658 ± 0.0083
+  Null range:               [0.0473, 0.0870]
+  Z-score:                  53.38
+  P-value (one-tailed):     0.0000
+  Result:                   *** HIGHLY SIGNIFICANT ***
+
+HIGH+MEDIUM confidence:
+  Actual assortativity:     0.8529
+  Null mean ± std:          0.0711 ± 0.0217
+  Null range:               [0.0294, 0.1397]
+  Z-score:                  36.05
+  P-value (one-tailed):     0.0000
+  Result:                   *** HIGHLY SIGNIFICANT ***
+
+------------------------------------------------------------
+NULL MODEL 2: CONFIGURATION MODEL (STUB MATCHING)
+  (Preserve degree sequence + labels, randomize edges)
+------------------------------------------------------------
+
+All dreams:
+  Actual assortativity:     0.4934
+  Null mean ± std:          0.0520 ± 0.0088
+  Null range:               [0.0340, 0.0827]
+  Z-score:                  49.91
+  P-value (one-tailed):     0.0000
+  Result:                   *** HIGHLY SIGNIFICANT ***
+
+Classified only:
+  Actual assortativity:     0.5084
+  Null mean ± std:          0.0522 ± 0.0085
+  Null range:               [0.0321, 0.0748]
+  Z-score:                  53.43
+  P-value (one-tailed):     0.0000
+  Result:                   *** HIGHLY SIGNIFICANT ***
+
+============================================================
+INTERPRETATION
+============================================================
+
+If Label Permutation is significant:
+  → The observed graph structure places same-archetype dreams closer
+    together than random label assignment would predict.
+    The ARCHETYPE LABELS are non-randomly arranged on the graph.
+
+If Configuration Model is significant:
+  → The specific wiring of edges creates more same-label connections
+    than a random graph with the same degree sequence would.
+    The EDGES themselves are structured by archetype.
+
+If both are significant:
+  → Archetype structure is a genuine property of dream space topology.
+    Neither label distribution nor degree sequence can explain it.
+

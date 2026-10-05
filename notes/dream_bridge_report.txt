@@ -1,0 +1,167 @@
+======================================================================
+DREAM BRIDGE ANALYSIS
+======================================================================
+
+--- Edge Summary ---
+Total classified edges (excluding unclassifiable): 655
+Same-archetype edges: 333 (50.8%)
+Cross-archetype edges: 322 (49.2%)
+
+--- Top Cross-Archetype Bridges ---
+  bodily + natural: 13
+  natural + religious_moral: 9
+  bodily + power_divine: 8
+  abstract + commerce: 8
+  abstract + bodily: 7
+  commerce + religious_devotion: 6
+  natural + religious_devotion: 6
+  domestic + natural: 6
+  conflict + power_political: 6
+  abstract + power_political: 6
+  legacy + religious_moral: 6
+  conflict + religious_moral: 6
+  bodily + conflict: 6
+  power_divine + power_political: 6
+  legacy + natural: 5
+
+--- Liminality Score Distribution ---
+Dreams with cross-archetype edges: 188
+Max liminality: 10
+Mean liminality: 3.43
+Median liminality: 3.0
+
+--- Most Liminal Dreams (most cross-archetype bridges) ---
+  #72 (RANDOM_creating, bodily, TENTATIVE): 10/12 cross-archetype edges
+      bridges to: #18(natural), #28(natural), #56(natural), #59(natural), #190(natural)
+  #63 (RANDOM_touchstone, legacy, MEDIUM): 9/17 cross-archetype edges
+      bridges to: #4(abstract), #5(power_divine), #29(bodily), #30(religious_devotion), #39(religious_moral)
+  #25 (lord, power_political, TENTATIVE): 8/10 cross-archetype edges
+      bridges to: #7(religious_cosmic), #90(bodily), #181(conflict), #60(conflict), #152(conflict)
+  #151 (final, natural, TENTATIVE): 8/9 cross-archetype edges
+      bridges to: #1(legacy), #9(legacy), #39(religious_moral), #64(abstract), #72(bodily)
+  #7 (woman, religious_cosmic, LOW): 7/10 cross-archetype edges
+      bridges to: #43(conflict), #194(conflict), #98(conflict), #25(power_political), #115(power_divine)
+  #34 (ellen, power_divine, TENTATIVE): 7/11 cross-archetype edges
+      bridges to: #8(legacy), #19(commerce), #23(wilderness), #74(religious_cosmic), #104(bodily)
+  #125 (motionless, domestic, TENTATIVE): 7/8 cross-archetype edges
+      bridges to: #86(religious_moral), #198(religious_moral), #108(conflict), #18(natural), #175(legacy)
+  #17 (vanity, power_institutional, TENTATIVE): 6/6 cross-archetype edges
+      bridges to: #41(commerce), #101(power_divine), #158(power_divine), #113(religious_devotion), #58(religious_devotion)
+  #32 (plus, power_divine, LOW): 6/9 cross-archetype edges
+      bridges to: #10(religious_moral), #139(religious_moral), #66(religious_moral), #58(religious_devotion), #80(religious_moral)
+  #35 (publique, power_personal, LOW): 6/6 cross-archetype edges
+      bridges to: #36(temporal), #181(conflict), #33(conflict), #170(bodily), #56(natural)
+  #36 (mission, temporal, MEDIUM): 6/9 cross-archetype edges
+      bridges to: #13(craft), #35(power_personal), #57(power_political), #117(religious_devotion), #150(power_political)
+  #43 (waters, conflict, LOW): 6/7 cross-archetype edges
+      bridges to: #7(religious_cosmic), #115(power_divine), #62(natural), #159(religious_cosmic), #110(bodily)
+  #56 (RANDOM_writ, natural, LOW): 6/8 cross-archetype edges
+      bridges to: #13(craft), #35(power_personal), #198(religious_moral), #72(bodily), #60(conflict)
+  #61 (RANDOM_machine, bodily, LOW): 6/7 cross-archetype edges
+      bridges to: #40(urban), #59(natural), #190(natural), #75(natural), #105(abstract)
+  #77 (oil, natural, TENTATIVE): 6/9 cross-archetype edges
+      bridges to: #80(religious_moral), #88(power_divine), #129(religious_moral), #131(power_institutional), #145(religious_moral)
+
+--- Bridge Dreams vs Non-Bridge Dreams ---
+Bridge dreams (≥1 cross edge): 188
+Non-bridge dreams (0 cross edges): 8
+
+Confidence distribution:
+  HIGH      : bridge  29 ( 15.4%) | non-bridge   2 ( 25.0%)
+  MEDIUM    : bridge  42 ( 22.3%) | non-bridge   5 ( 62.5%)
+  LOW       : bridge  65 ( 34.6%) | non-bridge   1 ( 12.5%)
+  TENTATIVE : bridge  52 ( 27.7%) | non-bridge   0 (  0.0%)
+  UNKNOWN   : bridge   0 (  0.0%) | non-bridge   0 (  0.0%)
+
+Structural means:
+  Temperature:    bridge 1.34 | non-bridge 1.39
+  Jump count:     bridge 20.2 | non-bridge 27.9
+  Seed drift:     bridge 0.644 | non-bridge 0.509
+  Conf margin:    bridge 0.310 | non-bridge 0.640
+
+--- Secondary Archetype as Bridge Predictor ---
+Bridge dreams with a secondary archetype: 187
+Secondary matches a bridge target: 128 (68.4%)
+
+--- Edge Distance Comparison ---
+Mean cross-archetype edge distance:  0.529
+Mean same-archetype edge distance:   0.515
+Cross edges are longer on average
+
+--- Deep Dive: Top 5 Most Liminal Dreams ---
+
+Dream #72
+  Seed: RANDOM_creating  Temp: 1.3  Jumps: 10
+  Primary: bodily  Secondary: natural  Confidence: TENTATIVE (margin 0.01)
+  Seed drift: -1.000
+  Cross-archetype bridges: 10
+    -> #18 (ellen, natural, MEDIUM) dist=0.495
+    -> #28 (decay, natural, LOW) dist=0.490
+    -> #56 (RANDOM_writ, natural, LOW) dist=0.513
+    -> #59 (RANDOM_table, natural, MEDIUM) dist=0.474
+    -> #190 (indies, natural, HIGH) dist=0.481
+    -> #151 (final, natural, TENTATIVE) dist=0.506
+    -> #75 (gospel, natural, MEDIUM) dist=0.515
+    -> #124 (ingratitude, craft, TENTATIVE) dist=0.535
+    -> #160 (gratefully, natural, TENTATIVE) dist=0.537
+    -> #167 (martial, natural, MEDIUM) dist=0.508
+
+Dream #63
+  Seed: RANDOM_touchstone  Temp: 1.3  Jumps: 18
+  Primary: legacy  Secondary: religious_cosmic  Confidence: MEDIUM (margin 0.42)
+  Seed drift: -1.000
+  Cross-archetype bridges: 9
+    -> #4 (writ, abstract, TENTATIVE) dist=0.500
+    -> #5 (lord, power_divine, TENTATIVE) dist=0.523
+    -> #29 (man, bodily, MEDIUM) dist=0.489
+    -> #30 (man, religious_devotion, LOW) dist=0.498
+    -> #39 (liveth, religious_moral, TENTATIVE) dist=0.475
+    -> #49 (table, religious_cosmic, TENTATIVE) dist=0.546
+    -> #55 (RANDOM_soul, urban, LOW) dist=0.526
+    -> #159 (notes, religious_cosmic, LOW) dist=0.543
+    -> #173 (ascending, religious_devotion, TENTATIVE) dist=0.560
+
+Dream #25
+  Seed: lord  Temp: 1.4  Jumps: 15
+  Primary: power_political  Secondary: conflict  Confidence: TENTATIVE (margin 0.03)
+  Seed drift: 0.611
+  Cross-archetype bridges: 8
+    -> #7 (woman, religious_cosmic, LOW) dist=0.522
+    -> #90 (stepped, bodily, TENTATIVE) dist=0.506
+    -> #181 (iago, conflict, HIGH) dist=0.515
+    -> #60 (RANDOM_soul, conflict, MEDIUM) dist=0.518
+    -> #152 (remains, conflict, MEDIUM) dist=0.518
+    -> #85 (medical, conflict, HIGH) dist=0.519
+    -> #123 (wool, conflict, TENTATIVE) dist=0.532
+    -> #165 (sister, domestic, MEDIUM) dist=0.530
+
+Dream #151
+  Seed: final  Temp: 1.3  Jumps: 19
+  Primary: natural  Secondary: legacy  Confidence: TENTATIVE (margin 0.08)
+  Seed drift: 0.608
+  Cross-archetype bridges: 8
+    -> #1 (lord, legacy, MEDIUM) dist=0.569
+    -> #9 (mission, legacy, TENTATIVE) dist=0.451
+    -> #39 (liveth, religious_moral, TENTATIVE) dist=0.524
+    -> #64 (RANDOM_tête, abstract, TENTATIVE) dist=0.528
+    -> #72 (RANDOM_creating, bodily, TENTATIVE) dist=0.506
+    -> #84 (indifference, legacy, LOW) dist=0.509
+    -> #133 (save, legacy, MEDIUM) dist=0.471
+    -> #173 (ascending, religious_devotion, TENTATIVE) dist=0.565
+
+Dream #7
+  Seed: woman  Temp: 1.3  Jumps: 15
+  Primary: religious_cosmic  Secondary: conflict  Confidence: LOW (margin 0.19)
+  Seed drift: 0.412
+  Cross-archetype bridges: 7
+    -> #43 (waters, conflict, LOW) dist=0.511
+    -> #194 (remain, conflict, HIGH) dist=0.512
+    -> #98 (journey, conflict, TENTATIVE) dist=0.515
+    -> #25 (lord, power_political, TENTATIVE) dist=0.522
+    -> #115 (saturday, power_divine, LOW) dist=0.525
+    -> #185 (cards, power_political, LOW) dist=0.527
+    -> #196 (othello, bodily, TENTATIVE) dist=0.561
+
+======================================================================
+END OF REPORT
+======================================================================
