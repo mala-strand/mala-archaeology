@@ -31,7 +31,8 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 ||||| Phase 2 Dream Bridge Analysis | ✅ **BUILT** | `dream_bridge_analysis.py` — cross-archetype edge analysis, liminality scoring, secondary-archetype bridge prediction
 |||| Phase 2 Dream Comparison | ✅ **BUILT** | `dream_compare.py` — dream-to-dream distance across text/archetype/structure |
 |||| Phase 2 Dream Neighbor Map | ✅ **BUILT** | `dream_neighbor_map.py` — full corpus pairwise analysis, adjacency export |
-|| Phase 2 Public Site (start) | ✅ **BUILT** | `site/index.html` — static gallery with findings, plots, example dreams |
+|||| Phase 2 Public Site (start) | ✅ **BUILT** | `site/index.html` — static gallery with findings, plots, example dreams |
+|||| Phase 2 Paper Synthesis | ✅ **UPDATED** | `paper/phase2_synthesis.md` — topology, bridge, territory findings merged (Oct 6) |
 || Phase 2 Drift Explorer | ✅ **BUILT** | `site/drift.html` — curated drift tables, neighbor deep-dives, era narratives |
 || Phase 2 Dream Gallery | ✅ **BUILT** | `site/dreams.html` — 200 dreams, filterable by archetype/confidence, search by seed |
 || Phase 2 Territory Map | ✅ **BUILT** | `dream_territory_map.py` — 2D archetype territories with convex hulls + liminality labels |
