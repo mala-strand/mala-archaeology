@@ -1,0 +1,642 @@
+{
+  "abstract": [
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.7854845523834229,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "computers",
+      "distance_to_target": 0.78191077709198,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5161828994750977
+    },
+    {
+      "word": "para",
+      "distance_to_target": 0.7645342350006104,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.6841764450073242
+    },
+    {
+      "word": "donate",
+      "distance_to_target": 0.7629086971282959,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.32801276445388794
+    },
+    {
+      "word": "formats",
+      "distance_to_target": 0.7582575082778931,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5384916067123413
+    }
+  ],
+  "bodily": [
+    {
+      "word": "para",
+      "distance_to_target": 0.8964864015579224,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.6841764450073242
+    },
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.8882458209991455,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "archive",
+      "distance_to_target": 0.8847975730895996,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.3345034718513489
+    },
+    {
+      "word": "electronically",
+      "distance_to_target": 0.8847368955612183,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.6994851231575012
+    },
+    {
+      "word": "trademark",
+      "distance_to_target": 0.8750861287117004,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.46463245153427124
+    }
+  ],
+  "commerce": [
+    {
+      "word": "para",
+      "distance_to_target": 0.7756561636924744,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.6841764450073242
+    },
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.773638129234314,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "computers",
+      "distance_to_target": 0.7694085836410522,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5161828994750977
+    },
+    {
+      "word": "formats",
+      "distance_to_target": 0.7682308554649353,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5384916067123413
+    },
+    {
+      "word": "org",
+      "distance_to_target": 0.7680967450141907,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4094104766845703
+    }
+  ],
+  "conflict": [
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.8175860643386841,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "org",
+      "distance_to_target": 0.7921614646911621,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4094104766845703
+    },
+    {
+      "word": "formats",
+      "distance_to_target": 0.7850791215896606,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5384916067123413
+    },
+    {
+      "word": "donate",
+      "distance_to_target": 0.7846323847770691,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.32801276445388794
+    },
+    {
+      "word": "online",
+      "distance_to_target": 0.7772698402404785,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4334239363670349
+    }
+  ],
+  "craft": [
+    {
+      "word": "computers",
+      "distance_to_target": 0.8218495845794678,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5161828994750977
+    },
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.8114824295043945,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "org",
+      "distance_to_target": 0.7975271940231323,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4094104766845703
+    },
+    {
+      "word": "donate",
+      "distance_to_target": 0.7971803545951843,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.32801276445388794
+    },
+    {
+      "word": "formats",
+      "distance_to_target": 0.7938098311424255,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5384916067123413
+    }
+  ],
+  "domestic": [
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.8254330158233643,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "donate",
+      "distance_to_target": 0.7920277714729309,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.32801276445388794
+    },
+    {
+      "word": "email",
+      "distance_to_target": 0.7917630672454834,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.35715460777282715
+    },
+    {
+      "word": "org",
+      "distance_to_target": 0.7904468774795532,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4094104766845703
+    },
+    {
+      "word": "computers",
+      "distance_to_target": 0.7897000312805176,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5161828994750977
+    }
+  ],
+  "identity": [
+    {
+      "word": "cubits",
+      "distance_to_target": 0.8519574999809265,
+      "nearest_other": "bodily",
+      "distance_to_nearest_other": 0.5640998482704163
+    },
+    {
+      "word": "holocausts",
+      "distance_to_target": 0.8493898510932922,
+      "nearest_other": "bodily",
+      "distance_to_nearest_other": 0.6620422601699829
+    },
+    {
+      "word": "computer",
+      "distance_to_target": 0.8007193803787231,
+      "nearest_other": "temporal",
+      "distance_to_nearest_other": 0.7048951387405396
+    },
+    {
+      "word": "firstfruits",
+      "distance_to_target": 0.7997663021087646,
+      "nearest_other": "bodily",
+      "distance_to_nearest_other": 0.5773619413375854
+    },
+    {
+      "word": "bardolph",
+      "distance_to_target": 0.787026047706604,
+      "nearest_other": "legacy",
+      "distance_to_nearest_other": 0.5569493770599365
+    }
+  ],
+  "knowledge": [
+    {
+      "word": "para",
+      "distance_to_target": 0.8284489512443542,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.6841764450073242
+    },
+    {
+      "word": "email",
+      "distance_to_target": 0.823289155960083,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.35715460777282715
+    },
+    {
+      "word": "donate",
+      "distance_to_target": 0.817219614982605,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.32801276445388794
+    },
+    {
+      "word": "electronically",
+      "distance_to_target": 0.8113337159156799,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.6994851231575012
+    },
+    {
+      "word": "archive",
+      "distance_to_target": 0.8089216351509094,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.3345034718513489
+    }
+  ],
+  "legacy": [
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.8032344579696655,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "org",
+      "distance_to_target": 0.7811760306358337,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4094104766845703
+    },
+    {
+      "word": "donate",
+      "distance_to_target": 0.7804854512214661,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.32801276445388794
+    },
+    {
+      "word": "formats",
+      "distance_to_target": 0.7773348689079285,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5384916067123413
+    },
+    {
+      "word": "online",
+      "distance_to_target": 0.7714879512786865,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4334239363670349
+    }
+  ],
+  "natural": [
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.7985104918479919,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "electronically",
+      "distance_to_target": 0.7934634685516357,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.6994851231575012
+    },
+    {
+      "word": "computers",
+      "distance_to_target": 0.7807154059410095,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5161828994750977
+    },
+    {
+      "word": "donate",
+      "distance_to_target": 0.7713620662689209,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.32801276445388794
+    },
+    {
+      "word": "org",
+      "distance_to_target": 0.7686063647270203,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4094104766845703
+    }
+  ],
+  "power_divine": [
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.813677191734314,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "donate",
+      "distance_to_target": 0.8016720414161682,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.32801276445388794
+    },
+    {
+      "word": "org",
+      "distance_to_target": 0.8000290393829346,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4094104766845703
+    },
+    {
+      "word": "computers",
+      "distance_to_target": 0.7997734546661377,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5161828994750977
+    },
+    {
+      "word": "formats",
+      "distance_to_target": 0.7954899072647095,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5384916067123413
+    }
+  ],
+  "power_institutional": [
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.8316022157669067,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "donate",
+      "distance_to_target": 0.8066770434379578,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.32801276445388794
+    },
+    {
+      "word": "computers",
+      "distance_to_target": 0.8062477111816406,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5161828994750977
+    },
+    {
+      "word": "para",
+      "distance_to_target": 0.8027712106704712,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.6841764450073242
+    },
+    {
+      "word": "archive",
+      "distance_to_target": 0.7977496385574341,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.3345034718513489
+    }
+  ],
+  "power_personal": [
+    {
+      "word": "electronically",
+      "distance_to_target": 0.8525604605674744,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.6994851231575012
+    },
+    {
+      "word": "holocausts",
+      "distance_to_target": 0.8106948733329773,
+      "nearest_other": "bodily",
+      "distance_to_nearest_other": 0.6620422601699829
+    },
+    {
+      "word": "computer",
+      "distance_to_target": 0.7973498106002808,
+      "nearest_other": "temporal",
+      "distance_to_nearest_other": 0.7048951387405396
+    },
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.7971654534339905,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "para",
+      "distance_to_target": 0.7945666313171387,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.6841764450073242
+    }
+  ],
+  "power_political": [
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.806151270866394,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "computers",
+      "distance_to_target": 0.7971461415290833,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5161828994750977
+    },
+    {
+      "word": "org",
+      "distance_to_target": 0.7827499508857727,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4094104766845703
+    },
+    {
+      "word": "donate",
+      "distance_to_target": 0.7815340757369995,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.32801276445388794
+    },
+    {
+      "word": "email",
+      "distance_to_target": 0.7781659364700317,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.35715460777282715
+    }
+  ],
+  "religious_cosmic": [
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.8483882546424866,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "org",
+      "distance_to_target": 0.8346710205078125,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4094104766845703
+    },
+    {
+      "word": "donate",
+      "distance_to_target": 0.8272099494934082,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.32801276445388794
+    },
+    {
+      "word": "computers",
+      "distance_to_target": 0.8268216848373413,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5161828994750977
+    },
+    {
+      "word": "formats",
+      "distance_to_target": 0.8254004716873169,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5384916067123413
+    }
+  ],
+  "religious_devotion": [
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.8528850078582764,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "org",
+      "distance_to_target": 0.8419898748397827,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4094104766845703
+    },
+    {
+      "word": "formats",
+      "distance_to_target": 0.8373511433601379,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5384916067123413
+    },
+    {
+      "word": "donate",
+      "distance_to_target": 0.8365885019302368,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.32801276445388794
+    },
+    {
+      "word": "online",
+      "distance_to_target": 0.8284972906112671,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4334239363670349
+    }
+  ],
+  "religious_moral": [
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.8428289294242859,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "org",
+      "distance_to_target": 0.8254666924476624,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4094104766845703
+    },
+    {
+      "word": "computers",
+      "distance_to_target": 0.8187534213066101,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5161828994750977
+    },
+    {
+      "word": "donate",
+      "distance_to_target": 0.8176381587982178,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.32801276445388794
+    },
+    {
+      "word": "formats",
+      "distance_to_target": 0.8132831454277039,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5384916067123413
+    }
+  ],
+  "temporal": [
+    {
+      "word": "holocausts",
+      "distance_to_target": 0.8239295482635498,
+      "nearest_other": "bodily",
+      "distance_to_nearest_other": 0.6620422601699829
+    },
+    {
+      "word": "cubits",
+      "distance_to_target": 0.7927581667900085,
+      "nearest_other": "bodily",
+      "distance_to_nearest_other": 0.5640998482704163
+    },
+    {
+      "word": "firstfruits",
+      "distance_to_target": 0.7838817834854126,
+      "nearest_other": "bodily",
+      "distance_to_nearest_other": 0.5773619413375854
+    },
+    {
+      "word": "electronically",
+      "distance_to_target": 0.7693875432014465,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.6994851231575012
+    },
+    {
+      "word": "para",
+      "distance_to_target": 0.7584209442138672,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.6841764450073242
+    }
+  ],
+  "urban": [
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.8041865825653076,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "donate",
+      "distance_to_target": 0.7909823060035706,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.32801276445388794
+    },
+    {
+      "word": "computers",
+      "distance_to_target": 0.7872443199157715,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5161828994750977
+    },
+    {
+      "word": "org",
+      "distance_to_target": 0.7785333395004272,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4094104766845703
+    },
+    {
+      "word": "email",
+      "distance_to_target": 0.7755224108695984,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.35715460777282715
+    }
+  ],
+  "wilderness": [
+    {
+      "word": "redistribution",
+      "distance_to_target": 0.9204410910606384,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5151476263999939
+    },
+    {
+      "word": "donate",
+      "distance_to_target": 0.8943138122558594,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.32801276445388794
+    },
+    {
+      "word": "computers",
+      "distance_to_target": 0.8871520757675171,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.5161828994750977
+    },
+    {
+      "word": "org",
+      "distance_to_target": 0.8833966851234436,
+      "nearest_other": "identity",
+      "distance_to_nearest_other": 0.4094104766845703
+    },
+    {
+      "word": "regress",
+      "distance_to_target": 0.8831226825714111,
+      "nearest_other": "power_personal",
+      "distance_to_nearest_other": 0.620672345161438
+    }
+  ]
+}

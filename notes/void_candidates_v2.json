@@ -1,0 +1,1002 @@
+[
+  {
+    "word": "oui",
+    "distance": 0.7410469055175781,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "computer",
+    "distance": 0.7048951387405396,
+    "nearest_archetype": "temporal"
+  },
+  {
+    "word": "electronically",
+    "distance": 0.6994851231575012,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "para",
+    "distance": 0.6841764450073242,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "holocausts",
+    "distance": 0.6620422601699829,
+    "nearest_archetype": "bodily"
+  },
+  {
+    "word": "holocaust",
+    "distance": 0.6404014825820923,
+    "nearest_archetype": "bodily"
+  },
+  {
+    "word": "regress",
+    "distance": 0.620672345161438,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "warranty",
+    "distance": 0.6202422976493835,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "replacement",
+    "distance": 0.5879688262939453,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "entity",
+    "distance": 0.5797559022903442,
+    "nearest_archetype": "craft"
+  },
+  {
+    "word": "ascii",
+    "distance": 0.5791106224060059,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "firstfruits",
+    "distance": 0.5773619413375854,
+    "nearest_archetype": "bodily"
+  },
+  {
+    "word": "updated",
+    "distance": 0.569251298904419,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "format",
+    "distance": 0.567855954170227,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "cubits",
+    "distance": 0.5640998482704163,
+    "nearest_archetype": "bodily"
+  },
+  {
+    "word": "vanilla",
+    "distance": 0.5586116909980774,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "refund",
+    "distance": 0.5579837560653687,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "bardolph",
+    "distance": 0.5569493770599365,
+    "nearest_archetype": "legacy"
+  },
+  {
+    "word": "com",
+    "distance": 0.5470513105392456,
+    "nearest_archetype": "craft"
+  },
+  {
+    "word": "levi",
+    "distance": 0.5410410165786743,
+    "nearest_archetype": "power_institutional"
+  },
+  {
+    "word": "lucentio",
+    "distance": 0.5405813455581665,
+    "nearest_archetype": "religious_cosmic"
+  },
+  {
+    "word": "formats",
+    "distance": 0.5384916067123413,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "lucius",
+    "distance": 0.5361073017120361,
+    "nearest_archetype": "craft"
+  },
+  {
+    "word": "unconditioned",
+    "distance": 0.530601978302002,
+    "nearest_archetype": "religious_devotion"
+  },
+  {
+    "word": "cressida",
+    "distance": 0.5266339778900146,
+    "nearest_archetype": "bodily"
+  },
+  {
+    "word": "plantagenet",
+    "distance": 0.5254065990447998,
+    "nearest_archetype": "conflict"
+  },
+  {
+    "word": "bonum",
+    "distance": 0.5253884792327881,
+    "nearest_archetype": "religious_devotion"
+  },
+  {
+    "word": "ole",
+    "distance": 0.5228577852249146,
+    "nearest_archetype": "bodily"
+  },
+  {
+    "word": "synthetical",
+    "distance": 0.5223172307014465,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "dis",
+    "distance": 0.5201700329780579,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "samaria",
+    "distance": 0.5179765224456787,
+    "nearest_archetype": "domestic"
+  },
+  {
+    "word": "bianca",
+    "distance": 0.5163311958312988,
+    "nearest_archetype": "religious_moral"
+  },
+  {
+    "word": "computers",
+    "distance": 0.5161828994750977,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "redistribution",
+    "distance": 0.5151476263999939,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "prominently",
+    "distance": 0.5127065181732178,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "troilus",
+    "distance": 0.5116541981697083,
+    "nearest_archetype": "bodily"
+  },
+  {
+    "word": "dave",
+    "distance": 0.511029064655304,
+    "nearest_archetype": "commerce"
+  },
+  {
+    "word": "roubles",
+    "distance": 0.5105757117271423,
+    "nearest_archetype": "religious_cosmic"
+  },
+  {
+    "word": "claudio",
+    "distance": 0.5070770978927612,
+    "nearest_archetype": "religious_cosmic"
+  },
+  {
+    "word": "est",
+    "distance": 0.506013035774231,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "bullion",
+    "distance": 0.5053706169128418,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "critique",
+    "distance": 0.5050467252731323,
+    "nearest_archetype": "religious_devotion"
+  },
+  {
+    "word": "firstborn",
+    "distance": 0.5043665766716003,
+    "nearest_archetype": "domestic"
+  },
+  {
+    "word": "armado",
+    "distance": 0.5038875341415405,
+    "nearest_archetype": "bodily"
+  },
+  {
+    "word": "rams",
+    "distance": 0.501704216003418,
+    "nearest_archetype": "bodily"
+  },
+  {
+    "word": "titus",
+    "distance": 0.5016693472862244,
+    "nearest_archetype": "craft"
+  },
+  {
+    "word": "dodd",
+    "distance": 0.5009282827377319,
+    "nearest_archetype": "legacy"
+  },
+  {
+    "word": "sen",
+    "distance": 0.4994569420814514,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "notre",
+    "distance": 0.49677032232284546,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "bon",
+    "distance": 0.4956910014152527,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "leonato",
+    "distance": 0.4954930543899536,
+    "nearest_archetype": "religious_cosmic"
+  },
+  {
+    "word": "candide",
+    "distance": 0.49228084087371826,
+    "nearest_archetype": "abstract"
+  },
+  {
+    "word": "mon",
+    "distance": 0.49223172664642334,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "thersites",
+    "distance": 0.4897194504737854,
+    "nearest_archetype": "power_political"
+  },
+  {
+    "word": "guilders",
+    "distance": 0.4888101816177368,
+    "nearest_archetype": "commerce"
+  },
+  {
+    "word": "cognition",
+    "distance": 0.4883958697319031,
+    "nearest_archetype": "religious_devotion"
+  },
+  {
+    "word": "jeremias",
+    "distance": 0.48804718255996704,
+    "nearest_archetype": "wilderness"
+  },
+  {
+    "word": "quod",
+    "distance": 0.4817982316017151,
+    "nearest_archetype": "religious_cosmic"
+  },
+  {
+    "word": "signior",
+    "distance": 0.48178327083587646,
+    "nearest_archetype": "bodily"
+  },
+  {
+    "word": "andronicus",
+    "distance": 0.48042136430740356,
+    "nearest_archetype": "craft"
+  },
+  {
+    "word": "capulet",
+    "distance": 0.47941166162490845,
+    "nearest_archetype": "religious_cosmic"
+  },
+  {
+    "word": "esau",
+    "distance": 0.4786139130592346,
+    "nearest_archetype": "craft"
+  },
+  {
+    "word": "costard",
+    "distance": 0.47841280698776245,
+    "nearest_archetype": "craft"
+  },
+  {
+    "word": "user",
+    "distance": 0.47826480865478516,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "jeroboam",
+    "distance": 0.4777628779411316,
+    "nearest_archetype": "legacy"
+  },
+  {
+    "word": "ephraim",
+    "distance": 0.47698909044265747,
+    "nearest_archetype": "power_political"
+  },
+  {
+    "word": "sion",
+    "distance": 0.4761963486671448,
+    "nearest_archetype": "domestic"
+  },
+  {
+    "word": "synthesis",
+    "distance": 0.47361665964126587,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "consumable",
+    "distance": 0.4693719148635864,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "rosaline",
+    "distance": 0.46774822473526,
+    "nearest_archetype": "craft"
+  },
+  {
+    "word": "intuitions",
+    "distance": 0.46771353483200073,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "damages",
+    "distance": 0.4669950604438782,
+    "nearest_archetype": "commerce"
+  },
+  {
+    "word": "copyright",
+    "distance": 0.46686673164367676,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "trademark",
+    "distance": 0.46463245153427124,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "syracuse",
+    "distance": 0.46345990896224976,
+    "nearest_archetype": "power_political"
+  },
+  {
+    "word": "jonathan",
+    "distance": 0.4615519046783447,
+    "nearest_archetype": "abstract"
+  },
+  {
+    "word": "license",
+    "distance": 0.4606330394744873,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "paragraphs",
+    "distance": 0.4587617516517639,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "cade",
+    "distance": 0.4579441547393799,
+    "nearest_archetype": "legacy"
+  },
+  {
+    "word": "huck",
+    "distance": 0.4557111859321594,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "allah",
+    "distance": 0.4554016590118408,
+    "nearest_archetype": "legacy"
+  },
+  {
+    "word": "caliph",
+    "distance": 0.45507752895355225,
+    "nearest_archetype": "legacy"
+  },
+  {
+    "word": "esdras",
+    "distance": 0.4550336003303528,
+    "nearest_archetype": "religious_cosmic"
+  },
+  {
+    "word": "provost",
+    "distance": 0.45375919342041016,
+    "nearest_archetype": "religious_devotion"
+  },
+  {
+    "word": "hee",
+    "distance": 0.45318305492401123,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "sensuous",
+    "distance": 0.4521922469139099,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "saul",
+    "distance": 0.45077943801879883,
+    "nearest_archetype": "abstract"
+  },
+  {
+    "word": "pucelle",
+    "distance": 0.45075565576553345,
+    "nearest_archetype": "power_political"
+  },
+  {
+    "word": "transcendental",
+    "distance": 0.4505271315574646,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "demo",
+    "distance": 0.45014017820358276,
+    "nearest_archetype": "temporal"
+  },
+  {
+    "word": "mynheer",
+    "distance": 0.4498859643936157,
+    "nearest_archetype": "legacy"
+  },
+  {
+    "word": "benedick",
+    "distance": 0.44658732414245605,
+    "nearest_archetype": "bodily"
+  },
+  {
+    "word": "nellie",
+    "distance": 0.4463004469871521,
+    "nearest_archetype": "commerce"
+  },
+  {
+    "word": "talbot",
+    "distance": 0.4459414482116699,
+    "nearest_archetype": "legacy"
+  },
+  {
+    "word": "shu",
+    "distance": 0.4428076148033142,
+    "nearest_archetype": "power_political"
+  },
+  {
+    "word": "evans",
+    "distance": 0.44250357151031494,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "juliet",
+    "distance": 0.4399377703666687,
+    "nearest_archetype": "temporal"
+  },
+  {
+    "word": "antony",
+    "distance": 0.4397907257080078,
+    "nearest_archetype": "wilderness"
+  },
+  {
+    "word": "data",
+    "distance": 0.43628203868865967,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "warwick",
+    "distance": 0.4358059763908386,
+    "nearest_archetype": "conflict"
+  },
+  {
+    "word": "holder",
+    "distance": 0.4357796907424927,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "edo",
+    "distance": 0.434067964553833,
+    "nearest_archetype": "power_political"
+  },
+  {
+    "word": "online",
+    "distance": 0.4334239363670349,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "banquo",
+    "distance": 0.43223273754119873,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "bourgeois",
+    "distance": 0.43089228868484497,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "shylock",
+    "distance": 0.4294915795326233,
+    "nearest_archetype": "craft"
+  },
+  {
+    "word": "unproductive",
+    "distance": 0.4283861517906189,
+    "nearest_archetype": "religious_devotion"
+  },
+  {
+    "word": "apemantus",
+    "distance": 0.42805027961730957,
+    "nearest_archetype": "craft"
+  },
+  {
+    "word": "priori",
+    "distance": 0.42800086736679077,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "gratiano",
+    "distance": 0.42769157886505127,
+    "nearest_archetype": "craft"
+  },
+  {
+    "word": "exporting",
+    "distance": 0.4276586174964905,
+    "nearest_archetype": "commerce"
+  },
+  {
+    "word": "olivia",
+    "distance": 0.4268128275871277,
+    "nearest_archetype": "religious_cosmic"
+  },
+  {
+    "word": "dat",
+    "distance": 0.4264468550682068,
+    "nearest_archetype": "bodily"
+  },
+  {
+    "word": "empirical",
+    "distance": 0.42617326974868774,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "mortimer",
+    "distance": 0.4259287118911743,
+    "nearest_archetype": "conflict"
+  },
+  {
+    "word": "disk",
+    "distance": 0.42416316270828247,
+    "nearest_archetype": "temporal"
+  },
+  {
+    "word": "israel",
+    "distance": 0.42362725734710693,
+    "nearest_archetype": "religious_cosmic"
+  },
+  {
+    "word": "somerset",
+    "distance": 0.4216562509536743,
+    "nearest_archetype": "conflict"
+  },
+  {
+    "word": "sid",
+    "distance": 0.4215787649154663,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "tit",
+    "distance": 0.421025812625885,
+    "nearest_archetype": "religious_cosmic"
+  },
+  {
+    "word": "glacial",
+    "distance": 0.4207749366760254,
+    "nearest_archetype": "temporal"
+  },
+  {
+    "word": "totality",
+    "distance": 0.42061370611190796,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "sho",
+    "distance": 0.41935235261917114,
+    "nearest_archetype": "power_institutional"
+  },
+  {
+    "word": "coriolanus",
+    "distance": 0.4191966652870178,
+    "nearest_archetype": "commerce"
+  },
+  {
+    "word": "exeunt",
+    "distance": 0.41895657777786255,
+    "nearest_archetype": "legacy"
+  },
+  {
+    "word": "rosalind",
+    "distance": 0.4188825488090515,
+    "nearest_archetype": "bodily"
+  },
+  {
+    "word": "fee",
+    "distance": 0.4185733199119568,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "mas",
+    "distance": 0.417322039604187,
+    "nearest_archetype": "religious_cosmic"
+  },
+  {
+    "word": "paragraph",
+    "distance": 0.41708630323410034,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "tabernacle",
+    "distance": 0.41586458683013916,
+    "nearest_archetype": "domestic"
+  },
+  {
+    "word": "desdemona",
+    "distance": 0.4151782989501953,
+    "nearest_archetype": "abstract"
+  },
+  {
+    "word": "martius",
+    "distance": 0.4144713282585144,
+    "nearest_archetype": "legacy"
+  },
+  {
+    "word": "absalom",
+    "distance": 0.4135381579399109,
+    "nearest_archetype": "power_divine"
+  },
+  {
+    "word": "exported",
+    "distance": 0.41309410333633423,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "passe",
+    "distance": 0.4115745425224304,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "exportation",
+    "distance": 0.4113224744796753,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "toby",
+    "distance": 0.411288321018219,
+    "nearest_archetype": "bodily"
+  },
+  {
+    "word": "reggie",
+    "distance": 0.41079413890838623,
+    "nearest_archetype": "religious_moral"
+  },
+  {
+    "word": "categories",
+    "distance": 0.41066277027130127,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "readable",
+    "distance": 0.41037970781326294,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "org",
+    "distance": 0.4094104766845703,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "moscow",
+    "distance": 0.4083341360092163,
+    "nearest_archetype": "religious_moral"
+  },
+  {
+    "word": "pandarus",
+    "distance": 0.40720343589782715,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "menelaus",
+    "distance": 0.406707763671875,
+    "nearest_archetype": "temporal"
+  },
+  {
+    "word": "comply",
+    "distance": 0.4066441059112549,
+    "nearest_archetype": "commerce"
+  },
+  {
+    "word": "lancaster",
+    "distance": 0.4045766592025757,
+    "nearest_archetype": "legacy"
+  },
+  {
+    "word": "hybrids",
+    "distance": 0.40445923805236816,
+    "nearest_archetype": "religious_devotion"
+  },
+  {
+    "word": "zeus",
+    "distance": 0.4038020372390747,
+    "nearest_archetype": "temporal"
+  },
+  {
+    "word": "copies",
+    "distance": 0.40362608432769775,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "silvia",
+    "distance": 0.4034399390220642,
+    "nearest_archetype": "religious_cosmic"
+  },
+  {
+    "word": "sirrah",
+    "distance": 0.4032434821128845,
+    "nearest_archetype": "craft"
+  },
+  {
+    "word": "belle",
+    "distance": 0.401256263256073,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "des",
+    "distance": 0.4007616639137268,
+    "nearest_archetype": "temporal"
+  },
+  {
+    "word": "importation",
+    "distance": 0.40071791410446167,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "kibei",
+    "distance": 0.4006446599960327,
+    "nearest_archetype": "domestic"
+  },
+  {
+    "word": "lieu",
+    "distance": 0.4005456566810608,
+    "nearest_archetype": "urban"
+  },
+  {
+    "word": "agamemnon",
+    "distance": 0.40029770135879517,
+    "nearest_archetype": "legacy"
+  },
+  {
+    "word": "distribute",
+    "distance": 0.40023958683013916,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "subjective",
+    "distance": 0.39919066429138184,
+    "nearest_archetype": "religious_devotion"
+  },
+  {
+    "word": "tobias",
+    "distance": 0.39692407846450806,
+    "nearest_archetype": "domestic"
+  },
+  {
+    "word": "portia",
+    "distance": 0.39673566818237305,
+    "nearest_archetype": "religious_devotion"
+  },
+  {
+    "word": "polonius",
+    "distance": 0.39526599645614624,
+    "nearest_archetype": "conflict"
+  },
+  {
+    "word": "malt",
+    "distance": 0.39515870809555054,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "copy",
+    "distance": 0.39484721422195435,
+    "nearest_archetype": "commerce"
+  },
+  {
+    "word": "defective",
+    "distance": 0.39441370964050293,
+    "nearest_archetype": "commerce"
+  },
+  {
+    "word": "project",
+    "distance": 0.39420104026794434,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "loaves",
+    "distance": 0.39410942792892456,
+    "nearest_archetype": "natural"
+  },
+  {
+    "word": "royalties",
+    "distance": 0.3940522074699402,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "allan",
+    "distance": 0.3939558267593384,
+    "nearest_archetype": "abstract"
+  },
+  {
+    "word": "hussars",
+    "distance": 0.3938140869140625,
+    "nearest_archetype": "power_institutional"
+  },
+  {
+    "word": "tulip",
+    "distance": 0.39364105463027954,
+    "nearest_archetype": "religious_devotion"
+  },
+  {
+    "word": "causality",
+    "distance": 0.3923684358596802,
+    "nearest_archetype": "religious_devotion"
+  },
+  {
+    "word": "holofernes",
+    "distance": 0.3922707438468933,
+    "nearest_archetype": "power_political"
+  },
+  {
+    "word": "imogen",
+    "distance": 0.3917461633682251,
+    "nearest_archetype": "abstract"
+  },
+  {
+    "word": "artificers",
+    "distance": 0.3916589617729187,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "beatrice",
+    "distance": 0.3911668658256531,
+    "nearest_archetype": "religious_devotion"
+  },
+  {
+    "word": "assyrians",
+    "distance": 0.3911060094833374,
+    "nearest_archetype": "domestic"
+  },
+  {
+    "word": "nigger",
+    "distance": 0.3894262909889221,
+    "nearest_archetype": "power_divine"
+  },
+  {
+    "word": "timon",
+    "distance": 0.38770627975463867,
+    "nearest_archetype": "craft"
+  },
+  {
+    "word": "genera",
+    "distance": 0.3866966962814331,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "romeo",
+    "distance": 0.3859056234359741,
+    "nearest_archetype": "abstract"
+  },
+  {
+    "word": "ounces",
+    "distance": 0.3858707547187805,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "access",
+    "distance": 0.3854144811630249,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "clarence",
+    "distance": 0.38432538509368896,
+    "nearest_archetype": "conflict"
+  },
+  {
+    "word": "psalm",
+    "distance": 0.3834884762763977,
+    "nearest_archetype": "religious_cosmic"
+  },
+  {
+    "word": "dialectic",
+    "distance": 0.3825751543045044,
+    "nearest_archetype": "power_divine"
+  },
+  {
+    "word": "providing",
+    "distance": 0.3825068473815918,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "formations",
+    "distance": 0.38237541913986206,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "excise",
+    "distance": 0.3820776343345642,
+    "nearest_archetype": "power_personal"
+  },
+  {
+    "word": "tyre",
+    "distance": 0.3815472722053528,
+    "nearest_archetype": "conflict"
+  },
+  {
+    "word": "mar",
+    "distance": 0.3813892602920532,
+    "nearest_archetype": "craft"
+  },
+  {
+    "word": "pharisees",
+    "distance": 0.38089126348495483,
+    "nearest_archetype": "domestic"
+  },
+  {
+    "word": "bertram",
+    "distance": 0.3807446360588074,
+    "nearest_archetype": "power_political"
+  },
+  {
+    "word": "hotspur",
+    "distance": 0.38065052032470703,
+    "nearest_archetype": "power_political"
+  },
+  {
+    "word": "agreement",
+    "distance": 0.3806147575378418,
+    "nearest_archetype": "identity"
+  },
+  {
+    "word": "cathy",
+    "distance": 0.37976956367492676,
+    "nearest_archetype": "wilderness"
+  },
+  {
+    "word": "annette",
+    "distance": 0.3779914379119873,
+    "nearest_archetype": "conflict"
+  },
+  {
+    "word": "kondo",
+    "distance": 0.3778127431869507,
+    "nearest_archetype": "power_political"
+  },
+  {
+    "word": "eyre",
+    "distance": 0.37777459621429443,
+    "nearest_archetype": "abstract"
+  },
+  {
+    "word": "psalms",
+    "distance": 0.3755339980125427,
+    "nearest_archetype": "wilderness"
+  }
+]

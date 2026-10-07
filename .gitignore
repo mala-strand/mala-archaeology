@@ -16,3 +16,7 @@ worker/__pycache__/
 
 # OS
 .DS_Store
+
+# Downloaded word lists
+data/words_alpha.txt
+data/google_10000_english.txt
