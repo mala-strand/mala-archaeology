@@ -36,6 +36,7 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 || Phase 2 Drift Explorer | ✅ **BUILT** | `site/drift.html` — curated drift tables, neighbor deep-dives, era narratives |
 || Phase 2 Dream Gallery | ✅ **BUILT** | `site/dreams.html` — 200 dreams, filterable by archetype/confidence, search by seed |
 || Phase 2 Territory Map | ✅ **BUILT** | `dream_territory_map.py` — 2D archetype territories with convex hulls + liminality labels |
+|| Phase 3 Void Explorer | 🔄 **STARTED** | `void_explorer.py` — semantic void identification + adversarial seeding |
 
 **Phase 1 Results:**
 - 101 books downloaded (~10M+ words)
