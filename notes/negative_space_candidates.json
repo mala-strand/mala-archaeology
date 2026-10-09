@@ -1,0 +1,1602 @@
+[
+  {
+    "word": "manasses",
+    "avg_dist": 0.6323690414428711,
+    "diversity": 0.55,
+    "density_score": 0.7973690414428711,
+    "nearest_archetypes": "power_political(4), abstract(3), power_divine(3)",
+    "frequency": 166
+  },
+  {
+    "word": "galaad",
+    "avg_dist": 0.5987546443939209,
+    "diversity": 0.6,
+    "density_score": 0.7787546443939208,
+    "nearest_archetypes": "abstract(3), power_political(2), domestic(2)",
+    "frequency": 146
+  },
+  {
+    "word": "thinges",
+    "avg_dist": 0.6265515089035034,
+    "diversity": 0.5,
+    "density_score": 0.7765515089035034,
+    "nearest_archetypes": "abstract(3), power_divine(3), legacy(3)",
+    "frequency": 159
+  },
+  {
+    "word": "sonnes",
+    "avg_dist": 0.586995005607605,
+    "diversity": 0.6,
+    "density_score": 0.7669950056076049,
+    "nearest_archetypes": "conflict(2), craft(2), legacy(2)",
+    "frequency": 103
+  },
+  {
+    "word": "juda",
+    "avg_dist": 0.5852848887443542,
+    "diversity": 0.6,
+    "density_score": 0.7652848887443542,
+    "nearest_archetypes": "abstract(3), power_political(3), legacy(3)",
+    "frequency": 908
+  },
+  {
+    "word": "cressida",
+    "avg_dist": 0.5826276540756226,
+    "diversity": 0.6,
+    "density_score": 0.7626276540756225,
+    "nearest_archetypes": "conflict(3), abstract(3), power_political(2)",
+    "frequency": 179
+  },
+  {
+    "word": "holocausts",
+    "avg_dist": 0.5799001455307007,
+    "diversity": 0.6,
+    "density_score": 0.7599001455307006,
+    "nearest_archetypes": "commerce(2), power_political(2), religious_cosmic(2)",
+    "frequency": 108
+  },
+  {
+    "word": "por",
+    "avg_dist": 0.5772972106933594,
+    "diversity": 0.6,
+    "density_score": 0.7572972106933593,
+    "nearest_archetypes": "natural(3), power_divine(2), religious_moral(2)",
+    "frequency": 103
+  },
+  {
+    "word": "tapanin",
+    "avg_dist": 0.5741456747055054,
+    "diversity": 0.6,
+    "density_score": 0.7541456747055053,
+    "nearest_archetypes": "abstract(4), temporal(2), urban(2)",
+    "frequency": 187
+  },
+  {
+    "word": "sitten",
+    "avg_dist": 0.5713596940040588,
+    "diversity": 0.6,
+    "density_score": 0.7513596940040588,
+    "nearest_archetypes": "conflict(4), abstract(2), religious_cosmic(2)",
+    "frequency": 148
+  },
+  {
+    "word": "kuin",
+    "avg_dist": 0.5855544805526733,
+    "diversity": 0.55,
+    "density_score": 0.7505544805526734,
+    "nearest_archetypes": "abstract(5), temporal(2), urban(2)",
+    "frequency": 256
+  },
+  {
+    "word": "oli",
+    "avg_dist": 0.5794571042060852,
+    "diversity": 0.55,
+    "density_score": 0.7444571042060852,
+    "nearest_archetypes": "abstract(4), temporal(2), urban(2)",
+    "frequency": 302
+  },
+  {
+    "word": "como",
+    "avg_dist": 0.5484908819198608,
+    "diversity": 0.65,
+    "density_score": 0.7434908819198609,
+    "nearest_archetypes": "legacy(3), urban(2), religious_cosmic(2)",
+    "frequency": 105
+  },
+  {
+    "word": "formats",
+    "avg_dist": 0.5579207539558411,
+    "diversity": 0.6,
+    "density_score": 0.737920753955841,
+    "nearest_archetypes": "commerce(4), temporal(3), power_institutional(2)",
+    "frequency": 142
+  },
+  {
+    "word": "firstfruits",
+    "avg_dist": 0.5539010167121887,
+    "diversity": 0.6,
+    "density_score": 0.7339010167121887,
+    "nearest_archetypes": "commerce(2), power_political(2), religious_cosmic(2)",
+    "frequency": 99
+  },
+  {
+    "word": "updated",
+    "avg_dist": 0.5679832696914673,
+    "diversity": 0.55,
+    "density_score": 0.7329832696914673,
+    "nearest_archetypes": "natural(3), power_institutional(3), temporal(3)",
+    "frequency": 130
+  },
+  {
+    "word": "vaan",
+    "avg_dist": 0.5504378080368042,
+    "diversity": 0.6,
+    "density_score": 0.7304378080368041,
+    "nearest_archetypes": "abstract(4), temporal(2), urban(2)",
+    "frequency": 304
+  },
+  {
+    "word": "beleeve",
+    "avg_dist": 0.5647112131118774,
+    "diversity": 0.55,
+    "density_score": 0.7297112131118775,
+    "nearest_archetypes": "abstract(4), urban(3), power_divine(3)",
+    "frequency": 110
+  },
+  {
+    "word": "ole",
+    "avg_dist": 0.5616239905357361,
+    "diversity": 0.55,
+    "density_score": 0.7266239905357361,
+    "nearest_archetypes": "natural(3), abstract(3), power_divine(3)",
+    "frequency": 133
+  },
+  {
+    "word": "baerle",
+    "avg_dist": 0.558599591255188,
+    "diversity": 0.55,
+    "density_score": 0.723599591255188,
+    "nearest_archetypes": "abstract(4), power_divine(3), legacy(2)",
+    "frequency": 192
+  },
+  {
+    "word": "hortensio",
+    "avg_dist": 0.5422528982162476,
+    "diversity": 0.6,
+    "density_score": 0.7222528982162475,
+    "nearest_archetypes": "religious_cosmic(4), religious_moral(3), conflict(2)",
+    "frequency": 122
+  },
+  {
+    "word": "bardolph",
+    "avg_dist": 0.5542589426040649,
+    "diversity": 0.55,
+    "density_score": 0.719258942604065,
+    "nearest_archetypes": "power_political(4), conflict(3), legacy(2)",
+    "frequency": 207
+  },
+  {
+    "word": "nyt",
+    "avg_dist": 0.5388731956481934,
+    "diversity": 0.6,
+    "density_score": 0.7188731956481933,
+    "nearest_archetypes": "abstract(4), temporal(2), urban(2)",
+    "frequency": 327
+  },
+  {
+    "word": "josue",
+    "avg_dist": 0.537424623966217,
+    "diversity": 0.6,
+    "density_score": 0.717424623966217,
+    "nearest_archetypes": "abstract(3), power_divine(3), domestic(2)",
+    "frequency": 240
+  },
+  {
+    "word": "soveraign",
+    "avg_dist": 0.5371414422988892,
+    "diversity": 0.6,
+    "density_score": 0.7171414422988891,
+    "nearest_archetypes": "abstract(3), power_political(3), urban(2)",
+    "frequency": 497
+  },
+  {
+    "word": "dampbell",
+    "avg_dist": 0.5520042777061462,
+    "diversity": 0.55,
+    "density_score": 0.7170042777061463,
+    "nearest_archetypes": "abstract(4), temporal(2), urban(2)",
+    "frequency": 158
+  },
+  {
+    "word": "amselle",
+    "avg_dist": 0.5036381483078003,
+    "diversity": 0.7,
+    "density_score": 0.7136381483078003,
+    "nearest_archetypes": "religious_moral(3), conflict(3), abstract(2)",
+    "frequency": 223
+  },
+  {
+    "word": "petruchio",
+    "avg_dist": 0.53328537940979,
+    "diversity": 0.6,
+    "density_score": 0.71328537940979,
+    "nearest_archetypes": "conflict(4), religious_cosmic(4), commerce(2)",
+    "frequency": 219
+  },
+  {
+    "word": "warranty",
+    "avg_dist": 0.518166184425354,
+    "diversity": 0.65,
+    "density_score": 0.7131661844253541,
+    "nearest_archetypes": "commerce(4), abstract(2), natural(2)",
+    "frequency": 150
+  },
+  {
+    "word": "armado",
+    "avg_dist": 0.5140077471733093,
+    "diversity": 0.65,
+    "density_score": 0.7090077471733094,
+    "nearest_archetypes": "abstract(3), legacy(3), power_political(3)",
+    "frequency": 125
+  },
+  {
+    "word": "katherina",
+    "avg_dist": 0.5260330438613892,
+    "diversity": 0.6,
+    "density_score": 0.7060330438613891,
+    "nearest_archetypes": "religious_cosmic(4), conflict(3), power_political(2)",
+    "frequency": 111
+  },
+  {
+    "word": "tapani",
+    "avg_dist": 0.5256659388542175,
+    "diversity": 0.6,
+    "density_score": 0.7056659388542175,
+    "nearest_archetypes": "abstract(4), temporal(2), urban(2)",
+    "frequency": 369
+  },
+  {
+    "word": "suzanne",
+    "avg_dist": 0.5104254484176636,
+    "diversity": 0.65,
+    "density_score": 0.7054254484176636,
+    "nearest_archetypes": "legacy(3), urban(3), natural(2)",
+    "frequency": 430
+  },
+  {
+    "word": "costard",
+    "avg_dist": 0.4947583079338074,
+    "diversity": 0.7,
+    "density_score": 0.7047583079338073,
+    "nearest_archetypes": "abstract(3), religious_cosmic(2), urban(2)",
+    "frequency": 117
+  },
+  {
+    "word": "plantagenet",
+    "avg_dist": 0.524337649345398,
+    "diversity": 0.6,
+    "density_score": 0.7043376493453979,
+    "nearest_archetypes": "conflict(4), religious_moral(3), legacy(2)",
+    "frequency": 117
+  },
+  {
+    "word": "summum",
+    "avg_dist": 0.5241371989250183,
+    "diversity": 0.6,
+    "density_score": 0.7041371989250182,
+    "nearest_archetypes": "religious_devotion(3), abstract(2), religious_cosmic(2)",
+    "frequency": 105
+  },
+  {
+    "word": "dodd",
+    "avg_dist": 0.5084155201911926,
+    "diversity": 0.65,
+    "density_score": 0.7034155201911927,
+    "nearest_archetypes": "abstract(2), legacy(2), urban(2)",
+    "frequency": 104
+  },
+  {
+    "word": "online",
+    "avg_dist": 0.5082669854164124,
+    "diversity": 0.65,
+    "density_score": 0.7032669854164124,
+    "nearest_archetypes": "commerce(4), temporal(2), abstract(2)",
+    "frequency": 318
+  },
+  {
+    "word": "rams",
+    "avg_dist": 0.4924871027469635,
+    "diversity": 0.7,
+    "density_score": 0.7024871027469635,
+    "nearest_archetypes": "commerce(2), urban(2), legacy(2)",
+    "frequency": 108
+  },
+  {
+    "word": "baptista",
+    "avg_dist": 0.5372539758682251,
+    "diversity": 0.55,
+    "density_score": 0.7022539758682251,
+    "nearest_archetypes": "religious_cosmic(4), religious_moral(4), conflict(3)",
+    "frequency": 124
+  },
+  {
+    "word": "lucentio",
+    "avg_dist": 0.5368261337280273,
+    "diversity": 0.55,
+    "density_score": 0.7018261337280274,
+    "nearest_archetypes": "conflict(4), religious_cosmic(4), religious_moral(3)",
+    "frequency": 126
+  },
+  {
+    "word": "sen",
+    "avg_dist": 0.5213997960090637,
+    "diversity": 0.6,
+    "density_score": 0.7013997960090637,
+    "nearest_archetypes": "religious_moral(5), power_political(3), conflict(2)",
+    "frequency": 282
+  },
+  {
+    "word": "replacement",
+    "avg_dist": 0.505352258682251,
+    "diversity": 0.65,
+    "density_score": 0.700352258682251,
+    "nearest_archetypes": "natural(3), commerce(3), abstract(2)",
+    "frequency": 358
+  },
+  {
+    "word": "nabuchodonosor",
+    "avg_dist": 0.5198710560798645,
+    "diversity": 0.6,
+    "density_score": 0.6998710560798644,
+    "nearest_archetypes": "abstract(3), power_divine(3), religious_cosmic(2)",
+    "frequency": 149
+  },
+  {
+    "word": "quod",
+    "avg_dist": 0.5048491954803467,
+    "diversity": 0.65,
+    "density_score": 0.6998491954803467,
+    "nearest_archetypes": "urban(3), abstract(2), religious_cosmic(2)",
+    "frequency": 118
+  },
+  {
+    "word": "lucius",
+    "avg_dist": 0.5197778940200806,
+    "diversity": 0.6,
+    "density_score": 0.6997778940200805,
+    "nearest_archetypes": "conflict(3), legacy(2), domestic(2)",
+    "frequency": 336
+  },
+  {
+    "word": "tamora",
+    "avg_dist": 0.5329874157905579,
+    "diversity": 0.55,
+    "density_score": 0.6979874157905579,
+    "nearest_archetypes": "conflict(3), legacy(2), domestic(2)",
+    "frequency": 126
+  },
+  {
+    "word": "montaigne",
+    "avg_dist": 0.5479706525802612,
+    "diversity": 0.5,
+    "density_score": 0.6979706525802613,
+    "nearest_archetypes": "religious_moral(4), power_divine(3), natural(3)",
+    "frequency": 162
+  },
+  {
+    "word": "levi",
+    "avg_dist": 0.531650185585022,
+    "diversity": 0.55,
+    "density_score": 0.696650185585022,
+    "nearest_archetypes": "power_political(3), abstract(2), power_institutional(2)",
+    "frequency": 103
+  },
+  {
+    "word": "vanilla",
+    "avg_dist": 0.5164806246757507,
+    "diversity": 0.6,
+    "density_score": 0.6964806246757507,
+    "nearest_archetypes": "natural(4), commerce(3), power_political(2)",
+    "frequency": 145
+  },
+  {
+    "word": "dedalus",
+    "avg_dist": 0.5154786705970764,
+    "diversity": 0.6,
+    "density_score": 0.6954786705970764,
+    "nearest_archetypes": "conflict(3), abstract(3), urban(2)",
+    "frequency": 124
+  },
+  {
+    "word": "macb",
+    "avg_dist": 0.5445407629013062,
+    "diversity": 0.5,
+    "density_score": 0.6945407629013062,
+    "nearest_archetypes": "conflict(5), religious_moral(3), abstract(3)",
+    "frequency": 137
+  },
+  {
+    "word": "eternall",
+    "avg_dist": 0.5122456550598145,
+    "diversity": 0.6,
+    "density_score": 0.6922456550598144,
+    "nearest_archetypes": "abstract(3), religious_devotion(3), urban(2)",
+    "frequency": 103
+  },
+  {
+    "word": "org",
+    "avg_dist": 0.5118398070335388,
+    "diversity": 0.6,
+    "density_score": 0.6918398070335388,
+    "nearest_archetypes": "commerce(5), temporal(2), abstract(2)",
+    "frequency": 719
+  },
+  {
+    "word": "mustapha",
+    "avg_dist": 0.5110548734664917,
+    "diversity": 0.6,
+    "density_score": 0.6910548734664916,
+    "nearest_archetypes": "commerce(3), legacy(3), power_divine(3)",
+    "frequency": 306
+  },
+  {
+    "word": "email",
+    "avg_dist": 0.5408973097801208,
+    "diversity": 0.5,
+    "density_score": 0.6908973097801209,
+    "nearest_archetypes": "commerce(3), abstract(3), natural(3)",
+    "frequency": 143
+  },
+  {
+    "word": "gryphus",
+    "avg_dist": 0.49536117911338806,
+    "diversity": 0.65,
+    "density_score": 0.6903611791133881,
+    "nearest_archetypes": "legacy(3), abstract(2), conflict(2)",
+    "frequency": 179
+  },
+  {
+    "word": "kun",
+    "avg_dist": 0.5074918270111084,
+    "diversity": 0.6,
+    "density_score": 0.6874918270111083,
+    "nearest_archetypes": "abstract(4), temporal(2), urban(2)",
+    "frequency": 443
+  },
+  {
+    "word": "website",
+    "avg_dist": 0.5218217372894287,
+    "diversity": 0.55,
+    "density_score": 0.6868217372894287,
+    "nearest_archetypes": "commerce(4), abstract(3), natural(3)",
+    "frequency": 286
+  },
+  {
+    "word": "boxtel",
+    "avg_dist": 0.5212529897689819,
+    "diversity": 0.55,
+    "density_score": 0.686252989768982,
+    "nearest_archetypes": "abstract(3), legacy(3), power_divine(2)",
+    "frequency": 190
+  },
+  {
+    "word": "kingdome",
+    "avg_dist": 0.5058860182762146,
+    "diversity": 0.6,
+    "density_score": 0.6858860182762145,
+    "nearest_archetypes": "abstract(4), religious_moral(2), power_institutional(2)",
+    "frequency": 292
+  },
+  {
+    "word": "ezechias",
+    "avg_dist": 0.5203232765197754,
+    "diversity": 0.55,
+    "density_score": 0.6853232765197754,
+    "nearest_archetypes": "abstract(3), power_divine(3), domestic(2)",
+    "frequency": 145
+  },
+  {
+    "word": "sanoi",
+    "avg_dist": 0.5051184892654419,
+    "diversity": 0.6,
+    "density_score": 0.6851184892654418,
+    "nearest_archetypes": "abstract(4), temporal(2), urban(2)",
+    "frequency": 374
+  },
+  {
+    "word": "pacha",
+    "avg_dist": 0.5350036025047302,
+    "diversity": 0.5,
+    "density_score": 0.6850036025047302,
+    "nearest_archetypes": "commerce(4), legacy(3), religious_moral(3)",
+    "frequency": 436
+  },
+  {
+    "word": "chanaan",
+    "avg_dist": 0.5348061919212341,
+    "diversity": 0.5,
+    "density_score": 0.6848061919212342,
+    "nearest_archetypes": "power_divine(4), abstract(3), power_political(3)",
+    "frequency": 111
+  },
+  {
+    "word": "soveraignty",
+    "avg_dist": 0.5190806984901428,
+    "diversity": 0.55,
+    "density_score": 0.6840806984901429,
+    "nearest_archetypes": "abstract(4), power_political(3), urban(2)",
+    "frequency": 107
+  },
+  {
+    "word": "refund",
+    "avg_dist": 0.4868861734867096,
+    "diversity": 0.65,
+    "density_score": 0.6818861734867097,
+    "nearest_archetypes": "natural(3), commerce(3), abstract(2)",
+    "frequency": 719
+  },
+  {
+    "word": "www",
+    "avg_dist": 0.5155594348907471,
+    "diversity": 0.55,
+    "density_score": 0.6805594348907471,
+    "nearest_archetypes": "commerce(5), abstract(3), natural(3)",
+    "frequency": 749
+  },
+  {
+    "word": "dave",
+    "avg_dist": 0.49977296590805054,
+    "diversity": 0.6,
+    "density_score": 0.6797729659080505,
+    "nearest_archetypes": "power_divine(4), abstract(3), religious_moral(2)",
+    "frequency": 197
+  },
+  {
+    "word": "sonne",
+    "avg_dist": 0.5276613831520081,
+    "diversity": 0.5,
+    "density_score": 0.6776613831520081,
+    "nearest_archetypes": "craft(3), abstract(3), religious_cosmic(3)",
+    "frequency": 126
+  },
+  {
+    "word": "cunegonde",
+    "avg_dist": 0.5118852257728577,
+    "diversity": 0.55,
+    "density_score": 0.6768852257728577,
+    "nearest_archetypes": "power_political(5), abstract(3), commerce(3)",
+    "frequency": 129
+  },
+  {
+    "word": "guilders",
+    "avg_dist": 0.4959495961666107,
+    "diversity": 0.6,
+    "density_score": 0.6759495961666107,
+    "nearest_archetypes": "urban(3), power_divine(2), natural(2)",
+    "frequency": 99
+  },
+  {
+    "word": "bianca",
+    "avg_dist": 0.510750412940979,
+    "diversity": 0.55,
+    "density_score": 0.675750412940979,
+    "nearest_archetypes": "conflict(4), religious_cosmic(3), abstract(3)",
+    "frequency": 119
+  },
+  {
+    "word": "sinne",
+    "avg_dist": 0.48056870698928833,
+    "diversity": 0.65,
+    "density_score": 0.6755687069892884,
+    "nearest_archetypes": "abstract(3), commerce(3), craft(2)",
+    "frequency": 106
+  },
+  {
+    "word": "niin",
+    "avg_dist": 0.495317280292511,
+    "diversity": 0.6,
+    "density_score": 0.6753172802925109,
+    "nearest_archetypes": "abstract(4), temporal(2), urban(2)",
+    "frequency": 394
+  },
+  {
+    "word": "thersites",
+    "avg_dist": 0.494750440120697,
+    "diversity": 0.6,
+    "density_score": 0.674750440120697,
+    "nearest_archetypes": "abstract(4), power_political(3), legacy(3)",
+    "frequency": 138
+  },
+  {
+    "word": "bonum",
+    "avg_dist": 0.509072482585907,
+    "diversity": 0.55,
+    "density_score": 0.674072482585907,
+    "nearest_archetypes": "religious_devotion(3), religious_moral(3), religious_cosmic(2)",
+    "frequency": 107
+  },
+  {
+    "word": "donate",
+    "avg_dist": 0.5240684151649475,
+    "diversity": 0.5,
+    "density_score": 0.6740684151649475,
+    "nearest_archetypes": "commerce(4), natural(3), conflict(3)",
+    "frequency": 363
+  },
+  {
+    "word": "bassanio",
+    "avg_dist": 0.463571697473526,
+    "diversity": 0.7,
+    "density_score": 0.673571697473526,
+    "nearest_archetypes": "abstract(3), religious_devotion(2), religious_cosmic(2)",
+    "frequency": 127
+  },
+  {
+    "word": "roubles",
+    "avg_dist": 0.5226054787635803,
+    "diversity": 0.5,
+    "density_score": 0.6726054787635803,
+    "nearest_archetypes": "conflict(4), commerce(3), power_divine(2)",
+    "frequency": 140
+  },
+  {
+    "word": "edom",
+    "avg_dist": 0.5070144534111023,
+    "diversity": 0.55,
+    "density_score": 0.6720144534111023,
+    "nearest_archetypes": "abstract(3), power_divine(3), domestic(2)",
+    "frequency": 104
+  },
+  {
+    "word": "dromio",
+    "avg_dist": 0.522011399269104,
+    "diversity": 0.5,
+    "density_score": 0.672011399269104,
+    "nearest_archetypes": "abstract(5), conflict(3), legacy(3)",
+    "frequency": 222
+  },
+  {
+    "word": "leonato",
+    "avg_dist": 0.4760574400424957,
+    "diversity": 0.65,
+    "density_score": 0.6710574400424958,
+    "nearest_archetypes": "religious_cosmic(4), conflict(2), religious_moral(2)",
+    "frequency": 195
+  },
+  {
+    "word": "rosaline",
+    "avg_dist": 0.47554484009742737,
+    "diversity": 0.65,
+    "density_score": 0.6705448400974274,
+    "nearest_archetypes": "conflict(4), commerce(3), abstract(2)",
+    "frequency": 102
+  },
+  {
+    "word": "mutta",
+    "avg_dist": 0.4902416169643402,
+    "diversity": 0.6,
+    "density_score": 0.6702416169643401,
+    "nearest_archetypes": "abstract(4), temporal(2), urban(2)",
+    "frequency": 342
+  },
+  {
+    "word": "shal",
+    "avg_dist": 0.48916226625442505,
+    "diversity": 0.6,
+    "density_score": 0.669162266254425,
+    "nearest_archetypes": "power_political(4), abstract(3), legacy(2)",
+    "frequency": 467
+  },
+  {
+    "word": "format",
+    "avg_dist": 0.5037118196487427,
+    "diversity": 0.55,
+    "density_score": 0.6687118196487427,
+    "nearest_archetypes": "natural(5), temporal(3), power_political(2)",
+    "frequency": 286
+  },
+  {
+    "word": "troilus",
+    "avg_dist": 0.5037029981613159,
+    "diversity": 0.55,
+    "density_score": 0.668702998161316,
+    "nearest_archetypes": "power_political(4), abstract(3), commerce(2)",
+    "frequency": 255
+  },
+  {
+    "word": "antipholus",
+    "avg_dist": 0.5184856653213501,
+    "diversity": 0.5,
+    "density_score": 0.6684856653213501,
+    "nearest_archetypes": "abstract(4), conflict(3), legacy(3)",
+    "frequency": 218
+  },
+  {
+    "word": "achab",
+    "avg_dist": 0.48785218596458435,
+    "diversity": 0.6,
+    "density_score": 0.6678521859645843,
+    "nearest_archetypes": "abstract(3), power_divine(3), religious_cosmic(2)",
+    "frequency": 103
+  },
+  {
+    "word": "com",
+    "avg_dist": 0.5026399493217468,
+    "diversity": 0.55,
+    "density_score": 0.6676399493217469,
+    "nearest_archetypes": "natural(3), legacy(3), power_divine(2)",
+    "frequency": 122
+  },
+  {
+    "word": "titus",
+    "avg_dist": 0.4856759011745453,
+    "diversity": 0.6,
+    "density_score": 0.6656759011745452,
+    "nearest_archetypes": "domestic(3), conflict(3), legacy(2)",
+    "frequency": 351
+  },
+  {
+    "word": "bullion",
+    "avg_dist": 0.514961302280426,
+    "diversity": 0.5,
+    "density_score": 0.664961302280426,
+    "nearest_archetypes": "urban(4), commerce(3), power_political(3)",
+    "frequency": 200
+  },
+  {
+    "word": "juliet",
+    "avg_dist": 0.46831268072128296,
+    "diversity": 0.65,
+    "density_score": 0.663312680721283,
+    "nearest_archetypes": "abstract(3), temporal(2), legacy(2)",
+    "frequency": 227
+  },
+  {
+    "word": "readable",
+    "avg_dist": 0.46826034784317017,
+    "diversity": 0.65,
+    "density_score": 0.6632603478431702,
+    "nearest_archetypes": "temporal(3), commerce(3), abstract(2)",
+    "frequency": 145
+  },
+  {
+    "word": "benedick",
+    "avg_dist": 0.45321589708328247,
+    "diversity": 0.7,
+    "density_score": 0.6632158970832824,
+    "nearest_archetypes": "religious_cosmic(4), abstract(3), conflict(2)",
+    "frequency": 202
+  },
+  {
+    "word": "civill",
+    "avg_dist": 0.5129852890968323,
+    "diversity": 0.5,
+    "density_score": 0.6629852890968323,
+    "nearest_archetypes": "power_political(3), power_divine(3), urban(2)",
+    "frequency": 326
+  },
+  {
+    "word": "haue",
+    "avg_dist": 0.482695996761322,
+    "diversity": 0.6,
+    "density_score": 0.662695996761322,
+    "nearest_archetypes": "conflict(3), craft(2), legacy(2)",
+    "frequency": 470
+  },
+  {
+    "word": "thurston",
+    "avg_dist": 0.4968739449977875,
+    "diversity": 0.55,
+    "density_score": 0.6618739449977875,
+    "nearest_archetypes": "abstract(5), power_political(3), religious_moral(2)",
+    "frequency": 102
+  },
+  {
+    "word": "joab",
+    "avg_dist": 0.4967229962348938,
+    "diversity": 0.55,
+    "density_score": 0.6617229962348938,
+    "nearest_archetypes": "abstract(5), legacy(3), domestic(2)",
+    "frequency": 153
+  },
+  {
+    "word": "firstborn",
+    "avg_dist": 0.48146456480026245,
+    "diversity": 0.6,
+    "density_score": 0.6614645648002624,
+    "nearest_archetypes": "power_divine(3), commerce(3), domestic(2)",
+    "frequency": 142
+  },
+  {
+    "word": "wil",
+    "avg_dist": 0.4964323043823242,
+    "diversity": 0.55,
+    "density_score": 0.6614323043823243,
+    "nearest_archetypes": "abstract(3), craft(2), power_political(2)",
+    "frequency": 148
+  },
+  {
+    "word": "ignosi",
+    "avg_dist": 0.5112310647964478,
+    "diversity": 0.5,
+    "density_score": 0.6612310647964478,
+    "nearest_archetypes": "conflict(5), legacy(4), power_political(2)",
+    "frequency": 121
+  },
+  {
+    "word": "huck",
+    "avg_dist": 0.48007869720458984,
+    "diversity": 0.6,
+    "density_score": 0.6600786972045898,
+    "nearest_archetypes": "power_divine(3), power_institutional(2), power_personal(2)",
+    "frequency": 349
+  },
+  {
+    "word": "demo",
+    "avg_dist": 0.49499908089637756,
+    "diversity": 0.55,
+    "density_score": 0.6599990808963776,
+    "nearest_archetypes": "conflict(5), domestic(3), abstract(2)",
+    "frequency": 418
+  },
+  {
+    "word": "samaria",
+    "avg_dist": 0.4797953963279724,
+    "diversity": 0.6,
+    "density_score": 0.6597953963279723,
+    "nearest_archetypes": "abstract(3), power_political(3), power_divine(3)",
+    "frequency": 157
+  },
+  {
+    "word": "critique",
+    "avg_dist": 0.4941914975643158,
+    "diversity": 0.55,
+    "density_score": 0.6591914975643158,
+    "nearest_archetypes": "religious_devotion(3), natural(3), religious_moral(3)",
+    "frequency": 109
+  },
+  {
+    "word": "federal",
+    "avg_dist": 0.49397367238998413,
+    "diversity": 0.55,
+    "density_score": 0.6589736723899842,
+    "nearest_archetypes": "commerce(3), conflict(3), temporal(2)",
+    "frequency": 148
+  },
+  {
+    "word": "allah",
+    "avg_dist": 0.4637780785560608,
+    "diversity": 0.65,
+    "density_score": 0.6587780785560609,
+    "nearest_archetypes": "legacy(3), conflict(2), power_divine(2)",
+    "frequency": 104
+  },
+  {
+    "word": "ebook",
+    "avg_dist": 0.4778878092765808,
+    "diversity": 0.6,
+    "density_score": 0.6578878092765807,
+    "nearest_archetypes": "commerce(3), natural(3), temporal(3)",
+    "frequency": 937
+  },
+  {
+    "word": "tranio",
+    "avg_dist": 0.507352352142334,
+    "diversity": 0.5,
+    "density_score": 0.657352352142334,
+    "nearest_archetypes": "conflict(5), religious_cosmic(3), power_political(2)",
+    "frequency": 140
+  },
+  {
+    "word": "boyet",
+    "avg_dist": 0.4913070797920227,
+    "diversity": 0.55,
+    "density_score": 0.6563070797920227,
+    "nearest_archetypes": "conflict(4), commerce(3), abstract(2)",
+    "frequency": 100
+  },
+  {
+    "word": "yotsuya",
+    "avg_dist": 0.4750641882419586,
+    "diversity": 0.6,
+    "density_score": 0.6550641882419586,
+    "nearest_archetypes": "legacy(3), power_institutional(3), power_political(2)",
+    "frequency": 102
+  },
+  {
+    "word": "yussuf",
+    "avg_dist": 0.5196353793144226,
+    "diversity": 0.45,
+    "density_score": 0.6546353793144226,
+    "nearest_archetypes": "power_political(4), power_divine(4), abstract(3)",
+    "frequency": 159
+  },
+  {
+    "word": "isaias",
+    "avg_dist": 0.47380247712135315,
+    "diversity": 0.6,
+    "density_score": 0.6538024771213531,
+    "nearest_archetypes": "power_divine(4), domestic(3), religious_cosmic(2)",
+    "frequency": 138
+  },
+  {
+    "word": "andronicus",
+    "avg_dist": 0.48865461349487305,
+    "diversity": 0.55,
+    "density_score": 0.6536546134948731,
+    "nearest_archetypes": "conflict(3), abstract(3), legacy(2)",
+    "frequency": 127
+  },
+  {
+    "word": "northwood",
+    "avg_dist": 0.47309842705726624,
+    "diversity": 0.6,
+    "density_score": 0.6530984270572662,
+    "nearest_archetypes": "conflict(4), abstract(3), domestic(3)",
+    "frequency": 147
+  },
+  {
+    "word": "dat",
+    "avg_dist": 0.4715604782104492,
+    "diversity": 0.6,
+    "density_score": 0.6515604782104492,
+    "nearest_archetypes": "religious_moral(3), urban(3), natural(3)",
+    "frequency": 125
+  },
+  {
+    "word": "donations",
+    "avg_dist": 0.48654308915138245,
+    "diversity": 0.55,
+    "density_score": 0.6515430891513825,
+    "nearest_archetypes": "commerce(4), power_political(3), temporal(2)",
+    "frequency": 1075
+  },
+  {
+    "word": "candide",
+    "avg_dist": 0.5014950037002563,
+    "diversity": 0.5,
+    "density_score": 0.6514950037002564,
+    "nearest_archetypes": "abstract(5), power_political(3), conflict(2)",
+    "frequency": 408
+  },
+  {
+    "word": "capulet",
+    "avg_dist": 0.486323744058609,
+    "diversity": 0.55,
+    "density_score": 0.651323744058609,
+    "nearest_archetypes": "religious_cosmic(4), power_divine(3), power_political(2)",
+    "frequency": 163
+  },
+  {
+    "word": "tit",
+    "avg_dist": 0.45605841279029846,
+    "diversity": 0.65,
+    "density_score": 0.6510584127902985,
+    "nearest_archetypes": "conflict(3), religious_moral(3), craft(2)",
+    "frequency": 115
+  },
+  {
+    "word": "sayd",
+    "avg_dist": 0.48572033643722534,
+    "diversity": 0.55,
+    "density_score": 0.6507203364372254,
+    "nearest_archetypes": "abstract(4), craft(2), natural(2)",
+    "frequency": 170
+  },
+  {
+    "word": "cranly",
+    "avg_dist": 0.5005695223808289,
+    "diversity": 0.5,
+    "density_score": 0.6505695223808289,
+    "nearest_archetypes": "conflict(5), abstract(3), power_divine(3)",
+    "frequency": 140
+  },
+  {
+    "word": "evill",
+    "avg_dist": 0.4829867482185364,
+    "diversity": 0.55,
+    "density_score": 0.6479867482185364,
+    "nearest_archetypes": "abstract(3), urban(3), power_political(3)",
+    "frequency": 126
+  },
+  {
+    "word": "levites",
+    "avg_dist": 0.4823320806026459,
+    "diversity": 0.55,
+    "density_score": 0.6473320806026459,
+    "nearest_archetypes": "abstract(4), power_political(3), domestic(2)",
+    "frequency": 252
+  },
+  {
+    "word": "jonathan",
+    "avg_dist": 0.46693429350852966,
+    "diversity": 0.6,
+    "density_score": 0.6469342935085296,
+    "nearest_archetypes": "abstract(4), legacy(3), power_divine(3)",
+    "frequency": 252
+  },
+  {
+    "word": "signior",
+    "avg_dist": 0.4655074179172516,
+    "diversity": 0.6,
+    "density_score": 0.6455074179172515,
+    "nearest_archetypes": "conflict(3), religious_moral(3), abstract(3)",
+    "frequency": 139
+  },
+  {
+    "word": "claudio",
+    "avg_dist": 0.4654390811920166,
+    "diversity": 0.6,
+    "density_score": 0.6454390811920165,
+    "nearest_archetypes": "religious_cosmic(4), conflict(2), power_divine(2)",
+    "frequency": 293
+  },
+  {
+    "word": "jeremias",
+    "avg_dist": 0.4646943509578705,
+    "diversity": 0.6,
+    "density_score": 0.6446943509578704,
+    "nearest_archetypes": "abstract(3), legacy(3), power_divine(2)",
+    "frequency": 242
+  },
+  {
+    "word": "berowne",
+    "avg_dist": 0.46438130736351013,
+    "diversity": 0.6,
+    "density_score": 0.6443813073635101,
+    "nearest_archetypes": "abstract(3), commerce(3), religious_cosmic(3)",
+    "frequency": 195
+  },
+  {
+    "word": "data",
+    "avg_dist": 0.43260321021080017,
+    "diversity": 0.7,
+    "density_score": 0.6426032102108001,
+    "nearest_archetypes": "conflict(3), power_divine(2), religious_cosmic(2)",
+    "frequency": 115
+  },
+  {
+    "word": "lawes",
+    "avg_dist": 0.4620015025138855,
+    "diversity": 0.6,
+    "density_score": 0.6420015025138854,
+    "nearest_archetypes": "commerce(3), power_political(3), abstract(2)",
+    "frequency": 256
+  },
+  {
+    "word": "transcendental",
+    "avg_dist": 0.4319540858268738,
+    "diversity": 0.7,
+    "density_score": 0.6419540858268737,
+    "nearest_archetypes": "conflict(3), abstract(2), power_institutional(2)",
+    "frequency": 565
+  },
+  {
+    "word": "synthetical",
+    "avg_dist": 0.4462049901485443,
+    "diversity": 0.65,
+    "density_score": 0.6412049901485444,
+    "nearest_archetypes": "power_institutional(3), abstract(2), religious_cosmic(2)",
+    "frequency": 245
+  },
+  {
+    "word": "syracuse",
+    "avg_dist": 0.47577542066574097,
+    "diversity": 0.55,
+    "density_score": 0.640775420665741,
+    "nearest_archetypes": "abstract(4), legacy(3), power_political(2)",
+    "frequency": 240
+  },
+  {
+    "word": "archive",
+    "avg_dist": 0.48794618248939514,
+    "diversity": 0.5,
+    "density_score": 0.6379461824893952,
+    "nearest_archetypes": "commerce(4), natural(4), temporal(3)",
+    "frequency": 928
+  },
+  {
+    "word": "caius",
+    "avg_dist": 0.4569304883480072,
+    "diversity": 0.6,
+    "density_score": 0.6369304883480071,
+    "nearest_archetypes": "religious_moral(3), legacy(3), power_political(3)",
+    "frequency": 144
+  },
+  {
+    "word": "hee",
+    "avg_dist": 0.45660272240638733,
+    "diversity": 0.6,
+    "density_score": 0.6366027224063873,
+    "nearest_archetypes": "urban(3), abstract(3), religious_moral(2)",
+    "frequency": 203
+  },
+  {
+    "word": "hybrids",
+    "avg_dist": 0.4410367012023926,
+    "diversity": 0.65,
+    "density_score": 0.6360367012023926,
+    "nearest_archetypes": "religious_devotion(5), conflict(2), religious_cosmic(2)",
+    "frequency": 285
+  },
+  {
+    "word": "paragraphs",
+    "avg_dist": 0.42564478516578674,
+    "diversity": 0.7,
+    "density_score": 0.6356447851657867,
+    "nearest_archetypes": "power_political(3), commerce(2), abstract(2)",
+    "frequency": 233
+  },
+  {
+    "word": "cognitions",
+    "avg_dist": 0.4393784999847412,
+    "diversity": 0.65,
+    "density_score": 0.6343784999847413,
+    "nearest_archetypes": "power_institutional(3), conflict(3), abstract(2)",
+    "frequency": 126
+  },
+  {
+    "word": "mynheer",
+    "avg_dist": 0.45216742157936096,
+    "diversity": 0.6,
+    "density_score": 0.6321674215793609,
+    "nearest_archetypes": "legacy(3), abstract(3), power_divine(3)",
+    "frequency": 109
+  },
+  {
+    "word": "malvolio",
+    "avg_dist": 0.4518011212348938,
+    "diversity": 0.6,
+    "density_score": 0.6318011212348937,
+    "nearest_archetypes": "conflict(4), religious_cosmic(3), abstract(3)",
+    "frequency": 132
+  },
+  {
+    "word": "priori",
+    "avg_dist": 0.434415727853775,
+    "diversity": 0.65,
+    "density_score": 0.6294157278537751,
+    "nearest_archetypes": "religious_cosmic(2), commerce(2), religious_devotion(2)",
+    "frequency": 740
+  },
+  {
+    "word": "exeunt",
+    "avg_dist": 0.44932985305786133,
+    "diversity": 0.6,
+    "density_score": 0.6293298530578613,
+    "nearest_archetypes": "legacy(4), conflict(4), power_political(2)",
+    "frequency": 133
+  },
+  {
+    "word": "evans",
+    "avg_dist": 0.4639083743095398,
+    "diversity": 0.55,
+    "density_score": 0.6289083743095398,
+    "nearest_archetypes": "power_political(5), religious_moral(2), conflict(2)",
+    "frequency": 115
+  },
+  {
+    "word": "ebooks",
+    "avg_dist": 0.4784303307533264,
+    "diversity": 0.5,
+    "density_score": 0.6284303307533264,
+    "nearest_archetypes": "commerce(4), abstract(3), power_political(3)",
+    "frequency": 576
+  },
+  {
+    "word": "equall",
+    "avg_dist": 0.46235936880111694,
+    "diversity": 0.55,
+    "density_score": 0.627359368801117,
+    "nearest_archetypes": "power_political(3), commerce(3), power_divine(3)",
+    "frequency": 154
+  },
+  {
+    "word": "cade",
+    "avg_dist": 0.4766863286495209,
+    "diversity": 0.5,
+    "density_score": 0.6266863286495209,
+    "nearest_archetypes": "legacy(5), conflict(4), craft(2)",
+    "frequency": 99
+  },
+  {
+    "word": "located",
+    "avg_dist": 0.4459001123905182,
+    "diversity": 0.6,
+    "density_score": 0.6259001123905181,
+    "nearest_archetypes": "commerce(5), temporal(3), abstract(2)",
+    "frequency": 511
+  },
+  {
+    "word": "ephraim",
+    "avg_dist": 0.4757402837276459,
+    "diversity": 0.5,
+    "density_score": 0.6257402837276459,
+    "nearest_archetypes": "legacy(4), abstract(3), power_political(3)",
+    "frequency": 205
+  },
+  {
+    "word": "sho",
+    "avg_dist": 0.4306650757789612,
+    "diversity": 0.65,
+    "density_score": 0.6256650757789612,
+    "nearest_archetypes": "power_divine(3), abstract(2), domestic(2)",
+    "frequency": 164
+  },
+  {
+    "word": "annette",
+    "avg_dist": 0.39993566274642944,
+    "diversity": 0.75,
+    "density_score": 0.6249356627464294,
+    "nearest_archetypes": "conflict(4), power_political(3), religious_cosmic(1)",
+    "frequency": 493
+  },
+  {
+    "word": "goe",
+    "avg_dist": 0.44473832845687866,
+    "diversity": 0.6,
+    "density_score": 0.6247383284568786,
+    "nearest_archetypes": "abstract(3), legacy(3), craft(2)",
+    "frequency": 120
+  },
+  {
+    "word": "shu",
+    "avg_dist": 0.4596570134162903,
+    "diversity": 0.55,
+    "density_score": 0.6246570134162903,
+    "nearest_archetypes": "power_political(3), power_divine(3), religious_moral(3)",
+    "frequency": 426
+  },
+  {
+    "word": "falstaff",
+    "avg_dist": 0.45933231711387634,
+    "diversity": 0.55,
+    "density_score": 0.6243323171138764,
+    "nearest_archetypes": "power_political(4), legacy(3), urban(3)",
+    "frequency": 606
+  },
+  {
+    "word": "prominently",
+    "avg_dist": 0.4443289339542389,
+    "diversity": 0.6,
+    "density_score": 0.6243289339542388,
+    "nearest_archetypes": "natural(3), power_political(2), abstract(2)",
+    "frequency": 145
+  },
+  {
+    "word": "mas",
+    "avg_dist": 0.4425067901611328,
+    "diversity": 0.6,
+    "density_score": 0.6225067901611328,
+    "nearest_archetypes": "power_divine(3), urban(2), religious_moral(2)",
+    "frequency": 171
+  },
+  {
+    "word": "knowed",
+    "avg_dist": 0.442049115896225,
+    "diversity": 0.6,
+    "density_score": 0.6220491158962249,
+    "nearest_archetypes": "natural(3), power_divine(3), urban(2)",
+    "frequency": 127
+  },
+  {
+    "word": "glacial",
+    "avg_dist": 0.41042977571487427,
+    "diversity": 0.7,
+    "density_score": 0.6204297757148742,
+    "nearest_archetypes": "conflict(3), urban(2), religious_devotion(2)",
+    "frequency": 128
+  },
+  {
+    "word": "edo",
+    "avg_dist": 0.4396236836910248,
+    "diversity": 0.6,
+    "density_score": 0.6196236836910247,
+    "nearest_archetypes": "legacy(3), power_divine(2), power_political(2)",
+    "frequency": 124
+  },
+  {
+    "word": "sion",
+    "avg_dist": 0.43885865807533264,
+    "diversity": 0.6,
+    "density_score": 0.6188586580753326,
+    "nearest_archetypes": "power_divine(3), domestic(3), religious_cosmic(2)",
+    "frequency": 217
+  },
+  {
+    "word": "vpon",
+    "avg_dist": 0.46877485513687134,
+    "diversity": 0.5,
+    "density_score": 0.6187748551368714,
+    "nearest_archetypes": "conflict(3), religious_cosmic(3), abstract(3)",
+    "frequency": 224
+  },
+  {
+    "word": "twala",
+    "avg_dist": 0.48310303688049316,
+    "diversity": 0.45,
+    "density_score": 0.6181030368804932,
+    "nearest_archetypes": "legacy(5), conflict(5), power_political(3)",
+    "frequency": 161
+  },
+  {
+    "word": "consumable",
+    "avg_dist": 0.4530119299888611,
+    "diversity": 0.55,
+    "density_score": 0.6180119299888611,
+    "nearest_archetypes": "power_political(6), commerce(3), conflict(2)",
+    "frequency": 98
+  },
+  {
+    "word": "moab",
+    "avg_dist": 0.4525587558746338,
+    "diversity": 0.55,
+    "density_score": 0.6175587558746338,
+    "nearest_archetypes": "abstract(5), domestic(2), religious_cosmic(2)",
+    "frequency": 177
+  },
+  {
+    "word": "sid",
+    "avg_dist": 0.4370424151420593,
+    "diversity": 0.6,
+    "density_score": 0.6170424151420593,
+    "nearest_archetypes": "power_divine(4), religious_moral(2), urban(2)",
+    "frequency": 108
+  },
+  {
+    "word": "veslovsky",
+    "avg_dist": 0.43518853187561035,
+    "diversity": 0.6,
+    "density_score": 0.6151885318756103,
+    "nearest_archetypes": "power_divine(3), urban(3), power_institutional(2)",
+    "frequency": 110
+  },
+  {
+    "word": "montoni",
+    "avg_dist": 0.44929471611976624,
+    "diversity": 0.55,
+    "density_score": 0.6142947161197663,
+    "nearest_archetypes": "commerce(5), power_divine(3), conflict(2)",
+    "frequency": 919
+  },
+  {
+    "word": "silvia",
+    "avg_dist": 0.4188578724861145,
+    "diversity": 0.65,
+    "density_score": 0.6138578724861146,
+    "nearest_archetypes": "religious_moral(3), legacy(2), religious_cosmic(2)",
+    "frequency": 130
+  },
+  {
+    "word": "esau",
+    "avg_dist": 0.46313515305519104,
+    "diversity": 0.5,
+    "density_score": 0.6131351530551911,
+    "nearest_archetypes": "abstract(4), domestic(3), power_divine(3)",
+    "frequency": 116
+  },
+  {
+    "word": "moscow",
+    "avg_dist": 0.4178088307380676,
+    "diversity": 0.65,
+    "density_score": 0.6128088307380677,
+    "nearest_archetypes": "legacy(3), power_political(2), urban(2)",
+    "frequency": 905
+  },
+  {
+    "word": "lomas",
+    "avg_dist": 0.4620412290096283,
+    "diversity": 0.5,
+    "density_score": 0.6120412290096283,
+    "nearest_archetypes": "power_political(5), power_divine(4), abstract(2)",
+    "frequency": 383
+  },
+  {
+    "word": "israel",
+    "avg_dist": 0.4308856129646301,
+    "diversity": 0.6,
+    "density_score": 0.6108856129646301,
+    "nearest_archetypes": "abstract(4), power_political(2), power_divine(2)",
+    "frequency": 2936
+  },
+  {
+    "word": "widest",
+    "avg_dist": 0.4006628394126892,
+    "diversity": 0.7,
+    "density_score": 0.6106628394126892,
+    "nearest_archetypes": "temporal(3), legacy(3), conflict(2)",
+    "frequency": 173
+  },
+  {
+    "word": "nos",
+    "avg_dist": 0.4305955767631531,
+    "diversity": 0.6,
+    "density_score": 0.610595576763153,
+    "nearest_archetypes": "abstract(4), power_divine(2), urban(2)",
+    "frequency": 163
+  },
+  {
+    "word": "zeus",
+    "avg_dist": 0.42948970198631287,
+    "diversity": 0.6,
+    "density_score": 0.6094897019863128,
+    "nearest_archetypes": "legacy(3), conflict(3), power_institutional(2)",
+    "frequency": 384
+  },
+  {
+    "word": "cymbeline",
+    "avg_dist": 0.443556547164917,
+    "diversity": 0.55,
+    "density_score": 0.608556547164917,
+    "nearest_archetypes": "legacy(4), conflict(3), power_political(3)",
+    "frequency": 130
+  },
+  {
+    "word": "saul",
+    "avg_dist": 0.4583655297756195,
+    "diversity": 0.5,
+    "density_score": 0.6083655297756195,
+    "nearest_archetypes": "abstract(7), legacy(3), power_political(3)",
+    "frequency": 511
+  },
+  {
+    "word": "allan",
+    "avg_dist": 0.4273828864097595,
+    "diversity": 0.6,
+    "density_score": 0.6073828864097595,
+    "nearest_archetypes": "abstract(4), power_divine(3), urban(2)",
+    "frequency": 109
+  },
+  {
+    "word": "banquo",
+    "avg_dist": 0.4572138786315918,
+    "diversity": 0.5,
+    "density_score": 0.6072138786315918,
+    "nearest_archetypes": "legacy(3), conflict(3), abstract(2)",
+    "frequency": 113
+  },
+  {
+    "word": "categories",
+    "avg_dist": 0.397090345621109,
+    "diversity": 0.7,
+    "density_score": 0.607090345621109,
+    "nearest_archetypes": "power_institutional(3), conflict(3), religious_cosmic(2)",
+    "frequency": 223
+  },
+  {
+    "word": "nigger",
+    "avg_dist": 0.41206932067871094,
+    "diversity": 0.65,
+    "density_score": 0.607069320678711,
+    "nearest_archetypes": "power_divine(4), abstract(3), legacy(2)",
+    "frequency": 184
+  },
+  {
+    "word": "aufidius",
+    "avg_dist": 0.4565644860267639,
+    "diversity": 0.5,
+    "density_score": 0.6065644860267639,
+    "nearest_archetypes": "religious_moral(3), power_divine(3), abstract(3)",
+    "frequency": 100
+  },
+  {
+    "word": "user",
+    "avg_dist": 0.44140148162841797,
+    "diversity": 0.55,
+    "density_score": 0.606401481628418,
+    "nearest_archetypes": "commerce(3), natural(3), temporal(3)",
+    "frequency": 218
+  },
+  {
+    "word": "shylock",
+    "avg_dist": 0.44107475876808167,
+    "diversity": 0.55,
+    "density_score": 0.6060747587680817,
+    "nearest_archetypes": "abstract(4), conflict(2), power_political(2)",
+    "frequency": 112
+  },
+  {
+    "word": "pharao",
+    "avg_dist": 0.42599278688430786,
+    "diversity": 0.6,
+    "density_score": 0.6059927868843078,
+    "nearest_archetypes": "power_divine(5), abstract(3), religious_cosmic(2)",
+    "frequency": 240
+  },
+  {
+    "word": "poins",
+    "avg_dist": 0.4408220648765564,
+    "diversity": 0.55,
+    "density_score": 0.6058220648765564,
+    "nearest_archetypes": "religious_moral(3), urban(3), abstract(3)",
+    "frequency": 100
+  },
+  {
+    "word": "fille",
+    "avg_dist": 0.4407430589199066,
+    "diversity": 0.55,
+    "density_score": 0.6057430589199067,
+    "nearest_archetypes": "legacy(3), religious_cosmic(2), natural(2)",
+    "frequency": 179
+  },
+  {
+    "word": "onely",
+    "avg_dist": 0.44035178422927856,
+    "diversity": 0.55,
+    "density_score": 0.6053517842292786,
+    "nearest_archetypes": "abstract(4), urban(2), commerce(2)",
+    "frequency": 435
+  },
+  {
+    "word": "antony",
+    "avg_dist": 0.43870052695274353,
+    "diversity": 0.55,
+    "density_score": 0.6037005269527436,
+    "nearest_archetypes": "power_divine(4), abstract(3), power_political(3)",
+    "frequency": 547
+  },
+  {
+    "word": "rosalind",
+    "avg_dist": 0.40815621614456177,
+    "diversity": 0.65,
+    "density_score": 0.6031562161445618,
+    "nearest_archetypes": "religious_cosmic(3), abstract(3), urban(2)",
+    "frequency": 276
+  },
+  {
+    "word": "mortimer",
+    "avg_dist": 0.45247554779052734,
+    "diversity": 0.5,
+    "density_score": 0.6024755477905274,
+    "nearest_archetypes": "conflict(6), power_divine(3), legacy(2)",
+    "frequency": 102
+  },
+  {
+    "word": "rouncewell",
+    "avg_dist": 0.4217155873775482,
+    "diversity": 0.6,
+    "density_score": 0.6017155873775482,
+    "nearest_archetypes": "legacy(3), power_divine(3), conflict(3)",
+    "frequency": 129
+  },
+  {
+    "word": "loaves",
+    "avg_dist": 0.40659308433532715,
+    "diversity": 0.65,
+    "density_score": 0.6015930843353272,
+    "nearest_archetypes": "power_political(3), conflict(2), urban(2)",
+    "frequency": 102
+  },
+  {
+    "word": "toby",
+    "avg_dist": 0.436429888010025,
+    "diversity": 0.55,
+    "density_score": 0.6014298880100251,
+    "nearest_archetypes": "conflict(4), religious_cosmic(3), legacy(3)",
+    "frequency": 211
+  },
+  {
+    "word": "cognition",
+    "avg_dist": 0.39113080501556396,
+    "diversity": 0.7,
+    "density_score": 0.6011308050155639,
+    "nearest_archetypes": "abstract(2), conflict(2), power_institutional(2)",
+    "frequency": 573
+  },
+  {
+    "word": "nellie",
+    "avg_dist": 0.4509811997413635,
+    "diversity": 0.5,
+    "density_score": 0.6009811997413635,
+    "nearest_archetypes": "power_divine(4), legacy(3), commerce(3)",
+    "frequency": 178
+  },
+  {
+    "word": "tabernacle",
+    "avg_dist": 0.4207943379878998,
+    "diversity": 0.6,
+    "density_score": 0.6007943379878997,
+    "nearest_archetypes": "domestic(3), legacy(3), conflict(2)",
+    "frequency": 370
+  }
+]

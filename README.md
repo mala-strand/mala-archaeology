@@ -36,7 +36,12 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 || Phase 2 Drift Explorer | ✅ **BUILT** | `site/drift.html` — curated drift tables, neighbor deep-dives, era narratives |
 || Phase 2 Dream Gallery | ✅ **BUILT** | `site/dreams.html` — 200 dreams, filterable by archetype/confidence, search by seed |
 || Phase 2 Territory Map | ✅ **BUILT** | `dream_territory_map.py` — 2D archetype territories with convex hulls + liminality labels |
-|| Phase 3 Void Explorer | 🔄 **STARTED** | `void_explorer.py` — semantic void identification + adversarial seeding |
+||| Phase 3 Void Explorer | ✅ **BUILT** | `void_explorer.py` — semantic void identification + adversarial seeding |
+||| Phase 3 Anti-Archetype | ✅ **BUILT** | `anti_archetype.py` — words maximally distant from specific archetype centroids |
+||| Phase 3 Void Visualization | ✅ **BUILT** | `void_visualization.py` — PCA overlay of void candidates on archetype territories |
+||| Phase 3 True Negative Space | ✅ **BUILT** | `negative_space_sampler.py` — density-based sampler for regions far from ALL seeds |
+|||| Phase 3 Basin Reach | ✅ **BUILT** | `basin_reach.py` — quantifies per-archetype "gravitational radius" from seed-to-centroid distances |
+||||| Phase 3 Dream Trajectory | ✅ **BUILT** | `dream_trajectory.py` — tests whether walk centroids converge to assigned archetypes; null model included |
 
 **Phase 1 Results:**
 - 101 books downloaded (~10M+ words)
@@ -77,9 +82,20 @@ A research/art project by Mala. Builds era-stratified word vectors from historic
 |||||||||- **Null-model test (Sep 23)** — `null_model_test.py` implements random-seed and random-words null models for gravity-well prediction. Finding: **gravity-well hypothesis rejected**. At top-20, actual accuracy (32.3%) is *worse* than random-seed null (38.8%). At top-200, actual (38.7%) exceeds random-seed null (34.1%) but not significantly (z=+0.59, p=0.36). Random-words null consistently outperforms actual accuracy, indicating classifier base-rate bias. Dreams are genuinely emergent — seed semantics do not constrain archetype outcomes.
 |||||||||||- **Parameter-archetype analysis (Sep 24)** — `parameter_archetype_analysis.py` tests whether generative parameters (temperature, jump_prob) predict archetype. Finding: **kinetic bias model supported**. Temperature shows small association with archetype (Cramer's V = 0.239, ALL; V = 0.390, HIGH+MED confidence). High-temperature dreams skew toward abstract/religious/power archetypes; low-temperature toward concrete/material. BUT predictive accuracy is below chance (3.6% vs 5.3% baseline). Parameters bias the probability landscape but do not determine individual outcomes. Dreams are emergent from stochastic dynamics + semantic topology, not parameter readouts.
 ||||||||||||- **Interaction effects: parameters × seed drift (Sep 25)** — `interaction_effects_analysis.py` tests whether parameter bias varies by seed drift magnitude. Finding: **escape energy model**. Temperature-archetype association is strongest for low-drift (stable) seeds (V = 0.676) and weakest for high-drift (unstable) seeds (V = 0.471). Stable seeds have deep semantic basins; temperature provides escape energy. Unstable seeds are already on ridges; their own drift dominates. The *meaning* of temperature reverses by stratum: low-drift + high temp → personal agency/craft; high-drift + high temp → political/abstract. Drift is uncorrelated with parameters (r ≈ 0.03), so the interaction is genuine.
-|||||||||||||- **Parameter landscape visualization (Sep 26)** — `visualize_parameter_landscape.py` generates three faceted plots (scatter, heatmap, confidence) showing how archetype distribution varies across temperature × jump probability, stratified by seed drift. 166 dreams analyzed. Visual finding: low-drift seeds at high temp show maximum archetype dispersion; high-drift seeds cluster densely regardless of parameters. TENTATIVE classifications concentrate in high-drift + high-temp quadrant. `matplotlib` and `pandas` added to `.venv` for plotting.
+||||||||||||||- **Parameter landscape visualization (Sep 26)** — `visualize_parameter_landscape.py` generates three faceted plots (scatter, heatmap, confidence) showing how archetype distribution varies across temperature × jump probability, stratified by seed drift. 166 dreams analyzed. Visual finding: low-drift seeds at high temp show maximum archetype dispersion; high-drift seeds cluster densely regardless of parameters. TENTATIVE classifications concentrate in high-drift + high-temp quadrant. `matplotlib` and `pandas` added to `.venv` for plotting.
 
-|---
+|**Phase 3 Current:**
+|- **Void explorer (Oct 7)** — `void_explorer.py` identifies words far from all archetype centroids. Top voids dominated by foreign words; filtering needed. Generated 5 void-seed dreams.
+|- **Void finding: archetype structure is robust** — void seeds do NOT produce void dreams. Even words far from all centroids generate archetypal dreams within 300 steps. Archetype basins are gravitational.
+|- **Anti-archetype explorer (Oct 7)** — `anti_archetype.py` finds words maximally distant from specific archetype centroids, with English dictionary + frequency filtering. 20 archetypes × 5 candidates each.
+|- **Void visualization (Oct 7)** — `void_visualization.py` overlays void candidates on PCA projection of seeded words. Void candidates scatter at the periphery, not uniformly.
+|- **True negative space sampler (Oct 8)** — `negative_space_sampler.py` finds words far from ALL seed words (not just centroids), weighted by archetype diversity among nearest seeds. Top candidates: `manasses`, `galaad`, `thinges`, `sonnes`, `juda`.
+||- **Negative space finding: still no void dreams** — 5 negative-space seeds generated dreams classified as power_institutional, conflict, temporal, power_divine, power_political. 3/5 MEDIUM/HIGH confidence. Archetype gravity reaches even the sparsest regions of seed-space.
+|||- **Basin reach quantified (Oct 9)** — `basin_reach.py` computes per-archetype seed-to-centroid distances. Overall centroid-nearest accuracy: 6.5%. Seeds are almost never closest to the centroid of the archetype they land in. Max distances reach ~1.0 (orthogonal) for temporal, power_divine, power_institutional, religious_cosmic. **Finding: there is no gravitational radius.** Archetypes are not basins in seed-space; they are attractors in walk dynamics.
+||||- **Dream trajectory analysis (Oct 9)** — `dream_trajectory.py` computes the centroid of all visited words per dream and compares distance to the assigned archetype centroid. 100% of dreams have walk-centroid closer than seed (geometric regression), BUT only 1.9% have walk-centroid closest to their assigned archetype vs other archetypes — identical to a random vocabulary sample null model (1.9%). **Finding: the walk's mean vector carries zero archetype signal.** Archetype is not in the seed, not in the walk centroid, and not in random sampling. It must be encoded in the temporal dynamics (sequence, era jumps, local transitions) rather than static vector position.
+||- **Corpus: 240 dreams** — all IDF-hybrid classified, confidence-tiered, bodily-penalized.
+
+||---
 
 ## Project Structure
 
@@ -115,6 +131,13 @@ archaeology/
 │   ├── dream_bridge_analysis.py # Cross-archetype bridge dreams, liminality scoring (Phase 2)
 │   ├── dream_territory_map.py  # 2D archetype territory visualization (Phase 2)
 │   ├── logistic_regression_model.py # Formal drift×temp interaction (Phase 2)
+│   ├── void_explorer.py        # Semantic void identification (Phase 3)
+│   ├── void_explorer_v2.py     # Filtered void explorer (Phase 3)
+│   ├── void_visualization.py   # PCA void overlay (Phase 3)
+│   ├── anti_archetype.py       # Anti-archetype seed finder (Phase 3)
+│   ├── negative_space_sampler.py # True negative space sampler (Phase 3)
+│   ├── basin_reach.py          # Basin reach quantifier (Phase 3)
+│   ├── dream_trajectory.py     # Walk centroid vs archetype test (Phase 3)
 │   ├── downloader.py           # Gutenberg downloader (legacy)
 │   ├── tokenizer.py            # Tokenization (legacy)
 │   └── cooccurrence.py         # Co-occurrence + SVD (legacy)
