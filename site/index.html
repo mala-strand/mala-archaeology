@@ -194,7 +194,7 @@
 <header>
   <h1>Semantic Archaeology</h1>
   <p class="subtitle">What does a word's history mean? A probing method using historical word vectors and stochastic dream-walks.</p>
-  <p class="meta">Mala Pixie Strand · 2026 · 101 texts · 6 eras · 200 dreams · 19 archetypes · <a href="drift.html">Explore drift →</a> · <a href="dreams.html">Browse dreams →</a></p>
+  <p class="meta">Mala Pixie Strand · 2026 · 101 texts · 6 eras · 240 dreams · 20 archetypes · <a href="drift.html">Explore drift →</a> · <a href="dreams.html">Browse dreams →</a></p>
 </header>
 
 <main>
@@ -211,8 +211,8 @@
     <div class="stat"><span class="num">8,121</span><div class="label">Vocabulary</div></div>
     <div class="stat"><span class="num">48K</span><div class="label">Vectors</div></div>
     <div class="stat"><span class="num">38,515</span><div class="label">Drift scores</div></div>
-    <div class="stat"><span class="num">200</span><div class="label">Dreams</div></div>
-    <div class="stat"><span class="num">19</span><div class="label">Archetypes</div></div>
+    <div class="stat"><span class="num">240</span><div class="label">Dreams</div></div>
+    <div class="stat"><span class="num">20</span><div class="label">Archetypes</div></div>
   </div>
 
   <div class="figure">
@@ -278,6 +278,39 @@
   <div class="figure">
     <img src="dream_bridge_analysis.png" alt="Bridge analysis">
     <p class="caption">Figure 6: Bridge analysis. Left: liminality score distribution — most dreams have at least one cross-archetype edge. Right: top 10 bridge pairs. The bodily↔natural pair dominates (13 edges), reflecting the structural artifact nature of the bodily archetype.</p>
+  </div>
+
+  <h2>Phase 3: The Inescapable</h2>
+
+  <p>
+    Phase 2 mapped dream space and found it structured — archetype territories exist, liminality is pervasive, and the topology mirrors semantic intuition.
+    But it also found that seeds do not determine outcomes. The gravity-well hypothesis was rejected.
+    Phase 3 asked: <em>what lives in the negative space between archetype territories?</em>
+    Are there regions of semantic space that the dream walk cannot reach? Seeds it cannot digest? Dreams that resist all classification?
+  </p>
+
+  <div class="model-box">
+    <p><strong>Four probes, four null results.</strong></p>
+    <p><strong>Vector voids</strong> — words far from all archetype centroids (<em>computer</em>, <em>holocaust</em>, <em>regress</em>) still produce archetypal dreams. The void is in seed-space, not dream-space.</p>
+    <p><strong>True negative space</strong> — words far from <em>all</em> seed words, surrounded by diverse archetypes (<em>galaad</em>, <em>manasses</em>, <em>juda</em>), still land in recognizable basins. 3/5 are MEDIUM or HIGH confidence.</p>
+    <p><strong>Basin reach</strong> — only 6.5% of seeds are closest to the centroid of the archetype they end up in. Four archetypes have seeds orthogonal to their centroid (distance ~1.0) and still capture them. There is no gravitational radius.</p>
+    <p><strong>Dream trajectory</strong> — the walk's mean vector is closer to the archetype than the seed (100%), but this is geometric regression. Walk-centroid archetype specificity is 1.9% — identical to a random vocabulary null model. The mean vector carries zero archetype signal.</p>
+  </div>
+
+  <div class="figure">
+    <img src="basin_reach.png" alt="Basin reach analysis">
+    <p class="caption">Figure 7: Basin reach — per-archetype mean seed-to-centroid distance with error bars. Temporal dreams average 0.561 distance from their centroid; power_divine, power_institutional, and religious_cosmic all reach orthogonality (~1.0). There is no basin.</p>
+  </div>
+
+  <div class="figure">
+    <img src="dream_trajectory.png" alt="Dream trajectory analysis">
+    <p class="caption">Figure 8: Dream trajectory — three-panel analysis. Left: histogram of seed-to-walk improvement (geometric artifact). Center: per-archetype walk-centroid accuracy (all near zero). Right: null model comparison — random vocabulary samples perform identically to actual walk centroids.</p>
+  </div>
+
+  <div class="model-box">
+    <p><strong>The conclusion:</strong> archetypes are not properties of seed-space topology. They are <em>attractors in walk dynamics</em>.</p>
+    <p>The stochastic dream walk — temperature-driven neighbor selection, era jumps, decay revisits — generates trajectories that converge on recognizable thematic patterns regardless of where they start. The semantic graph's edge structure creates basins of attraction invisible to static vector analysis.</p>
+    <p>Archetype is not encoded in static position. It must be in the temporal dynamics: sequence, era-jump patterns, local word-to-word transitions. The map is not the territory. The territory is the walk.</p>
   </div>
 
   <h2>Example Dreams</h2>
@@ -349,6 +382,11 @@
     <li><strong>Archetype assortativity is genuine.</strong> 51% of nearest-neighbor edges connect same-primary dreams vs 6.8% baseline (7.5× enrichment). Label-permutation and configuration-model null tests both reject the null at z > 36, p < 0.0001.</li>
     <li><strong>Bridge dreams are the norm, not the exception.</strong> 96% of classified dreams have at least one cross-archetype neighbor. Liminality correlates with lower confidence (0.31 vs 0.64 margin) and higher seed drift. Counterintuitively, fewer jumps produce more boundary-crossing dreams — stable walks linger on borders; chaotic walks collapse into single archetypes or unclassifiability.</li>
     <li><strong>Secondary archetype predicts bridge targets.</strong> A dream's secondary label forecasts which archetype territories it touches 68% of the time. The secondary is not decorative — it is a genuine directional signal.</li>
+    <li><strong>Void seeds do not produce void dreams.</strong> Words far from all archetype centroids still generate archetypal dreams within 300 steps. Archetype structure is robust to adversarial seeding.</li>
+    <li><strong>True negative space is still archetypal.</strong> Words far from all seed words, surrounded by diverse archetypes, land in recognizable basins with MEDIUM/HIGH confidence. Archetype gravity reaches the sparsest regions of seed-space.</li>
+    <li><strong>There is no gravitational radius.</strong> Only 6.5% of seeds are closest to their assigned archetype's centroid. Four archetypes capture seeds that are orthogonal (distance ~1.0) to their centroid. Archetypes are not basins in seed-space.</li>
+    <li><strong>Walk centroids carry zero archetype signal.</strong> Mean vectors of visited words are statistically indistinguishable from random vocabulary samples (1.9% accuracy vs 1.9% null). Archetype is not encoded in static vector position.</li>
+    <li><strong>Archetypes are attractors in walk dynamics.</strong> The only remaining hypothesis: archetype is encoded in temporal structure — sequence, era jumps, local transitions — not in spatial position.</li>
   </ul>
 
   <h2>Status</h2>
@@ -356,8 +394,9 @@
   <p>
     Phase 1 (corpus, vectors, drift) is complete.
     Phase 2 (dream engine, reflection pipeline, taxonomy, statistical validation, topology, bridge analysis) is complete.
+    Phase 3 (void exploration, negative space, basin reach, dream trajectory) is complete — archetypes are dynamic attractors, not spatial basins.
     <a href="drift.html">Semantic drift explorer</a> and <a href="dreams.html">dream gallery</a> now live.
-    Next: public site deployment (Render), or Phase 3 (generative drift — new words that never existed in any era).
+    Next: temporal dynamics analysis (sequence/transition models), or public site deployment.
   </p>
 
 </main>
