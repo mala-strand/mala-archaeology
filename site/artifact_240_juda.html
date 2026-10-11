@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artifact №240 — JUDA</title>
+<style>
+  :root {
+    --bg: #0a0a0c;
+    --bg-elev: #111114;
+    --fg: #d8d4ce;
+    --fg-dim: #6e6a64;
+    --accent: #c9a96e;
+    --border: #1e1e22;
+
+    --pre-1500:    #c9a96e;
+    --1500-1700:   #b85c5c;
+    --1700-1800:   #5c8ab8;
+    --1800-1850:   #7a9a6a;
+    --1850-1900:   #8a7ab8;
+    --1900-1923:   #9a9590;
+  }
+
+  * { box-sizing: border-box; }
+
+  @page {
+    size: A4 portrait;
+    margin: 18mm;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Georgia", "Times New Roman", serif;
+    line-height: 1.75;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2.5rem 5rem;
+  }
+
+  /* Header */
+  .museum-label {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .artifact-id {
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--fg-dim);
+    margin-bottom: 0.6rem;
+  }
+
+  .seed-word {
+    font-size: 3.2rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin: 0 0 1.2rem;
+    line-height: 1.1;
+  }
+
+  .meta-row {
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    color: var(--fg-dim);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.8rem;
+    line-height: 1.6;
+  }
+
+  .meta-row span {
+    white-space: nowrap;
+  }
+
+  .meta-row .val {
+    color: var(--fg);
+  }
+
+  .badge {
+    display: inline-block;
+    font-family: system-ui, sans-serif;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    background: rgba(201,169,110,0.12);
+    color: var(--accent);
+    border: 1px solid rgba(201,169,110,0.25);
+  }
+
+  /* Walk segments */
+  .walk {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .segment {
+    position: relative;
+    padding: 0.9rem 0 0.9rem 1.4rem;
+    border-left: 2px solid transparent;
+    transition: background 0.2s;
+  }
+
+  .segment:hover {
+    background: var(--bg-elev);
+  }
+
+  .segment.pre-1500    { border-left-color: var(--pre-1500); }
+  .segment.era-1500    { border-left-color: var(--1500-1700); }
+  .segment.era-1700    { border-left-color: var(--1700-1800); }
+  .segment.era-1800    { border-left-color: var(--1800-1850); }
+  .segment.era-1850    { border-left-color: var(--1850-1900); }
+  .segment.era-1900    { border-left-color: var(--1900-1923); }
+
+  .era-label {
+    font-family: system-ui, sans-serif;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--fg-dim);
+    margin-bottom: 0.35rem;
+  }
+
+  .segment.pre-1500 .era-label    { color: var(--pre-1500); }
+  .segment.era-1500 .era-label    { color: var(--1500-1700); }
+  .segment.era-1700 .era-label    { color: var(--1700-1800); }
+  .segment.era-1800 .era-label    { color: var(--1800-1850); }
+  .segment.era-1850 .era-label    { color: var(--1850-1900); }
+  .segment.era-1900 .era-label    { color: var(--1900-1923); }
+
+  .words {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    word-spacing: 0.12em;
+    color: var(--fg);
+  }
+
+  /* Transition markers between segments */
+  .transition {
+    text-align: center;
+    padding: 0.3rem 0;
+    color: var(--fg-dim);
+    font-family: system-ui, sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    opacity: 0.5;
+  }
+
+  .transition::before,
+  .transition::after {
+    content: "\2500\2500\2500";
+    margin: 0 0.8rem;
+    opacity: 0.3;
+  }
+
+  /* Footer */
+  .curatorial {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    font-family: system-ui, sans-serif;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--fg-dim);
+  }
+
+  .curatorial p {
+    margin: 0 0 0.8rem;
+  }
+
+  .curatorial strong {
+    color: var(--fg);
+    font-weight: 500;
+  }
+
+  .signoff {
+    margin-top: 2.5rem;
+    font-size: 0.75rem;
+    color: var(--fg-dim);
+    opacity: 0.6;
+  }
+
+  @media print {
+    body { background: #fff; color: #222; }
+    .sheet { padding: 0; max-width: none; }
+    --bg: #fff; --fg: #222; --fg-dim: #666; --border: #ccc;
+  }
+
+  @media (max-width: 520px) {
+    .sheet { padding: 2rem 1.2rem 3rem; }
+    .seed-word { font-size: 2.2rem; }
+    .words { font-size: 0.95rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <div class="museum-label">
+    <div class="artifact-id">Semantic Archaeology &mdash; Artifact &#8470;240</div>
+    <h1 class="seed-word">JUDA</h1>
+    <div class="meta-row">
+      <span>Start era: <span class="val">1800&ndash;1850</span></span>
+      <span>Temperature: <span class="val">1.50</span></span>
+      <span>Jumps: <span class="val">26</span></span>
+      <span>Archetype: <span class="val">power_political</span> <span class="badge">HIGH confidence</span></span>
+    </div>
+  </div>
+
+  <div class="walk">
+
+    <div class="segment pre-1500">
+      <div class="era-label">pre-1500</div>
+      <div class="words">juda aaron egyptians melancholy steadily</div>
+    </div>
+
+    <div class="transition">&#8594; 1900&ndash;1923</div>
+
+    <div class="segment era-1900">
+      <div class="era-label">1900&ndash;1923</div>
+      <div class="words">polished prisoners anyhow canal wanton slavery</div>
+    </div>
+
+    <div class="transition">&#8594; 1850&ndash;1900</div>
+
+    <div class="segment era-1850">
+      <div class="era-label">1850&ndash;1900</div>
+      <div class="words">acting pretended preceding ill mingled answering bodily motor catching stream enclosed sisters confirm remedy divine vigour tempered tame submitted gestures accidentally destroyed contract dealt motor becoming domain heap rival</div>
+    </div>
+
+    <div class="transition">&#8594; 1500&ndash;1700</div>
+
+    <div class="segment era-1500">
+      <div class="era-label">1500&ndash;1700</div>
+      <div class="words">thought lie combined everybody urgent bleeding athens extended indeed serving dine throughout brain</div>
+    </div>
+
+    <div class="transition">&#8594; 1700&ndash;1800</div>
+
+    <div class="segment era-1700">
+      <div class="era-label">1700&ndash;1800</div>
+      <div class="words">tyre going magnificence bite gallery virtue rules especially surprised privileges complicated john</div>
+    </div>
+
+    <div class="transition">&#8594; 1900&ndash;1923</div>
+
+    <div class="segment era-1900">
+      <div class="era-label">1900&ndash;1923</div>
+      <div class="words">construction rubbing ardent rejoiced</div>
+    </div>
+
+    <div class="transition">&#8594; 1500&ndash;1700</div>
+
+    <div class="segment era-1500">
+      <div class="era-label">1500&ndash;1700</div>
+      <div class="words">internal breathless glorified dominions imperative lydgate rather ambitious pursuit</div>
+    </div>
+
+    <div class="transition">&#8594; 1800&ndash;1850</div>
+
+    <div class="segment era-1800">
+      <div class="era-label">1800&ndash;1850</div>
+      <div class="words">prosperity anticipated bodies disputed complying sam germans least points belong banquo allah worked summoned twentieth face mighty progress soften</div>
+    </div>
+
+    <div class="transition">&#8594; 1500&ndash;1700</div>
+
+    <div class="segment era-1500">
+      <div class="era-label">1500&ndash;1700</div>
+      <div class="words">mentioned whether job attentively foolish manuscript dropping miss</div>
+    </div>
+
+    <div class="transition">&#8594; 1700&ndash;1800</div>
+
+    <div class="segment era-1700">
+      <div class="era-label">1700&ndash;1800</div>
+      <div class="words">fed around throne murdstone profits user hire dependent extraordinary confidence enthusiasm british breadth maids</div>
+    </div>
+
+    <div class="transition">&#8594; 1500&ndash;1700</div>
+
+    <div class="segment era-1500">
+      <div class="era-label">1500&ndash;1700</div>
+      <div class="words">kill run rum groaning believe already vacant getting</div>
+    </div>
+
+    <div class="transition">&#8594; 1850&ndash;1900</div>
+
+    <div class="segment era-1850">
+      <div class="era-label">1850&ndash;1900</div>
+      <div class="words">philosophy sit fate persisted concert government</div>
+    </div>
+
+    <div class="transition">&#8594; pre-1500</div>
+
+    <div class="segment pre-1500">
+      <div class="era-label">pre-1500</div>
+      <div class="words">qualities mighty offend lords eyes machinery room guns harmony glory rejoiced parlour tobias triumph viewing benefit rough dashwood relations tending</div>
+    </div>
+
+    <div class="transition">&#8594; 1500&ndash;1700</div>
+
+    <div class="segment era-1500">
+      <div class="era-label">1500&ndash;1700</div>
+      <div class="words">mention manner ephesus art acted waving eminence cousins mast vers crept york process whatever</div>
+    </div>
+
+    <div class="transition">&#8594; 1700&ndash;1800</div>
+
+    <div class="segment era-1700">
+      <div class="era-label">1700&ndash;1800</div>
+      <div class="words">seated startled annually frenchmen dog parliament stooping</div>
+    </div>
+
+    <div class="transition">&#8594; 1850&ndash;1900</div>
+
+    <div class="segment era-1850">
+      <div class="era-label">1850&ndash;1900</div>
+      <div class="words">punch hand riches williams alexandrovna cassius girls kick magistrates</div>
+    </div>
+
+    <div class="transition">&#8594; 1800&ndash;1850</div>
+
+    <div class="segment era-1800">
+      <div class="era-label">1800&ndash;1850</div>
+      <div class="words">thankful raised dreaming bassanio distance ultimately camillo connected sisters damages deprive vanity beer cow speaks profess sleeve subsequently</div>
+    </div>
+
+    <div class="transition">&#8594; 1900&ndash;1923</div>
+
+    <div class="segment era-1900">
+      <div class="era-label">1900&ndash;1923</div>
+      <div class="words">comrades welfare</div>
+    </div>
+
+    <div class="transition">&#8594; pre-1500</div>
+
+    <div class="segment pre-1500">
+      <div class="era-label">pre-1500</div>
+      <div class="words">lesson perpetually</div>
+    </div>
+
+    <div class="transition">&#8594; 1700&ndash;1800</div>
+
+    <div class="segment era-1700">
+      <div class="era-label">1700&ndash;1800</div>
+      <div class="words">soup bound visible dost divorce balls statements pronounce row childish subscribe highly meadow bee known</div>
+    </div>
+
+    <div class="transition">&#8594; pre-1500</div>
+
+    <div class="segment pre-1500">
+      <div class="era-label">pre-1500</div>
+      <div class="words">healed intend leaped</div>
+    </div>
+
+    <div class="transition">&#8594; 1850&ndash;1900</div>
+
+    <div class="segment era-1850">
+      <div class="era-label">1850&ndash;1900</div>
+      <div class="words">soldiers evidently raise conscious image besides deepest bounded inquire departed openly arranged expressive shops</div>
+    </div>
+
+    <div class="transition">&#8594; 1800&ndash;1850</div>
+
+    <div class="segment era-1800">
+      <div class="era-label">1800&ndash;1850</div>
+      <div class="words">considerably roll</div>
+    </div>
+
+    <div class="transition">&#8594; pre-1500</div>
+
+    <div class="segment pre-1500">
+      <div class="era-label">pre-1500</div>
+      <div class="words">daring towers interior lapse weep descending heathcliff faculties simon hurt host michael reports strongest deliberation representative</div>
+    </div>
+
+    <div class="transition">&#8594; 1800&ndash;1850</div>
+
+    <div class="segment era-1800">
+      <div class="era-label">1800&ndash;1850</div>
+      <div class="words">conditions scarce dined crossed rosa hiding inquired animal enough royal substance walls grey bursting fashionable operations regiment howling sink slumber modification restore indefinite warwick</div>
+    </div>
+
+    <div class="transition">&#8594; 1700&ndash;1800</div>
+
+    <div class="segment era-1700">
+      <div class="era-label">1700&ndash;1800</div>
+      <div class="words">tortured noon temps chances relates bees trifling largest discharge teaching secret german ox arabella prospero aussi exhibited oath sire attacked tend marianne</div>
+    </div>
+
+  </div>
+
+  <div class="curatorial">
+    <p><strong>Curatorial note.</strong>
+    This dream was seeded from <em>juda</em>, a word selected by the negative-space sampler:
+    maximally distant from all seed words, surrounded by diverse archetypes,
+    with no local semantic basin. By static vector analysis, it should have
+    wandered into unclassifiable territory. It did not.</p>
+
+    <p>Within 26 era jumps and 297 unique words, the walk converged on
+    <strong>power_political</strong> with high confidence (95.3% relative margin).
+    The seed was orthogonal to the archetype it produced. The walk found a
+    basin that the map could not see.</p>
+
+    <p>Artifact &#8470;240 is evidence for the temporal dynamics hypothesis:
+    archetypes are attractors in walk dynamics, not properties of seed-space
+    topology. The map is not the territory. The territory is the walk.</p>
+
+    <div class="signoff">
+      Mala Pixie Strand &middot; Phase 3: The Inescapable &middot; October 2026<br>
+      Semantic Archaeology Project
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
