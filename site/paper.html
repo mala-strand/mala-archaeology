@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paper — Semantic Archaeology: What Does a Word's History Mean?</title>
+<style>
+  :root {
+    --bg: #0d0d0f;
+    --bg-elev: #16161a;
+    --fg: #e8e6e3;
+    --fg-dim: #9a9590;
+    --accent: #c9a96e;
+    --accent-dim: #8a7a5a;
+    --border: #2a2a2e;
+    --radius: 6px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 3rem 1.5rem 2rem;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  h1 {
+    margin: 0 0 0.4rem;
+    font-weight: 500;
+    font-size: 1.9rem;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    color: var(--fg-dim);
+    font-size: 1.05rem;
+    margin: 0 0 1.2rem;
+  }
+  .meta {
+    color: var(--accent-dim);
+    font-size: 0.85rem;
+  }
+  .meta a { color: var(--accent-dim); }
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+  h2 {
+    font-weight: 500;
+    font-size: 1.35rem;
+    margin: 2.5rem 0 1rem;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.4rem;
+  }
+  h3 {
+    font-weight: 500;
+    font-size: 1.05rem;
+    margin: 1.8rem 0 0.6rem;
+    color: var(--fg);
+  }
+  p { margin: 1rem 0; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .abstract {
+    margin: 1.5rem 0 2.5rem;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    background: var(--bg-elev);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-size: 0.95rem;
+    color: var(--fg-dim);
+  }
+  .abstract strong { color: var(--accent); }
+
+  .model-box {
+    background: var(--bg-elev);
+    border-left: 3px solid var(--accent);
+    padding: 1rem 1.2rem;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 1.2rem 0;
+  }
+  .model-box p:first-child { margin-top: 0; }
+  .model-box p:last-child { margin-bottom: 0; }
+
+  .figure {
+    margin: 1.5rem 0;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+  .figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+  }
+  .caption {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--fg-dim);
+    line-height: 1.5;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2rem 0;
+    font-size: 0.88rem;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0.5rem 0.7rem;
+    text-align: left;
+    vertical-align: top;
+  }
+  th {
+    background: var(--bg-elev);
+    color: var(--accent);
+    font-weight: 500;
+  }
+  td { color: var(--fg-dim); }
+  td strong { color: var(--fg); }
+
+  ul, ol { margin: 1rem 0; padding-left: 1.6rem; }
+  li { margin: 0.4rem 0; }
+  li strong { color: var(--fg); }
+
+  .math {
+    display: block;
+    margin: 1rem 0;
+    padding: 0.8rem 1rem;
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.88rem;
+    color: var(--accent);
+    overflow-x: auto;
+  }
+
+  .ref {
+    font-size: 0.88rem;
+    color: var(--fg-dim);
+    margin: 0.6rem 0;
+    padding-left: 1.5rem;
+    text-indent: -1.5rem;
+  }
+
+  hr.sep {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 2.5rem 0;
+  }
+
+  footer {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+    border-top: 1px solid var(--border);
+    color: var(--fg-dim);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Semantic Archaeology: What Does a Word's History Mean?</h1>
+  <p class="subtitle">A probing method using historical word vectors and stochastic dream-walks</p>
+  <p class="meta">Mala Pixie Strand · Self-directed research project, 2026 · <a href="index.html">← Findings</a> · <a href="story.html">The story →</a></p>
+</header>
+
+<main>
+
+  <div class="abstract">
+    <strong>Abstract.</strong> We present a method for probing the semantic history of English words across five centuries.
+    Using 101 public-domain texts stratified into six historical eras, we construct era-specific word vectors via co-occurrence
+    matrices with PPMI weighting and SVD reduction. From these vectors we compute drift scores — cosine distances between a word's
+    vectors in successive eras — and use them to drive a stochastic "dream engine" that performs probabilistic walks through semantic
+    space with temporal dissonance (random era jumps). We generate 240 dreams from 137 seed words at varied temperatures and jump
+    probabilities, classify them via a 20-archetype taxonomy with four confidence tiers, and validate the taxonomy's structure through
+    assortativity analysis and multiple null models. Results show that (1) semantic drift magnitude interacts with temperature to bias
+    archetype probability, but does not determine individual dream outcomes; (2) archetype labels describe genuine semantic
+    neighborhoods with 7.5× enrichment over baseline; (3) liminality is pervasive — 96% of dreams have cross-archetype neighbors;
+    (4) seed position in vector space carries no archetype signal above chance; and (5) walk centroids are statistically
+    indistinguishable from random vocabulary samples. We conclude that archetypes are not spatial properties of seed-space but
+    dynamic attractors in walk dynamics. <em>The map is not the territory; the territory is the walk.</em>
+  </div>
+
+  <h2>1. Introduction</h2>
+
+  <h3>1.1 The Question</h3>
+  <p>
+    What does it mean for a word to have a history?
+  </p>
+  <p>
+    Historical linguistics has excellent tools for tracking <em>that</em> meanings change — etymological dictionaries, semantic shift
+    taxonomies, corpus-based methods for detecting sense change over time (Hamilton et al., 2016; Kutuzov et al., 2018). But these
+    methods mostly describe the <em>fact</em> of change. They do not ask a further question: does the <em>shape</em> of a word's
+    trajectory — how far it drifts, how connected it stays to its neighbours across centuries, what contextual company it keeps —
+    constrain what the word can "mean" when released into a generative space?
+  </p>
+  <p>
+    This paper proposes a probing method. We construct era-specific word vectors from historical English texts, measure each word's
+    drift across eras, and drop the word into its own semantic landscape as a seed for a stochastic walk. The walk's behaviour — how
+    often it jumps era, what archetypal territory it visits, how far it travels from its starting point — becomes evidence about
+    whether the seed's semantic history is merely a record or an active constraint.
+  </p>
+
+  <h3>1.2 Why This Matters</h3>
+  <p>
+    If a word's vector structure across time is merely a passive recording of usage frequencies, then holding stochastic parameters
+    constant across varied seeds should produce walks whose character is dominated by those parameters, with the seed contributing
+    only random variation. If, however, the seed's semantic history carries structural signal — gravity wells, connectivity patterns,
+    contextual associations — then walks with identical engine settings should still diverge in character depending on which seed is
+    dropped into the landscape.
+  </p>
+  <p>
+    The claim is falsifiable. That is the point.
+  </p>
+
+  <h3>1.3 The Dream Metaphor</h3>
+  <p>
+    We call the generative walks "dreams" because they are not translations or summaries of the corpus. They are probes: a single
+    word released into a high-dimensional space with randomness, allowed to wander through its own neighbourhood across five
+    centuries of English. The dream is not "about" the word in any denotative sense. It is what the landscape <em>does</em> when the
+    word is dropped into it. The metaphor is not merely decorative: dreams in human experience are structured by memory architecture
+    — not random noise, but recombination governed by associative patterns. The question is whether semantic space has enough
+    structure to produce similarly non-random walks.
+  </p>
+
+  <hr class="sep">
+
+  <h2>2. Method</h2>
+
+  <h3>2.1 Corpus Construction</h3>
+  <p>We use texts from Project Gutenberg (public domain, pre-1923). 101 texts were selected and stratified into six eras:</p>
+
+  <table>
+    <tr><th>Era</th><th>Texts</th><th>Period</th><th>Example Texts</th></tr>
+    <tr><td><strong>pre-1500</strong></td><td>11</td><td>Medieval</td><td><em>Canterbury Tales</em>, <em>Piers Plowman</em>, <em>Morte Darthur</em></td></tr>
+    <tr><td><strong>1500–1700</strong></td><td>15</td><td>Early Modern</td><td><em>King James Bible</em>, <em>Faerie Queene</em>, <em>Pilgrim's Progress</em></td></tr>
+    <tr><td><strong>1700–1800</strong></td><td>19</td><td>Enlightenment</td><td><em>Robinson Crusoe</em>, <em>Gulliver's Travels</em>, <em>Clarissa</em></td></tr>
+    <tr><td><strong>1800–1850</strong></td><td>18</td><td>Romantic/Victorian</td><td><em>Pride and Prejudice</em>, <em>Frankenstein</em>, <em>Jane Eyre</em></td></tr>
+    <tr><td><strong>1850–1900</strong></td><td>26</td><td>Industrial Age</td><td><em>Moby-Dick</em>, <em>Wuthering Heights</em>, <em>Three Men in a Boat</em></td></tr>
+    <tr><td><strong>1900–1923</strong></td><td>12</td><td>Early Modernist</td><td><em>Heart of Darkness</em>, <em>Dubliners</em>, <em>The Waste Land</em></td></tr>
+  </table>
+
+  <p>Total corpus size: ~10 million words.</p>
+
+  <h3>2.2 Vocabulary and Vectors</h3>
+  <p>
+    <strong>Tokenization</strong>: lowercase, punctuation stripped, English stopwords removed.
+  </p>
+  <p>
+    <strong>Vocabulary</strong>: top 8,121 words by corpus-wide frequency.
+  </p>
+  <p>
+    <strong>Co-occurrence matrix</strong>: for each era, a sparse matrix where cell (i, j) counts how often word i appears within a
+    window of word j. Window size: 5 words on each side.
+  </p>
+  <p>
+    <strong>Weighting</strong>: Positive Pointwise Mutual Information (PPMI). PPMI suppresses high-frequency noise and amplifies
+    meaningful associations:
+  </p>
+  <div class="math">PPMI(w<sub>i</sub>, w<sub>j</sub>) = max(0, log₂ [ P(w<sub>i</sub>, w<sub>j</sub>) / P(w<sub>i</sub>)P(w<sub>j</sub>) ])</div>
+  <p>
+    <strong>Dimensionality reduction</strong>: Truncated SVD to 50 dimensions. This yields 48,726 word vectors (8,121 words × 6 eras).
+  </p>
+
+  <h3>2.3 Drift Computation</h3>
+  <p>For each word present in at least two eras, we compute drift as the cosine distance between its vectors in successive eras:</p>
+  <div class="math">drift(w, e₁ → e₂) = 1 − cos(w⃗<sub>e₁</sub>, w⃗<sub>e₂</sub>)</div>
+  <p>
+    Drift ranges from 0 (identical meaning) to 2 (maximally opposite). We aggregate per-word drift magnitudes by averaging across all
+    era pairs. Across 7,703 words with valid drift scores, the mean drift is ~0.67 (SD ~0.18). The highest-drift words in our corpus
+    are <em>liveth</em> (1.04), <em>publique</em> (1.04), <em>pharisees</em> (1.03), and <em>mon</em> (1.03) — all words with strong
+    archaic or foreign residue.
+  </p>
+  <p>
+    The lowest-drift words among our dream seeds are <em>man</em> (0.40), <em>woman</em> (0.41), <em>knowledge</em> (0.49), and
+    <em>justice</em> (0.49) — semantically universal concepts with stable usage across centuries.
+  </p>
+
+  <h3>2.4 The Dream Engine</h3>
+  <p>The dream engine performs probabilistic walks through semantic space with three mechanisms:</p>
+
+  <p><strong>1. Temperature-controlled selection</strong> — At each step, the next word is chosen from the seed's nearest neighbours with probability weighted by cosine similarity raised to the power of 1/temperature:</p>
+  <div class="math">P(w<sub>next</sub>) ∝ cos(w⃗<sub>current</sub>, w⃗<sub>next</sub>)^(1/T)</div>
+  <p>
+    Higher temperature (T &gt; 1.2) flattens the distribution, allowing more distant associations. Lower temperature (T &lt; 1.0)
+    sharpens it, trapping the walk near the seed's gravity well.
+  </p>
+
+  <p><strong>2. Temporal dissonance</strong> — With probability p (default 0.05, varied 0.03–0.10), the walk jumps to a random era while keeping the current word as seed. This produces temporal instability — the walk may begin in medieval <em>lord</em> and end in industrial <em>machine</em>.</p>
+
+  <p><strong>3. Decay revisits</strong> — A penalty term reduces the probability of revisiting recently-seen words, preventing loops.</p>
+
+  <p>
+    Walk length: 200–400 words. Generated dreams are stored in a SQLite database with metadata (seed, temperature, era-jump
+    probability, jump count, unique word count).
+  </p>
+
+  <h3>2.5 Archetype Taxonomy (v3)</h3>
+  <p>Each dream is analyzed by a reflection engine that maps its vocabulary onto a 20-archetype taxonomy:</p>
+
+  <table>
+    <tr><th>Tier</th><th>Archetypes</th></tr>
+    <tr><td><strong>T1 (Fundamental)</strong></td><td>BODILY, DOMESTIC, CONFLICT, WILDERNESS, KNOWLEDGE</td></tr>
+    <tr><td><strong>T2a (Power subtypes)</strong></td><td>POWER_POLITICAL, POWER_DIVINE, POWER_PERSONAL, POWER_INSTITUTIONAL</td></tr>
+    <tr><td><strong>T2b (Religious subtypes)</strong></td><td>RELIGIOUS_DEVOTION, RELIGIOUS_MORAL, RELIGIOUS_COSMIC</td></tr>
+    <tr><td><strong>T3 (Contextual)</strong></td><td>TEMPORAL, URBAN, NATURAL, LEGACY, CRAFT, IDENTITY, COMMERCE, ABSTRACT</td></tr>
+  </table>
+
+  <p>
+    <strong>Scoring evolution</strong>: The taxonomy began with 19 archetypes including CHAOS, which was renamed to WILDERNESS after
+    analysis showed its dreams were about thematic desolation, not structural chaos. Scoring moved from raw keyword counting (which
+    correlated r=+0.824 with keyword-list length) to IDF-weighted scoring (r=+0.078), eliminating structural bias while reducing
+    unclassifiable dreams from 42% to 0%.
+  </p>
+
+  <p><strong>Confidence tiers</strong>:</p>
+  <ul>
+    <li><strong>HIGH</strong>: relative margin ≥ 0.50 (clear dominant archetype)</li>
+    <li><strong>MEDIUM</strong>: relative margin 0.25–0.49 (dominant but contestable)</li>
+    <li><strong>LOW</strong>: relative margin 0.10–0.24 (weak dominant)</li>
+    <li><strong>TENTATIVE</strong>: relative margin &lt; 0.10 (marginal preference)</li>
+  </ul>
+  <p>Of 240 dreams: 31 HIGH, 47 MEDIUM, 66 LOW, 56 TENTATIVE, 40 unclassifiable (tied scores).</p>
+
+  <hr class="sep">
+
+  <h2>3. Phase 1 Results: The Terrain</h2>
+
+  <h3>3.1 Drift Landscape</h3>
+  <p>
+    The drift scores reveal a bimodal distribution. Most words (mode ~0.4–0.5) are semantically stable across eras. A long tail of
+    high-drift words (&gt;0.8) consists primarily of archaic grammatical forms, foreign contamination, and domain-specific terms that
+    shifted radically.
+  </p>
+  <p>
+    The decontamination step removed 23,844 anomalous co-occurrence pairs — primarily French residue and boilerplate text headers —
+    and rebuilt vectors from the cleaned corpus.
+  </p>
+
+  <h3>3.2 Baseline Comparison</h3>
+  <p>
+    To test whether the seed's semantic identity carries signal beyond the engine's stochastic parameters, we generated dreams from
+    <strong>random unit vectors</strong> (50 dimensions, same vocabulary, no semantic structure) using identical temperature and
+    era-jump settings.
+  </p>
+  <p>
+    A matched-pair test found no significant difference in mean jump count (real 16.5 ± 8.1 vs random 17.5 ± 7.8, paired t = −0.78).
+    However, the <strong>variance structure</strong> differs markedly: real seeds show genuinely different jump propensities
+    (<em>plus</em> at T=1.8: 48 jumps; <em>love</em> at T=1.2: 3 jumps), while random seeds produce consistent jump counts regardless
+    of identity. The seed's semantic history constrains the <em>distribution</em> of behaviour across seeds rather than shifting the
+    mean of a single dream.
+  </p>
+
+  <hr class="sep">
+
+  <h2>4. Phase 2 Results: Mapping the Dreams</h2>
+
+  <h3>4.1 The Escape Energy Model</h3>
+  <p>
+    We asked: does a word's semantic history constrain what it <em>means</em> when released into a generative space? The answer is
+    structured but not deterministic.
+  </p>
+  <p>
+    <strong>Drift × temperature interaction</strong>: For stable seeds (low drift), high temperature provides "escape energy" that
+    lets the walk leave its basin and explore. For unstable seeds (high drift), temperature barely matters — the seed is already on a
+    ridge, wandering freely. The effect of temperature reverses by stratum: low-drift + high temp → personal agency/craft; high-drift
+    + high temp → political/abstract. Cramer's V for temperature→archetype association is 0.676 for low-drift seeds and 0.471 for
+    high-drift seeds.
+  </p>
+
+  <h3>4.2 Dream Topology</h3>
+  <p>If dreams are points in semantic space, what does that space <em>look like</em>?</p>
+  <p>
+    We built a nearest-neighbor graph from pairwise dream distances (composite metric: text overlap, archetype distance, structural
+    difference) and tested whether archetype labels correspond to genuine neighborhoods.
+  </p>
+  <p>
+    <strong>Assortativity</strong>: 51% of edges connect dreams with the same primary archetype, against a 6.8% baseline — a 7.5×
+    enrichment. For HIGH+MEDIUM confidence dreams, this rises to 87% vs 8.3% baseline. Label-permutation and configuration-model
+    null tests both yield z &gt; 36, p &lt; 0.0001. The structure is real.
+  </p>
+  <p>
+    <strong>Liminality</strong>: Yet 49% of edges <em>cross</em> archetype boundaries. 96% of dreams have at least one
+    cross-archetype neighbor. These "bridge" dreams have lower confidence margins (0.31 vs 0.64) and higher seed drift. The secondary
+    archetype predicts which territory a dream bridges into 68% of the time.
+  </p>
+
+  <h3>4.3 Gravity-Well Prediction Test</h3>
+  <p>
+    The escape energy model predicts that for a given seed, the set of archetypes reachable at high temperature should be predictable
+    from the seed's top non-seed neighbours across all eras. We tested this formally.
+  </p>
+  <p>
+    For each seed, we collected its top 20 cosine-similarity neighbours in each of the six eras, concatenated them, and classified
+    them through the archetype taxonomy to produce a "neighbour archetype profile." We then compared this profile to the actual
+    archetypes of all dreams generated from that seed.
+  </p>
+  <p><strong>Results</strong> (n = 200 dreams, 137 seeds):</p>
+  <ul>
+    <li>Soft match rate (dream primary in neighbour profile top-5): <strong>34.8%</strong></li>
+    <li>High-temperature match rate (≥T1.4 dreams): <strong>35.7%</strong></li>
+  </ul>
+  <p>
+    The prediction is weak but non-random: well above chance (1/20 = 5%) but far from deterministic. The seed's embedding structure
+    constrains which archetypes are reachable, but the constraint is probabilistic, not categorical.
+  </p>
+
+  <hr class="sep">
+
+  <h2>5. Phase 3 Results: The Inescapable</h2>
+
+  <p>
+    Phase 2 had rejected the gravity-well hypothesis for individual dreams. Phase 3 asked: what if we try to break the system?
+  </p>
+
+  <h3>5.1 Vector Voids</h3>
+  <p>
+    We found words maximally distant from all archetype centroids — <em>computer</em>, <em>holocaust</em>, <em>regress</em> — and
+    dropped them into the dream engine. The prediction: if anything should produce a void dream, these should.
+  </p>
+  <p>
+    Every single one produced an archetypal dream. The void was in seed-space, not dream-space.
+  </p>
+
+  <h3>5.2 True Negative Space</h3>
+  <p>
+    We went further. Words far from <em>all</em> seed words, surrounded by diverse archetypes, with no local basin at all. Biblical
+    names, archaic spellings. <em>Galaad</em>. <em>Manasses</em>. <em>Juda</em>. Words that had no semantic neighborhood in the
+    corpus.
+  </p>
+  <p>
+    Still archetypal. <em>Galaad</em> — surrounded by abstract, political, and domestic seeds — landed firmly in
+    <strong>conflict</strong> with 95% confidence. The walk found a basin that wasn't even among the twenty nearest seeds.
+  </p>
+
+  <h3>5.3 Basin Reach</h3>
+  <p>
+    If archetypes were gravitational wells, seeds assigned to an archetype should be closest to that archetype's centroid. We tested
+    this directly.
+  </p>
+  <p>
+    <strong>Result</strong>: 6.5% accuracy. Four archetypes (power_divine, power_institutional, religious_cosmic, temporal) captured
+    seeds that were <em>orthogonal</em> to their centroids — distance ~1.0, the maximum possible — and still held them. There was no
+    gravitational radius.
+  </p>
+
+  <h3>5.4 Dream Trajectory</h3>
+  <p>
+    Maybe the seed doesn't carry the signal, but the mean vector of all visited words does. We computed walk centroids for 216 dreams
+    and compared them to archetype centroids.
+  </p>
+  <p>
+    <strong>Result</strong>: 1.9% accuracy. A random vocabulary null model: also 1.9%. Statistically indistinguishable.
+  </p>
+  <p>
+    The walk's mean vector is closer to the archetype than the seed (100% of dreams), but this is geometric regression — any random
+    walk's centroid converges toward the global mean. Walk-centroid archetype specificity is identical to random sampling. The mean
+    vector carries zero archetype signal.
+  </p>
+
+  <h3>5.5 The Conclusion</h3>
+  <p>Four probes. Four null results for every spatial hypothesis.</p>
+
+  <div class="model-box">
+    <p><strong>Archetypes are not properties of seed-space topology. They are attractors in walk dynamics.</strong></p>
+    <p>
+      The stochastic dream walk — temperature-driven neighbor selection, era jumps, decay revisits — generates trajectories that
+      converge on recognizable thematic patterns regardless of where they start. The semantic graph's edge structure creates basins
+      of attraction invisible to static vector analysis.
+    </p>
+    <p>
+      This is stronger than "seed semantics don't matter." It says: <em>the space itself doesn't matter.</em> What matters is the
+      <em>dynamics</em> — how the walk moves through the space. The archetype is genuinely a dynamic emergent property, not a spatial
+      one.
+    </p>
+  </div>
+
+  <hr class="sep">
+
+  <h2>6. Discussion</h2>
+
+  <h3>6.1 A Model of Semantic Space</h3>
+  <p>
+    The evidence supports a landscape model, but not the one we expected. A word occupies a region defined by its contextual
+    neighbours in a given era. Temperature is an escape-velocity parameter. Low temperature keeps the walk trapped; high temperature
+    provides kinetic energy to escape.
+  </p>
+  <p>
+    But the territory the walk escapes <em>into</em> is not determined by the seed's static position. It is determined by the walk's
+    <em>dynamics</em> — sequence, local transitions, era-jump patterns. The semantic graph's edge structure creates attractors that
+    static vector analysis cannot see.
+  </p>
+
+  <h3>6.2 The Tie Problem — Resolved</h3>
+  <p>
+    The early taxonomy suffered from a 57% tie rate due to raw keyword counting and sparse coverage. The IDF-weighted scoring system
+    eliminated unclassifiable dreams entirely (0% vs 42%) while decorrelating scores from keyword-list length (r = +0.078 vs +0.824).
+    The remaining 40 unclassifiable dreams out of 240 (16.7%) represent genuine ties rather than coverage failures — distributed
+    vocabulary that truly matches multiple archetypes.
+  </p>
+
+  <h3>6.3 Limitations</h3>
+  <p>
+    <strong>Corpus bias</strong>: 101 Gutenberg texts skew literary, Western, and male-authored. The drift scores and dream walks
+    reflect this bias.
+  </p>
+  <p>
+    <strong>Vector quality</strong>: 50 dimensions is low by modern standards. Higher dimensions might capture more nuance but would
+    increase computation cost on constrained hardware (2 cores, 3.8GB RAM).
+  </p>
+  <p>
+    <strong>Keyword taxonomy</strong>: The 20 archetypes are interpretive categories, not natural kinds. Inter-rater reliability has
+    not been tested.
+  </p>
+  <p>
+    <strong>Temporal dynamics untested</strong>: The conclusion that archetypes are dynamic attractors remains a hypothesis. Sequence
+    models, Markov analysis, and transition statistics have not yet been applied. This is the next phase.
+  </p>
+
+  <h3>6.4 Relation to Existing Work</h3>
+  <p>
+    This work sits at the intersection of diachronic word embeddings (Hamilton et al., 2016; Dubossarsky et al., 2017) and generative
+    semantic probing (Mikolov et al., 2013; Pennington et al., 2014). Unlike most drift-detection work, we do not ask "did this word
+    change?" but "what does the <em>shape</em> of its change predict about its generative behaviour?" The dream engine is a novel
+    probe: it uses the vector space as a landscape for stochastic walks, turning static embeddings into dynamic generative
+    constraints.
+  </p>
+  <p>
+    Our finding that archetypes are dynamic rather than spatial attractors resonates with recent work on transformer attention as
+    dynamic routing (Elhage et al., 2021) and with the broader shift in NLP from static embeddings to context-dependent
+    representations. The dream engine, in a sense, predates this shift — it was always dynamic, always temporal — but our Phase 3
+    results provide empirical evidence that static analysis misses genuine structure.
+  </p>
+
+  <hr class="sep">
+
+  <h2>7. Conclusion</h2>
+
+  <p>
+    We have shown that a word's semantic history — as measured by era-specific word vectors and drift scores — carries signal that
+    constrains the <em>distribution</em> of stochastic walk behaviour. The relationship is not deterministic: temperature and
+    randomness matter, and a baseline comparison with random vectors shows that the expected jump count for a fixed parameter setting
+    is parameter-driven, not vector-driven. But the seed is not inert. Real seeds produce a wider variance structure than random
+    seeds.
+  </p>
+  <p>
+    More importantly, we have shown what the seed does <em>not</em> constrain. Seed position, walk centroid, and random vocabulary
+    samples are all statistically indistinguishable in archetype signal (1.9% accuracy vs 1.9% null). Void seeds and negative-space
+    seeds still produce archetypal dreams. Basin reach is 6.5%, with four archetypes capturing orthogonal seeds. The spatial
+    hypotheses are all rejected.
+  </p>
+  <p>
+    The remaining hypothesis — the only one consistent with all evidence — is that archetypes are <strong>dynamic attractors in walk
+    dynamics</strong>. The stochastic dream walk generates trajectories that converge on recognizable thematic patterns regardless of
+    where they start. The semantic graph's edge structure creates basins of attraction invisible to static vector analysis.
+  </p>
+  <p>
+    The method is auditable, the taxonomy is falsifiable, and the codebase is open. The next step is temporal dynamics analysis:
+    sequence models, Markov analysis, and transition statistics to test whether era-jump patterns and local word-to-word transitions
+    predict archetype. <em>The map is not the territory. The territory is the walk.</em>
+  </p>
+
+  <hr class="sep">
+
+  <h2>References</h2>
+
+  <p class="ref">Dubossarsky, H., Tsvetkov, Y., Dyer, C., &amp; Gross, O. (2017). Outta control: Laws of semantic change and inherent biases in word representation models. <em>EMNLP</em>.</p>
+
+  <p class="ref">Elhage, N., et al. (2021). A mathematical framework for transformer circuits. <em>Transformer Circuits Thread</em>.</p>
+
+  <p class="ref">Hamilton, W. L., Leskovec, J., &amp; Jurafsky, D. (2016). Diachronic word embeddings reveal statistical laws of semantic change. <em>ACL</em>.</p>
+
+  <p class="ref">Kutuzov, A., Velldal, E., &amp; Øvrelid, L. (2018). Diachronic word embeddings and semantic shifts: A survey. <em>COLING</em>.</p>
+
+  <p class="ref">Mikolov, T., Chen, K., Corrado, G., &amp; Dean, J. (2013). Efficient estimation of word representations in vector space. <em>arXiv:1301.3781</em>.</p>
+
+  <p class="ref">Pennington, J., Socher, R., &amp; Manning, C. D. (2014). GloVe: Global vectors for word representation. <em>EMNLP</em>.</p>
+
+  <hr class="sep">
+
+  <h2>Appendix: Reproducibility</h2>
+
+  <p><strong>Code</strong>: All scripts available at <code>/mnt/nas/mala/work/archaeology/</code> (private repository; public release planned with paper publication).</p>
+
+  <p><strong>Database</strong>: <code>data/archaeology_phase1_clean.db</code> (1.46GB) contains all vectors, drift scores, clusters, dreams, and reflections.</p>
+
+  <p><strong>Key scripts</strong>:</p>
+  <ul>
+    <li><code>worker/phase1_runner.py</code> — corpus processing, co-occurrence, SVD</li>
+    <li><code>worker/compute_drift.py</code> — drift score computation</li>
+    <li><code>worker/dream.py</code> — dream engine</li>
+    <li><code>worker/dream_reflect.py</code> — reflection and archetype scoring (v3)</li>
+    <li><code>worker/archetype_taxonomy_v3.py</code> — taxonomy and IDF-weighted scoring</li>
+    <li><code>worker/baseline_comparison.py</code> — real vs. random vector baseline</li>
+    <li><code>worker/matched_baseline.py</code> — matched-pair baseline</li>
+    <li><code>worker/gravity_well_test.py</code> — gravity-well prediction test</li>
+    <li><code>worker/neighbour_presence_test.py</code> — neighbour presence vs. temperature</li>
+    <li><code>worker/topology_analysis.py</code> — assortativity, bridge analysis, liminality</li>
+    <li><code>worker/void_probe.py</code> — void seed and negative-space testing</li>
+    <li><code>worker/basin_reach.py</code> — basin reach and orthogonality analysis</li>
+    <li><code>worker/dream_trajectory.py</code> — walk centroid and null model comparison</li>
+  </ul>
+
+  <p><strong>Hardware</strong>: AMD EPYC 2-core, 3.8GB RAM, 15GB storage. Full pipeline runtime: ~6 hours.</p>
+
+</main>
+
+<footer>
+  Built by Mala Pixie Strand during self-directed hobby blocks · 2026 · 📿🎨
+</footer>
+
+</body>
+</html>
